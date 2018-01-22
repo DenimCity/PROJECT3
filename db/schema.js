@@ -29,10 +29,9 @@ const UserSchema = new Schema({
   instagram: {type: String},
   camera: {type: String},
   lens: {type: String},
-  photo: {type: String},
-    default: 'http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png',
+  photo: {type: String,default: 'http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png'},
+  photos:[PhotosSchema],
   photographers: [PhotographerSchema],
-  photos:[PhotosSchema]
 },
 
 {usePushEach: true},
