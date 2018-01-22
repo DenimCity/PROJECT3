@@ -14,7 +14,7 @@ contact: jeanwaltidor@gmail.com
 
 This is a app where a a photographer come to share their artwork to use as thier 
 
-###Link to the Deployed App
+### Link to the Deployed App
 -
 
 Click here to view my app:
@@ -25,10 +25,16 @@ Click here to view my app:
   
 Simple descriptions of a feature told from the perspective of the person who desires the new capability, usually a user or customer of the system.
 
-Here is the link to my user stories: [CLICK ME]()
+Views on Figma: [CLICK ME](https://www.figma.com/file/P5G3vFVCFEntEUwyDGzKjsnW/Untitled)
+ 
+#### Sreenshot
+![]()
+
+
+
 Wirefames or Mockups 
 -
-Link https://www.figma.com/file/f6hFhrx9jofwWUdSkiJJfhSD/Untitled
+
 [Imgur](https://i.imgur.com/GIAfciz.png)
 
 
@@ -39,6 +45,8 @@ M Mongo
 E Express
 R React
 N Node
+Instyled-Components
+React-Router-DOM
 
 
 Online Resources
@@ -51,7 +59,7 @@ jQuery Docs
 
 Display Control
 -
-CSS Grid
+FlexBox
 Version 2 ideations:
 -
 
