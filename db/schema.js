@@ -10,7 +10,8 @@ mongoose.Promise = global.Promise
 const PhotosSchema = new Schema({
   img1:{type:String},
   img2: {type:String},
-  img3: {type: String}
+  img3: {type: String},
+  img4:{type:String}
 })
 
 const PhotographerSchema = new Schema({
