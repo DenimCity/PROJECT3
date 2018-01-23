@@ -1,14 +1,15 @@
 
 const express = require('express')
 const router = express.Router()
-const User  = require('../db/models/User')
+const User   = require('../db/models/User')
 const bodyParser = require('body-parser')
+
 
 
 
 router.get('/', async (req, res) => {
   try{
-    const User = await User.find({})
+    const users = await User.find({})
     res.json(users)
   } catch (error){
     {
