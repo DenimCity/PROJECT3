@@ -36,7 +36,17 @@ app.use(express.static(__dirname + '/client/build/'))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
 
-// uncomment after placing your favicon in /public
+// const indexController = require('./routes/indexController')
+// // for the homePage
+// app.use('/api/', indexController)
+
+
+
+const userController = require('./routes/userController')
+//express Controllers for Users
+app.use('/api/users', userController)
+
+// un-comment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(logger('dev'))
 app.use(bodyParser.json())
