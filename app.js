@@ -10,6 +10,15 @@ const mongoose = require('mongoose')
 
 
 const app = express()
+const userController = require('./routes/userController')
+//express Controllers for Users
+app.use('/api/users', userController)
+//express Controllers for photo
+const photoController = require('./routes/photoController') 
+app.use('/api/users/:userId/photo', photoController)  
+
+const photographerController = require('.routes/photographerController')
+app.use('/api')
 
 //database setup
 mongoose.Promise = global.Promise
@@ -37,9 +46,8 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
 
 
-const userController = require('./routes/userController')
-//express Controllers for Users
-app.use('/api/users', userController)
+
+
 
 // un-comment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
