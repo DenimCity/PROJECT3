@@ -36,11 +36,6 @@ app.use(express.static(__dirname + '/client/build/'))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
 
-// const indexController = require('./routes/indexController')
-// // for the homePage
-// app.use('/api/', indexController)
-
-
 
 const userController = require('./routes/userController')
 //express Controllers for Users
@@ -52,7 +47,6 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
-
 
 
 // catch 404 and forward to error handler
