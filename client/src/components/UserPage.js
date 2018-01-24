@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import User from './User'
-import {AboveNavBar, NavBar} from './HomePage'
 import styled from 'styled-components'
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
+import NewUserPage from './NewUserPage'
 
 class UserPage extends Component {
   render() {
@@ -19,11 +20,21 @@ class UserPage extends Component {
           lens={user.lens}/>)
       })
     return (
-      <UserIdContainer className="userIdContainer">
+      <UserIdContainer >
+       <div className="NavButtons">
+          <Link to="/">Home</Link>
+        </div>
+        <div className="NavButtons">
+          <Link to="/new">Create User</Link>
+        </div>
+        <div>
+         
         <h1>Users List</h1>
+        </div>
         <div>
           {userList}
         </div>
+        
       </UserIdContainer>
     )
   }
@@ -35,4 +46,20 @@ const UserIdContainer = styled.div `
 display:flex;
 flex-direction:row;
 flex-wrap:wrap;
+justify-content:center;
+
+h1 {
+  color:goldenrod;
+}
+
+.NavButtons {
+display:flex;
+
+  a{
+  color:green;
+  margin:2px 0px 0px 5px;
+ 
+}
+ 
+}
 `
