@@ -34,7 +34,7 @@ mongoose
     photographers:[{
       firstName:'Gary',
       lastName:'Fong',
-      photo:'hello',
+      photo:'https://petapixel.com/assets/uploads/2014/12/garyfong.jpg',
       website:'https://www.garyfong.com/'}],
     photos:[{
       img1:'https://i.imgur.com/phBGjPR.jpg',
@@ -55,7 +55,7 @@ mongoose
       firstName:'Marge',
       lastName:'Simpson',
       website:'http://www.simpsonsworld.com/'}],
-      photo:'help',
+      photo:'https://s-media-cache-ak0.pinimg.com/originals/97/59/ef/9759ef4e74d095b3a2f4aff7af016695.jpg',
     photos:[{
       img1:'https://i.pinimg.com/736x/d2/1e/50/d21e50b01d45b4c281b8b7e55e5f86a8--photography-surreal-magic-photography.jpg',
       img2:'https://farm4.staticflickr.com/3829/33207121940_81fc6b004e_b.jpg',
