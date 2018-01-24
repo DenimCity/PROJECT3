@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
 import User from './User'
+import { AboveNavBar, NavBar} from './HomePage'
+import styled from 'styled-components'
+
+
 
 class UserPage extends Component {
   render() {
@@ -14,7 +18,7 @@ class UserPage extends Component {
           lens={user.lens}/>)
       })
     return (
-      <div>
+      <div className="userIdContainer">
         <h1>Users List</h1>
         <div>
           {userList}
