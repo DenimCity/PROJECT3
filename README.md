@@ -1,5 +1,5 @@
 # Project - 3
-Photographer Webiste
+Photographer Website
 
 
 created by Jean Altidor
