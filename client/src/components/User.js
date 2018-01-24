@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import styled from 'styled-components'
 
 
 class User extends Component {
@@ -8,7 +8,7 @@ class User extends Component {
 
 
     return(
-      <div>
+      <UserWrapper>
         <div>
           <img src={this.props.photo} alt="pic of user"/>
         </div>
@@ -17,7 +17,7 @@ class User extends Component {
         <div>Instagram:{this.props.instagram}</div>
         <div>Go to Camera:{this.props.camera}</div>
         <div>Favorite Lens:{this.props.lens}</div>
-        </div>
+        </UserWrapper>
       
     )
   }
@@ -28,3 +28,15 @@ class User extends Component {
 
 
 export default User
+const UserWrapper = styled.div`
+display:flex;
+flex-direction:row;
+
+
+img {
+  height:190px;
+  width:190px;
+  border-radius:10px;
+}
+
+`
