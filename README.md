@@ -10,7 +10,7 @@ contact: jeanwaltidor@gmail.com
 -
 
 
-####Project description
+#### Project description
 
 This is a app where a a photographer come to share their artwork to use as thier 
 
@@ -21,7 +21,7 @@ Click here to view my app:
 [Deploy]()
 
 
-####User Stories:
+#### User Stories:
   
 Simple descriptions of a feature told from the perspective of the person who desires the new capability, usually a user or customer of the system.
 
