@@ -23,6 +23,7 @@ class User extends Component {
           <Link to="#">Inspo</Link> 
           <Link to="#">Photos</Link> 
           <Link to="#">Edit</Link>
+          <Link to="#">Delete</Link>
         </LinkWrapper>
         </InfoWrapper>
         </UserWrapper>

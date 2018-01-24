@@ -63,16 +63,16 @@ router.get('/something', (req, res) => {
 //     })
 // })
 
-// router.get('/:userId/edit', (req, res) => {
-//   const userId = req.params.userId
-//   console.log(userId)
-//   User.findById(userId)
-//     .then((user) => {
-//       res.json('users/edit', {
-//         user 
-//       })
-//     })
-// })
+router.get('/:userId/edit', (req, res) => {
+  const userId = req.params.userId
+  console.log(userId)
+  User.findById(userId)
+    .then((user) => {
+      res.json('users/edit', {
+        user 
+      })
+    })
+})
 
 // router.get('/:userId/delete', (req, res) => {
 //   const userId = req.params.userId
