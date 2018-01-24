@@ -14,11 +14,11 @@ const userController = require('./routes/userController')
 //express Controllers for Users
 app.use('/api/users', userController)
 //express Controllers for photo
-const photoController = require('./routes/photoController') 
-app.use('/api/users/:userId/photo', photoController)  
+// const photoController = require('./routes/photoController') 
+// app.use('/api/users/:userId/photo', photoController)  
 
-const photographerController = require('.routes/photographerController')
-app.use('/api')
+// const photographerController = require('.routes/photographerController')
+// app.use('/api')
 
 //database setup
 mongoose.Promise = global.Promise
