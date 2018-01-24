@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios'
 import HomePage from './components/HomePage'
 import UserPage from './components/UserPage'
+import NewsUserPAge from './components/NewUserPage'
 
 class App extends Component {
 
@@ -30,6 +31,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/user" component={userInfo}/>
+          <Route exact path="/new" component={NewsUserPAge}/>
         </Switch>
       </Router>
     )
