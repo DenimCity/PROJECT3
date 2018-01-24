@@ -16,9 +16,25 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.get('/something', (req, res) => {
-  res.send('hello')
+// to create a new user
+router.get ('/new', (req,res)=> {
+  res.json(users)
 })
+
+// router.get('/:userId', async (req, res) => {
+  
+//   const userId = req.params.userId
+
+//   User.findById(userId)
+//     .then((user) => {
+//       res.json('users/show', {
+//         user
+//       })
+//     })
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// })
 
 // router.post('/', (req, res)=> {
 //   const newUser = req.body 
@@ -34,19 +50,7 @@ router.get('/something', (req, res) => {
 
 //   })
 
-// router.get('/:userId', (req, res) => {
-//   const userId = req.params.userId
 
-//   User.findById(userId)
-//     .then((user) => {
-//       res.json('users/show', {
-//         user
-//       })
-//     })
-//     .catch((err) => {
-//       console.log(err)
-//     })
-// })
 
 
 // router.put('/:userId', (req, res)=>{
