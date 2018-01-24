@@ -62,5 +62,11 @@ height:200px;
  justify-content:center;
  flex-direction: row;
  margins: 2px 0 0 2px;
+
+ 
+  a {
+  margin: 2px 3px 4px 5px;
+}
+
  `
 
