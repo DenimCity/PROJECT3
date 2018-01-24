@@ -17,7 +17,8 @@ class User extends Component {
         <div>Instagram:{this.props.instagram}</div>
         <div>Go to Camera:{this.props.camera}</div>
         <div>Favorite Lens:{this.props.lens}</div>
-      </div>
+        </div>
+      
     )
   }
 }
