@@ -19,7 +19,7 @@ class HomePage extends Component {
             <Link to="/user">Users</Link>
           </div>
           <div className="button">
-            <Link to="#">Photos</Link>
+            <Link to="#">Photo Gallery</Link>
           </div>
         </NavBar>
         <Body>
