@@ -12,13 +12,13 @@ router.get('/', async (req, res) => {
     const users = await User.find({})
     res.json(users)
   } catch (error){
-    {
-      console.log(error)
-    }
+    console.log(error)
   }
 })
 
-
+router.get('/something', (req, res) => {
+  res.send('hello')
+})
 
 // router.post('/', (req, res)=> {
 //   const newUser = req.body 

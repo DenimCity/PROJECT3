@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 
 class User extends Component {
@@ -9,14 +10,21 @@ class User extends Component {
 
     return(
       <UserWrapper>
-        <div>
+        <div className="picWrapper">
           <img src={this.props.photo} alt="pic of user"/>
         </div>
-        <div>First Name:{this.props.firstName}</div>
-        <div>Last Name:{this.props.lastName}</div>
-        <div>Instagram:{this.props.instagram}</div>
-        <div>Go to Camera:{this.props.camera}</div>
-        <div>Favorite Lens:{this.props.lens}</div>
+        <InfoWrapper className="infoWrapper">
+        <div>First: {this.props.firstName}</div>
+        <div>Last: {this.props.lastName}</div>
+        <div>Instagram: {this.props.instagram}</div>
+        <div>GoToCamera: {this.props.camera}</div>
+        <div>Fav Lens: {this.props.lens}</div>
+        <LinkWrapper>
+          <Link to="#">Inspo</Link> 
+          <Link to="#">Photos</Link> 
+          <Link to="#">Edit</Link>
+        </LinkWrapper>
+        </InfoWrapper>
         </UserWrapper>
       
     )
@@ -28,15 +36,30 @@ class User extends Component {
 
 
 export default User
+
+
 const UserWrapper = styled.div`
 display:flex;
 flex-direction:row;
-
+/* border:solid 1px black; */
 
 img {
-  height:190px;
+  height:200px;
   width:190px;
-  border-radius:10px;
+  /* border-radius:5px; */
+  border:solid 1px black;
 }
-
 `
+
+const InfoWrapper = styled.div`
+border:solid 1px black;
+height:200px;
+`
+ const LinkWrapper = styled.div`
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ flex-direction: row;
+ margins: 2px 0 0 2px;
+ `
+

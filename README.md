@@ -59,7 +59,7 @@ jQuery Docs
 
 Display Control
 -
-FlexBox
+
 Version 2 ideations:
 -
 
