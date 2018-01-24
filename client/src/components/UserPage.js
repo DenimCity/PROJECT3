@@ -1,13 +1,14 @@
 import React, {Component} from 'react'
 import User from './User'
-import { AboveNavBar, NavBar} from './HomePage'
+import {AboveNavBar, NavBar} from './HomePage'
 import styled from 'styled-components'
-
-
 
 class UserPage extends Component {
   render() {
-    const userList = this.props.users.map((user, index) => {
+    const userList = this
+      .props
+      .users
+      .map((user, index) => {
         return (<User
           key={index}
           photo={user.photo}
@@ -18,13 +19,20 @@ class UserPage extends Component {
           lens={user.lens}/>)
       })
     return (
-      <div className="userIdContainer">
+      <UserIdContainer className="userIdContainer">
         <h1>Users List</h1>
         <div>
           {userList}
         </div>
-      </div>
+      </UserIdContainer>
     )
   }
 }
 export default UserPage
+
+const UserIdContainer = styled.div `
+
+display:flex;
+flex-direction:row;
+flex-wrap:wrap;
+`
