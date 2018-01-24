@@ -1,33 +1,29 @@
-import React, {Component} from 'react'
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
-import axios from 'axios'
-
-
+import React, { Component } from 'react'
 
 
 
 class User extends Component {
-  //this grabs the data sent over from sever
-  //responds to when the browser get the /api/users call
-  
-  
-  async componentWillMount(){
-    const response = await axios.get('/api/users')
+
+  render(){
+
+
+    return(
+      <div>
+        <div>
+          <img src={this.props.photo} alt="pic of user"/>
+        </div>
+        <div>First Name:{this.props.firstName}</div>
+        <div>Last Name:{this.props.lastName}</div>
+        <div>Instagram:{this.props.instagram}</div>
+        <div>Go to Camera:{this.props.camera}</div>
+        <div>Favorite Lens:{this.props.lens}</div>
+      </div>
+    )
   }
-
-
-
-render(){
-  return(
-
-<h1>Here fro the users page </h1>
-
-  )
 }
 
 
 
-}
 
 
 export default User
