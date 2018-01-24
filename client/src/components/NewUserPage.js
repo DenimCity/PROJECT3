@@ -1,38 +1,13 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
-import { AboveNavBar} from './HomePage'
-
-
-
-
+import axios from 'axios'
 class NewUserPage extends Component {
 
-  //now we have to capture the state of a new user
-  state = {
-    newUser: {
-      firstName: '',
-      lastName: '',
-      instagram: '',
-      camera: '',
-      lens: '',
-      photo: '',
-      photos: [],
-      photographers: []
-    }
-  }
-
-  //this function will handle the change the user makes types in the form
-  handleChange = (event) => {
-    // we need to assign the information they are typing in into a variable the
-    // variable after we will use to capture
-    const values = event.target.value
-
-  }
 
   render() {
 
     return (
-      
+
       <NewUserContainer>
         <div>
           <h2>Create New User</h2>
@@ -41,15 +16,15 @@ class NewUserPage extends Component {
           <div>
             <input
               onChange={this.handleChange}
-              value="photo"
-              placeholder="upload photo"
+              name="photo"
+              placeholder="avatar"
               type="text"
               value={this.state.newUser.photo}/>
           </div>
           <div>
             <input
               onChange={this.handleChange}
-              value="firstName"
+              name="firstName"
               placeholder="first name"
               type="text"
               value={this.state.newUser.firstName}/>
@@ -57,7 +32,7 @@ class NewUserPage extends Component {
           <div>
             <input
               onChange={this.handleChange}
-              value="lastName"
+              name="lastName"
               placeholder="last name"
               type="text"
               value={this.state.newUser.lastName}/>
@@ -65,7 +40,7 @@ class NewUserPage extends Component {
           <div>
             <input
               onChange={this.handleChange}
-              value="instagram"
+              name="instagram"
               placeholder="@instagram"
               type="text"
               value={this.state.newUser.instagram}/>
@@ -73,7 +48,7 @@ class NewUserPage extends Component {
           <div>
             <input
               onChange={this.handleChange}
-              value="camera"
+              name="camera"
               placeholder="Go to Camera"
               type="text"
               value={this.state.newUser.camera}/>
@@ -81,7 +56,7 @@ class NewUserPage extends Component {
           <div>
             <input
               onChange={this.handleChange}
-              value="lens"
+              name="lens"
               placeholder="go to lens"
               type="text"
               value={this.state.newUser.lens}/>
@@ -89,34 +64,35 @@ class NewUserPage extends Component {
           <div>
             <input
               onChange={this.handleChange}
-              value="photos"
-              placeholder="upload one photo link"
+              name="photos"
+              placeholder="upload a photo"
               type="text"
-              value={this.state.newUser.photos}/>
+              value={this.state.newUser.img1}/>
+          </div>
+
+          <div>
+            <input
+              onChange={this.handleChange}
+              name="photographers"
+              placeholder="inspo first name"
+              type="text"
+              value={this.state.newUser.photographers.firstName}/>
           </div>
           <div>
             <input
               onChange={this.handleChange}
-              value="photos"
-              placeholder="upload one photo link"
+              name="photographers"
+              placeholder="inspo website"
               type="text"
-              value={this.state.newUser.photos}/>
+              value={this.state.newUser.photographers.website}/>
           </div>
           <div>
             <input
               onChange={this.handleChange}
-              value="photos"
-              placeholder="upload one photo link"
+              name="photographers"
+              placeholder="insp picture"
               type="text"
-              value={this.state.newUser.photos}/>
-          </div>
-          <div>
-            <input
-              onChange={this.handleChange}
-              value="photographers"
-              placeholder="upload photographers"
-              type="text"
-              value={this.state.newUser.photographers}/>
+              value={this.state.newUser.photographers.photo}/>
           </div>
 
           <div className="ButtonContainer">
@@ -168,7 +144,7 @@ color:white;
   background-color:green;
 }
 `
-const HomeButton = styled.button`
+const HomeButton = styled.button `
 cursor:pointer;
 font-size: 12px;
 background-color:black;
@@ -197,7 +173,7 @@ width: 102px;
   background-color:red;
 }
 `
-const input = styled.input`
+const input = styled.input `
 color:red;
 
 `
