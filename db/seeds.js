@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const User = require('./models/User')
 const Photographer = require('./models/Photographer')
-const Photos = require('./models/Photos')
+const Photos = require('./models/Photo')
 const mongoose = require('mongoose')
 // connect to database
 mongoose.connect(process.env.MONGODB_URI)
