@@ -46,6 +46,12 @@ class NewUserPage extends Component {
     this.setState({redirectToUsersPage:true, newUserId:response.data._id})
   }
 
+  addNewUser = (event) => {
+    event.preventDefault()
+    this.props.addNewUser(this.state.newUser)
+    console.log(this.state.newUser)
+  }
+
 
 
   render() {
@@ -62,7 +68,7 @@ if (this.state.redirectToUsersPage){
         <div>
           <h2>Create New User</h2>
         </div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.addNewUser}>
           <div>
             <input
               onChange={this.handleChange}

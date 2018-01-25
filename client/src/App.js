@@ -25,9 +25,15 @@ class App extends Component {
   }
 
 
-//  addNewUser = async () => {
-//    const
-//  }
+  addNewUser = (newUser) =>{
+    const users = [...this.state.users]
+    users.push(newUser)
+    this.setState({ users})
+  }
+
+
+
+
 
 
 
@@ -40,7 +46,9 @@ class App extends Component {
 ////the function to grab all the users 
     const userInfo = () => (<UserList users={this.state.users}/>)
 //function  to create a new user and pass that information to the the 
-    const NewUser = () =>(<NewsUserPAge users={this.state.users}/>)
+    const newUser = () =>(<NewsUserPAge 
+      users={this.state.users}
+      addNewUser={this.addNewUser}/>)
 
 
 
@@ -51,7 +59,7 @@ class App extends Component {
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/user" component={userInfo}/>
           {/* <Route exact path="/edit" compoent={} */}
-          <Route exact path="/new" component={NewUser}/>
+          <Route exact path="/new" component={newUser}/>
 
         </Switch>
       </Router>
