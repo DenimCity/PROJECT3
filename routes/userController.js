@@ -13,81 +13,56 @@ router.get('/', async (req, res) => {
     res.json(users)
   } catch (error){
     console.log(error)
-  }
-})
+  }})
 
-// to create a new user
-router.get ('/new', (req,res)=> {
-  res.json(users)
-})
 
-// router.get('/:userId', async (req, res) => {
+//to create new user
+router.post('/',  async (req, res)=> {
   
-//   const userId = req.params.userId
-
-//   User.findById(userId)
-//     .then((user) => {
-//       res.json('users/show', {
-//         user
-//       })
-//     })
-//     .catch((err) => {
-//       console.log(err)
-//     })
-// })
-
-// router.post('/', (req, res)=> {
-//   const newUser = req.body 
-//     console.log(`new user ${newUser}`)
-//     User.create(newUser)
-//     .then(() => {
-//       //going to user React to redirect
-//       // res.redirect('/users')
-//     })
-//     .catch((error) => {
-//       console.log(error)
-//     })
-
-//   })
+try {
+  ///take the information from the form and save it to the variable newUser
+  const newUser = new User(req.body.user)
+  ///then save that new user and save tha info into a variable we can use to console
+  //to that the user was saved
+  const saved = await newUser.save()
+  res.json(saved)
+}catch(error){
+  res.send(error)
+}})
 
 
 
 
-// router.put('/:userId', (req, res)=>{
+
+
+
+
+
+// router.patch('/:userId', async (req,res)=>{
 //   const userId = req.params.userId
 //   const updatedUserInfo = req.body
-
-//     User.findByIdAndUpdate(userId, updatedUserInfo)
-//     .then(()=>{
-//       ///using React for this function
-//         // res.redirect(`/users/${userId}`)
-//     })
-//     .catch((err)=>{
-//         console.log(err)
-//     })
+//   User.findByIdAndUpdate(userId, updatedUserInfo)
+//   .then(()=>{
+//     res.direct(`/users/${userId}`)
+//   })
+//   .catch((error)=>{
+//     console.log(error)
+//   })
 // })
 
-router.get('/:userId/edit', (req, res) => {
-  const userId = req.params.userId
-  console.log(userId)
-  User.findById(userId)
-    .then((user) => {
-      res.json('users/edit', {
-        user 
-      })
-    })
+
+router.delete ('/:id', async (req, res) => {
+   
+  try{ // Find the user
+  const user = await User.findById(req.params.id).remove()
+   const users = await User.find({})
+  //Save the updated change
+  res.send(users)
+  } catch (error){
+      res.send(error)
+  } 
 })
 
-// router.get('/:userId/delete', (req, res) => {
-//   const userId = req.params.userId
 
-//   User.findByIdAndRemove(userId)
-//     .then(() => {
-//       // res.redirect('/users')
-//     })
-//     .catch((err) => {
-//       console.log(err)
-//     })
-// })
 
 module.exports = router

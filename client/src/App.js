@@ -3,14 +3,19 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css';
 import axios from 'axios'
 import HomePage from './components/HomePage'
-import UserPage from './components/UserPage'
+import UserList from './components/UserList'
 import NewsUserPAge from './components/NewUserPage'
+
+
 
 class App extends Component {
 
   state = {
     users: []
   }
+
+
+  
 
   userDatabase = () => {
     axios.get('/api/users').then(response => {
@@ -19,19 +24,35 @@ class App extends Component {
     })
   }
 
+
+//  addNewUser = async () => {
+//    const
+//  }
+
+
+
+
   componentWillMount() {
     this.userDatabase()
   }
   
   render() {
+////the function to grab all the users 
+    const userInfo = () => (<UserList users={this.state.users}/>)
+//function  to create a new user and pass that information to the the 
+    const NewUser = () =>(<NewsUserPAge users={this.state.users}/>)
 
-    const userInfo = () => (<UserPage users={this.state.users}/>)
+
+
+
     return (
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/user" component={userInfo}/>
-          <Route exact path="/new" component={NewsUserPAge}/>
+          {/* <Route exact path="/edit" compoent={} */}
+          <Route exact path="/new" component={NewUser}/>
+
         </Switch>
       </Router>
     )

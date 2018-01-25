@@ -1,10 +1,60 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import{Redirect} from 'react-router-dom'
 class NewUserPage extends Component {
+
+  //now we have to capture the state of a new user
+  state = {
+    newUser: {
+      firstName: '',
+      lastName: '',
+      instagram: '',
+      camera: '',
+      lens: '',
+      photo: '',
+      photos: [],
+      photographers: []
+    },
+    redirectToUsersPage:false,
+    newUserId:''
+  }
+ 
+
+  //this function will handle the change the user makes types in the form
+  handleChange = (event) => {
+    // we need to assign the information they are typing in into a variable the
+    // variable after we will use to capture values from the input field
+    const attributes = event.target.name
+    //using the spread operator copy this state and attach to the variable
+    const updateUser = {...this.state.newUser}
+    //update the value on the screen with what the user is typing 
+    updateUser[attributes] = event.target.value
+    this.setState({newUser: updateUser})
+  }
+
+//this will handle the function once we press the submit button it
+  handleSubmit = async (event) => {
+    //the page will refresh automatically if you dont have this value set up
+    event.preventDefault()
+// soo after we capture all of our data
+// 
+    const response = await axios.post('/api/users', {
+      'users':this.state.newUser
+    })
+    console.log(response)
+    this.setState({redirectToUsersPage:true, newUserId:response.data._id})
+  }
+
 
 
   render() {
+/// hopefully this if statement works
+//this if statement is being used to redirect me to the user created
+if (this.state.redirectToUsersPage){
+  return <Redirect to={`users/${this.state.newUserId}`}/>
+}
+
 
     return (
 
@@ -17,7 +67,7 @@ class NewUserPage extends Component {
             <input
               onChange={this.handleChange}
               name="photo"
-              placeholder="avatar"
+              placeholder="DefaultPhoto"
               type="text"
               value={this.state.newUser.photo}/>
           </div>
