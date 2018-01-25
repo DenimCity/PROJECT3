@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
-import{Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 class NewUserPage extends Component {
 
   //now we have to capture the state of a new user
@@ -17,51 +17,48 @@ class NewUserPage extends Component {
       photographers: []
     }
   }
- 
+
+  createUser = async() => {
+    const response = await axios.post(`/api/users`, this.state.newUser)
+    const newUser = response.data
+    const newUsers = [...this.state.users]
+    newUsers.unshift(newUsers)
+    this.setState({users: newUsers})
+  }
+
+  // deleteUser = async () => {
+
+
+  // }
 
   //this function will handle the change the user makes types in the form
   handleChange = (event) => {
     // we need to assign the information they are typing in into a variable the
     // variable after we will use to capture values from the input field
     const attribute = event.target.name
-    let value = event.target.value
-    //update the value on the screen with what the user is typing 
-    //copy that info and add it to 
-    const newUser = {...this.state.newUser}
+    const value = event.target.value
+    // update the value on the screen with what the user is typing copy that info
+    // and add it to
+    const newUser = {
+      ...this.state.newUser
+    }
     newUser[attribute] = value
-    
+    console.log("Changing User:", newUser)
     this.setState({newUser})
   }
 
-//this will handle the function once we press the submit button it
-  handleSubmit = async (event) => {
+  //this will handle the function once we press the submit button it
+  handleSubmit = async(event) => {
     //the page will refresh automatically if you dont have this value set up
     event.preventDefault()
-// soo after we capture all of our data
-// 
-    const response = await axios.post('/api/users', {
-      'users':this.state.newUser
-    })
-    console.log(response)
-    this.setState({redirectToUsersPage:true, newUserId:response.data._id})
+    // soo after we capture all of our data
+    this.createUser()
   }
-
-  addNewUser = (event) => {
-    event.preventDefault()
-    this.props.addNewUser(this.state.newUser)
-    // console.log(this.state.newUser)
-  }
-
-
-
 
   render() {
-/// hopefully this if statement works
-//this if statement is being used to redirect me to the user created
-if (this.state.redirectToUsersPage){
-  return <Redirect to={`users/${this.state.newUserId}`}/>
-}
-
+    // / hopefully this if statement works this if statement is being used to
+    // redirect me to the user created if (this.state.redirectToUsersPage){   return
+    // <Redirect to={`users/${this.state.newUserId}`}/> }
 
     return (
 
@@ -69,7 +66,7 @@ if (this.state.redirectToUsersPage){
         <div>
           <h2>Create New User</h2>
         </div>
-        <form onSubmit={this.addNewUser}>
+        <form onSubmit={this.createUser}>
           <div>
             <input
               onChange={this.handleChange}
@@ -151,14 +148,16 @@ if (this.state.redirectToUsersPage){
               type="text"
               value={this.state.newUser.photographers.photo}/>
           </div>
-          <button type="submit"> Submit </button>
-          </form>
-          {/* <div className="ButtonContainer">
+          <button type="submit">
+            Submit
+          </button>
+        </form>
+        {/* <div className="ButtonContainer">
             <NewUserButton>Submit</NewUserButton>
             <CancelButton>Cancel</CancelButton>
             <HomeButton>Home</HomeButton>
           </div> */}
-       
+
       </NewUserContainer>
 
     )
@@ -168,12 +167,14 @@ if (this.state.redirectToUsersPage){
 export default NewUserPage
 
 const NewUserContainer = styled.div `
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    justify-content:center;
-    display:grid;
+background-image: url(https://i.imgur.com/CBWEmLR.jpg);
+background-position: center;
+padding-right: 15px;
+padding-left: 0px;
+padding-top: 109px;
+margin-right: auto;
+margin-left: auto;
+justify-content: center;
  h2 {
    font-size:30px;
    margin-top:20px;
@@ -186,10 +187,15 @@ const NewUserContainer = styled.div `
    display:flex;
 color:white;
  }
+ input[type="text"] {
+    border: solid 1px;
+}
 `
 
 const NewUserButton = styled.button `
 cursor:pointer;
+
+background-position:centerd;
 font-size: 12px;
 background-color:black;
 border-radius:12px;
