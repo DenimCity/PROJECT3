@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch, Link}  from 'react-router-dom'
 
 
 class Users extends Component {
 
   render(){
-
-
     return(
       <UserWrapper>
         <div className="picWrapper">
@@ -27,22 +25,15 @@ class Users extends Component {
         </LinkWrapper>
         </InfoWrapper>
         </UserWrapper>
-      
     )
   }
 }
-
-
-
-
-
 export default Users
 
 
 const UserWrapper = styled.div`
 display:flex;
 flex-direction:row;
-/* border:solid 1px black; */
 
 img {
   height:200px;
@@ -51,7 +42,6 @@ img {
   border:solid 1px black;
 }
 `
-
 const InfoWrapper = styled.div`
 border:solid 1px black;
 height:200px;
@@ -62,7 +52,6 @@ height:200px;
  justify-content:center;
  flex-direction: row;
  margins: 2px 0 0 2px;
-
  
   a {
   margin: 2px 3px 4px 5px;

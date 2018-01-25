@@ -2,63 +2,40 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import {Redirect} from 'react-router-dom'
+
+
+
+
 class NewUserPage extends Component {
 
-  //now we have to capture the state of a new user
-  state = {
-    newUser: {
-      firstName: '',
-      lastName: '',
-      instagram: '',
-      camera: '',
-      lens: '',
-      photo: '',
-      photos: [],
-      photographers: []
-    }
-  }
-
-  createUser = async() => {
-    const response = await axios.post(`/api/users`, this.state.newUser)
-    const newUser = response.data
-    const newUsers = [...this.state.users]
-    newUsers.unshift(newUsers)
-    this.setState({users: newUsers})
-  }
-
-  // deleteUser = async () => {
-
-
-  // }
-
+state = {
+  newUser:[],
+  redirect:false
+}
   //this function will handle the change the user makes types in the form
   handleChange = (event) => {
     // we need to assign the information they are typing in into a variable the
     // variable after we will use to capture values from the input field
     const attribute = event.target.name
-    const value = event.target.value
+    let val = event.target.value
     // update the value on the screen with what the user is typing copy that info
     // and add it to
-    const newUser = {
-      ...this.state.newUser
-    }
-    newUser[attribute] = value
-    console.log("Changing User:", newUser)
+    const newUser = {...this.state.newUser}
+    newUser[attribute] = val
+
     this.setState({newUser})
   }
 
-  //this will handle the function once we press the submit button it
-  handleSubmit = async(event) => {
-    //the page will refresh automatically if you dont have this value set up
+  handleSubmit = (event) => {
     event.preventDefault()
-    // soo after we capture all of our data
-    this.createUser()
+    this.props.createUser(this.state.newUser)
+    this.setState({redirect:true})
   }
 
   render() {
-    // / hopefully this if statement works this if statement is being used to
-    // redirect me to the user created if (this.state.redirectToUsersPage){   return
-    // <Redirect to={`users/${this.state.newUserId}`}/> }
+   if (this.state.redirect){
+     return <Redirect to="/user"/>
+   }
 
     return (
 
@@ -66,7 +43,7 @@ class NewUserPage extends Component {
         <div>
           <h2>Create New User</h2>
         </div>
-        <form onSubmit={this.createUser}>
+        <form onSubmit={this.handleSubmit}>
           <div>
             <input
               onChange={this.handleChange}
@@ -124,13 +101,13 @@ class NewUserPage extends Component {
               value={this.state.newUser.img1}/>
           </div>
 
-          <div>
+          {/* <div>
             <input
               onChange={this.handleChange}
               name="photographers"
               placeholder="inspo first name"
               type="text"
-              value={this.state.newUser.photographers.firstName}/>
+              value={this.state.users.photographers.firstName}/>
           </div>
           <div>
             <input
@@ -138,7 +115,7 @@ class NewUserPage extends Component {
               name="photographers"
               placeholder="inspo website"
               type="text"
-              value={this.state.newUser.photographers.website}/>
+              value={this.state.users.photographers.website}/>
           </div>
           <div>
             <input
@@ -146,17 +123,12 @@ class NewUserPage extends Component {
               name="photographers"
               placeholder="insp picture"
               type="text"
-              value={this.state.newUser.photographers.photo}/>
-          </div>
+              value={this.state.users.photographers.photo}/>
+          </div> */}
           <button type="submit">
             Submit
           </button>
         </form>
-        {/* <div className="ButtonContainer">
-            <NewUserButton>Submit</NewUserButton>
-            <CancelButton>Cancel</CancelButton>
-            <HomeButton>Home</HomeButton>
-          </div> */}
 
       </NewUserContainer>
 
@@ -192,52 +164,3 @@ color:white;
 }
 `
 
-const NewUserButton = styled.button `
-cursor:pointer;
-
-background-position:centerd;
-font-size: 12px;
-background-color:black;
-border-radius:12px;
-height:30px;
-width: 102px;
-text-align:center;
-color:white;
-
-&:hover{
-  background-color:green;
-}
-`
-const HomeButton = styled.button `
-cursor:pointer;
-font-size: 12px;
-background-color:black;
-border-radius:12px;
-height:30px;
-width: 102px;
-text-align:center;
-color:white;
-
-&:hover{
-  background-color:goldenrod;
-}
-
-`
-
-const CancelButton = styled.button `
-cursor:pointer;
-font-size:12px;
-background-color:black;
-border-radius:12px;
-height:30px;
-text-align:center;
-color:white;
-width: 102px;
-&:hover{
-  background-color:red;
-}
-`
-const input = styled.input `
-color:red;
-
-`

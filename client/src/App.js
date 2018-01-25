@@ -4,45 +4,52 @@ import './App.css';
 import axios from 'axios'
 import HomePage from './components/HomePage'
 import UserList from './components/UserList'
-import NewsUserPAge from './components/NewUserPage'
-
-
+import NewUserPage from './components/NewUserPage'
 
 class App extends Component {
 
   state = {
-    users: [],
-    
+    users: []
   }
 
   userDatabase = () => {
-    axios.get('/api/users').then(response => {
-      const users = response.data
-      this.setState({users: users})
-    })
+    axios
+      .get('/api/users')
+      .then(response => {
+        const users = response.data
+        this.setState({users: users})
+      })
   }
 
+  createUser = async(user) => {
+    // send the user to the database
+    const response = await axios.post(`/api/users`, user)
+
+    // grab the new user we just created in the database
+    const newUser = response.data
+
+    // put that new user into our list of users on the `state`
+    const users = [...this.state.users]
+    users.push(newUser)
+    this.setState({users})
+  }
 
   componentWillMount() {
     this.userDatabase()
   }
-  
+
   render() {
-////the function to grab all the users 
+    ////the function to grab all the users
     const userInfo = () => (<UserList users={this.state.users}/>)
-//function  to create a new user and pass that information to the the 
-    const newUser = () =>(<NewsUserPAge 
-      users={this.state.users}
-      // createUser={this.state.newUsers}
-      />)
+
+    const makeNewUser = () => (<NewUserPage createUser={this.createUser} users={this.state.users}/>)
 
     return (
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/user" component={userInfo}/>
-          {/* <Route exact path="/edit" compoent={} */}
-          <Route exact path="/new" component={newUser}/>
+          <Route exact path="/new" component={makeNewUser}/>
 
         </Switch>
       </Router>
