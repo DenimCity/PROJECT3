@@ -151,13 +151,14 @@ if (this.state.redirectToUsersPage){
               type="text"
               value={this.state.newUser.photographers.photo}/>
           </div>
-
-          <div className="ButtonContainer">
+          <button type="submit"> Submit </button>
+          </form>
+          {/* <div className="ButtonContainer">
             <NewUserButton>Submit</NewUserButton>
             <CancelButton>Cancel</CancelButton>
             <HomeButton>Home</HomeButton>
-          </div>
-        </form>
+          </div> */}
+       
       </NewUserContainer>
 
     )
