@@ -11,11 +11,9 @@ import NewsUserPAge from './components/NewUserPage'
 class App extends Component {
 
   state = {
-    users: []
+    users: [],
+    
   }
-
-
-  
 
   userDatabase = () => {
     axios.get('/api/users').then(response => {
@@ -23,19 +21,6 @@ class App extends Component {
       this.setState({users: users})
     })
   }
-
-
-  addNewUser = (newUser) =>{
-    const users = [...this.state.users]
-    users.push(newUser)
-    this.setState({ users})
-  }
-
-
-
-
-
-
 
 
   componentWillMount() {
@@ -48,10 +33,8 @@ class App extends Component {
 //function  to create a new user and pass that information to the the 
     const newUser = () =>(<NewsUserPAge 
       users={this.state.users}
-      addNewUser={this.addNewUser}/>)
-
-
-
+      // createUser={this.state.newUsers}
+      />)
 
     return (
       <Router>
