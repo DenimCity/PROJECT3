@@ -15,9 +15,7 @@ class NewUserPage extends Component {
       photo: '',
       photos: [],
       photographers: []
-    },
-    redirectToUsersPage:false,
-    newUserId:''
+    }
   }
  
 
@@ -25,12 +23,14 @@ class NewUserPage extends Component {
   handleChange = (event) => {
     // we need to assign the information they are typing in into a variable the
     // variable after we will use to capture values from the input field
-    const attributes = event.target.name
-    //using the spread operator copy this state and attach to the variable
-    const updateUser = {...this.state.newUser}
+    const attribute = event.target.name
+    let value = event.target.value
     //update the value on the screen with what the user is typing 
-    updateUser[attributes] = event.target.value
-    this.setState({newUser: updateUser})
+    //copy that info and add it to 
+    const newUser = {...this.state.newUser}
+    newUser[attribute] = value
+    
+    this.setState({newUser})
   }
 
 //this will handle the function once we press the submit button it
@@ -49,8 +49,9 @@ class NewUserPage extends Component {
   addNewUser = (event) => {
     event.preventDefault()
     this.props.addNewUser(this.state.newUser)
-    console.log(this.state.newUser)
+    // console.log(this.state.newUser)
   }
+
 
 
 
