@@ -2,24 +2,29 @@ import React, {Component} from 'react'
 import Users from './Users'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import User from '../components/User'
 
 
 class UserList extends Component {
 
+ 
+
   render() {
-    const userList = this
-      .props
-      .users
-      .map((user, index) => {
-        return (<Users
-          key={index}
-          photo={user.photo}
-          firstName={user.firstName}
-          lastName={user.lastName}
-          instagram={user.instagram}
-          camera={user.camera}
-          lens={user.lens}/>)
-      })
+    
+    const banana = this.props.MyUsers.map((user, index) => {
+      return (<User
+        key={index}
+        photo={user.photo}
+        firstName={user.firstName}
+        lastName={user.lastName}
+        instagram={user.instagram}
+        camera={user.camera}
+        lens={user.lens}
+        id={user._id}/>)
+  
+  
+    })
+    
     return (
       <UserIdContainer >
         <div className="NavButtons">
@@ -28,8 +33,10 @@ class UserList extends Component {
           <h1>Users List</h1>
         </div>
         <div>
-          {userList}
+          <div>{banana}</div>
+
         </div>
+        
       </UserIdContainer>
     )
   }

@@ -5,6 +5,8 @@ import axios from 'axios'
 import HomePage from './components/HomePage'
 import UserList from './components/UserList'
 import NewForm from './components/NewForm'
+import User from './components/User'
+import UserEditDelete from './components/UserEditDelete'
 
 class App extends Component {
 
@@ -34,22 +36,40 @@ class App extends Component {
     this.setState({users})
   }
 
+  updateUser = () => {
+    // console.log ("from the edit function in UserView")
+    axios.patch(`/api/users/${this.state.user._id}`, this.state.user)
+    // console.log ("ive made it to the edit router in the userview")
+    .then(res => {
+    const update = res.data
+      // console.log("i have the the date user to delete ", user)
+      this.props.updateUser
+      // console.log("i grabbed the data that matched the use",userId)
+
+      }).catch((error)=>{
+        console.log ("ERROR bob")
+      })
+  }
+
   componentWillMount() {
     this.userDatabase()
   }
 
   render() {
     ////the function to grab all the users
-    const userInfo = () => (<UserList users={this.state.users}/>)
+    const DataOfUsers = () => (<UserList MyUsers={this.state.users} />)
 
     const makeNewUser = () => (<NewForm createUser={this.createUser} users={this.state.users}/>)
+    const editUser = (props) => (<UserEditDelete     updateUser={this.updateUser} users={this.state.users} {...props} />)
 
     return (
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage}/>
-          <Route exact path="/user" component={userInfo}/>
+          <Route exact path="/user" component={DataOfUsers}/>
           <Route exact path="/new" component={makeNewUser}/>
+          <Route exact path="/users" component={User}/>
+          <Route exact path="/users/:userId" component={editUser}/>
 
         </Switch>
       </Router>
