@@ -42,7 +42,7 @@ class App extends Component {
     ////the function to grab all the users
     const userInfo = () => (<UserList users={this.state.users}/>)
 
-    const makeNewUser = () => (<NewUserPage createUser={this.createUser} users={this.state.users}/>)
+    const makeNewUser = () => (<NewForm createUser={this.createUser} users={this.state.users}/>)
 
     return (
       <Router>
