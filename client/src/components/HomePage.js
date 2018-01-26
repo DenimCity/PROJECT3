@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {BrowserRouter as Link} from 'react-router-dom'
+import {BrowserRouter as Route, Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 class HomePage extends Component {
