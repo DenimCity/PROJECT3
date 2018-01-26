@@ -10,17 +10,19 @@ class UserEditDelete extends Component {
       lastName: "",
       instagram: "",
       camera: "",
-      lens: ""
+      lens: "",
     }
 
   }
   handleChange = (event) => {
-   
-    const attribute = event.target.name
-    let result = event.target.value
-    const updatedUser = {...this.state.updatedUser}
-    updatedUser[attribute] = result
-  }
+    const updateUser = {
+        ...this.state.user
+    }
+    updateUser[event.target.name] = event.target.value
+    this.setState({user: updateUser})
+}
+
+handl
 
   updateCurrentState = () => {
     axios
