@@ -24,11 +24,7 @@ class UserList extends Component {
       <UserIdContainer >
         <div className="NavButtons">
           <Link to="/">Home</Link>
-        </div>
-        <div className="NavButtons">
           <Link to="/new">Create User</Link>
-        </div>
-        <div>
           <h1>Users List</h1>
         </div>
         <div>
@@ -42,7 +38,7 @@ export default UserList
 
 const UserIdContainer = styled.div `
 display:flex;
-flex-direction:row;
+flex-direction:column;
 flex-wrap:wrap;
 justify-content:center;
 h1 {
@@ -50,6 +46,7 @@ h1 {
 }
 .NavButtons {
 display:flex;
+flex-direction:column;
   a{
   color:green;
   margin:2px 0px 0px 5px;
