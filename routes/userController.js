@@ -55,7 +55,7 @@ router.post('/', async(req, res) => {
 
 
 router.patch('/:userId', (req,res)=> {
-  console.log('made it to the server delete route')
+  console.log('made it to the server edit and update route')
   const userId = req.params.userId
   console.log('i found the user by iD a the server', userId)
   const updateInfo = req.body
