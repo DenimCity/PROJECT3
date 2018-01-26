@@ -61,8 +61,10 @@ router.patch('/:userId', (req,res)=> {
   const updateInfo = req.body
   console.log("i grabbed the info of that user @ controller", updateInfo)
   User.findByIdAndUpdate(userId, updateInfo)
+
+  
   .then(()=> {
-    res.json('/users/${userId}')
+    res.json()
   }).catch((error)=>{
     console.log(error)
   })
