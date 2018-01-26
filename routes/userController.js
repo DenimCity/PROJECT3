@@ -13,16 +13,7 @@ router.get('/', async(req, res) => {
     console.log(error)
   }
 })
-// //this one specific user/ userId
-// router.get('/api/users/user_id', async(request,response)=>{
-// try {
-//   const users  = await User.findByIdAndRemove({})
-//   res.json(users)
-// } catch (error){
-//   console.log(error)
-// }
 
-// })
 
 router.get('/:userId', (req, res) => {
   console.log("here from update the controller route")
