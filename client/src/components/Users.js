@@ -3,6 +3,18 @@ import styled from 'styled-components'
 import {BrowserRouter as Router, Route, Switch, Link}  from 'react-router-dom'
 
 
+
+const Edit = styled.button`
+width: 58px;
+height: 33px;
+background-color:gold;
+`
+
+const Delete = styled.button`
+background-color: red;
+width: 58px;
+height: 33px;
+`
 class Users extends Component {
 
   render(){
@@ -18,10 +30,9 @@ class Users extends Component {
         <div>GoToCamera: {this.props.camera}</div>
         <div>Fav Lens: {this.props.lens}</div>
         <LinkWrapper>
-          <Link to="#">Inspo</Link> 
-          <Link to="#">Photos</Link> 
-          <Link to="#">Edit</Link>
-          <Link to="#">Delete</Link>
+          <Edit to="#">Edit</Edit>
+          <Delete to="#">Delete</Delete>
+
         </LinkWrapper>
         </InfoWrapper>
         </UserWrapper>
@@ -34,11 +45,10 @@ export default Users
 const UserWrapper = styled.div`
 display:flex;
 flex-direction:row;
-
+font-size:35px;
 img {
   height:200px;
   width:190px;
-  /* border-radius:5px; */
   border:solid 1px black;
 }
 `
