@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import Users from './Users'
 import styled from 'styled-components'
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
-import NewUserPage from './NewUserPage'
+import {Link} from 'react-router-dom'
+
 
 class UserList extends Component {
 
@@ -55,3 +55,4 @@ display:flex;
   margin:2px 0px 0px 5px;
 }}
 `
+
