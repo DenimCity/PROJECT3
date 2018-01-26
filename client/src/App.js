@@ -4,7 +4,7 @@ import './App.css';
 import axios from 'axios'
 import HomePage from './components/HomePage'
 import UserList from './components/UserList'
-import NewUserPage from './components/NewUserPage'
+import NewForm from './components/NewForm'
 
 class App extends Component {
 
