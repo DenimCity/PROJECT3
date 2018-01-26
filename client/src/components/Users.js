@@ -22,19 +22,8 @@ class Users extends Component {
       <UserWrapper>
         <div className="picWrapper">
           <img src={this.props.photo} alt="pic of user"/>
+          <Name>{this.props.firstName}</Name>
         </div>
-        <InfoWrapper className="infoWrapper">
-        <div>First: {this.props.firstName}</div>
-        <div>Last: {this.props.lastName}</div>
-        <div>Instagram: {this.props.instagram}</div>
-        <div>GoToCamera: {this.props.camera}</div>
-        <div>Fav Lens: {this.props.lens}</div>
-        <LinkWrapper>
-          <Edit to="#">Edit</Edit>
-          <Delete to="#">Delete</Delete>
-
-        </LinkWrapper>
-        </InfoWrapper>
         </UserWrapper>
     )
   }
@@ -46,6 +35,7 @@ const UserWrapper = styled.div`
 display:flex;
 flex-direction:row;
 font-size:15px;
+align-items:center;
 img {
   height:200px;
   width:190px;
@@ -66,6 +56,17 @@ height:200px;
   a {
   margin: 2px 3px 4px 5px;
 }
+ `
 
+ const Name = styled.div`
+ height:15px;
+ width:25px;
+ background-color:green;
+ cursor:pointer;
+ 
+ &:hover{
+   background-color:gold;
+ }
+ 
  `
 
