@@ -34,17 +34,5 @@ router.delete('/:id', async (req,res)=> {
   }
 })
 
-// // //to delete the user 
-// router.delete('/:id', async(req, res) => {
-//   console.log("i've made it  to the delete path in the controller")
-//   try {
-
-//     user = await User.findByIdAndRemove(req.params.id)
-  
-//     res.send(users)
-//   } catch (error) {
-//     res.send(error)
-//   }
-// // })
 
 module.exports = router
