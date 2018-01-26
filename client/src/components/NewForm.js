@@ -5,7 +5,7 @@ import {Redirect} from 'react-router-dom'
 
 
 
-class NewUserPage extends Component {
+class NewForm extends Component {
 
 state = {
   newUser:[],
@@ -135,7 +135,7 @@ state = {
   }
 }
 
-export default NewUserPage
+export default NewForm
 
 const NewUserContainer = styled.div `
 background-image: url(https://i.imgur.com/CBWEmLR.jpg);
