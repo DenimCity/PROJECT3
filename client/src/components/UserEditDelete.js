@@ -11,7 +11,8 @@ class UserEditDelete extends Component {
       instagram: "",
       camera: "",
       lens: "",
-      redirect:false
+      redirect:false,
+      isStateNotSet: true
     }
 
   }
@@ -23,9 +24,22 @@ class UserEditDelete extends Component {
     this.setState({user: updateUser})
 }
 
+updateUser = () => {
+  console.log ("from the edit function in UserView")
+  axios.patch(`/api/users/${this.props.match.params.userId}`)
+  
+  .then(res => {
+  const update = res.data
+    console.log("i have the the date user to delete ", update)
+    // this.props.updateUser()
+
+    }).catch((error)=>{
+      console.log ("ERROR bob")
+    })}
+
 handleSubmit = (event) => {
   event.preventDefault()
-  this.props.updateUser(this.state.updateUser)
+  this.updateUser()
   this.setState({redirect:true})
 }
 
@@ -34,13 +48,15 @@ handleSubmit = (event) => {
       .get(`/api/users/${this.props.match.params.userId}`)
      
       .then(response => {
-        this.setState({user: response.data})
+        this.setState({user: response.data, isStateNotSet: false })
         
       })
       .catch((error) => {
         console.log(error)
       })
   }
+
+ 
 
   componentWillMount() {
     this.updateCurrentState()
@@ -49,7 +65,10 @@ handleSubmit = (event) => {
 
   render() {
     
+    
     return (
+      this.state.isStateNotSet ? <div></div> : 
+
       <div>
 
         <div>
