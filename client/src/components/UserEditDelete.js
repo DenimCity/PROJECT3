@@ -11,6 +11,7 @@ class UserEditDelete extends Component {
       instagram: "",
       camera: "",
       lens: "",
+      redirect:false
     }
 
   }
@@ -22,7 +23,11 @@ class UserEditDelete extends Component {
     this.setState({user: updateUser})
 }
 
-handl
+handleSubmit = (event) => {
+  event.preventDefault()
+  this.props.updateUser(this.state.updateUser)
+  this.setState({redirect:true})
+}
 
   updateCurrentState = () => {
     axios
