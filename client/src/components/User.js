@@ -1,15 +1,28 @@
-// import React, {  Component} from 'react'
+import React, {  Component} from 'react'
+import UserList from '../components/UserList'
+import {Link} from 'react-router-dom'
+class User extends Component {
+render() {
 
-// class User extends Componet {
-// render() {
+ 
 
-//   render(
+  return(
+    <div>
+      <div className="UserContainer">
+      <div className="imageContainer">
+      <img src={this.props.photo} alt={this.props.firstName}/>
+      </div>
+      <div className="firstNameContainer">
+      <div>{this.props.firstName} {this.props.lastName}</div>
+      <Link to={`/users/${this.props.id}`}>Edit</Link>
+      </div>
+      </div>
+      <img src={this.props.img1} alt="their most recent upload"/>
+</div>
 
+  )
+}
 
+}
 
-//   )
-// }
-
-// }
-
-// export default User
+export default User

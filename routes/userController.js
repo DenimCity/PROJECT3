@@ -23,16 +23,30 @@ router.post('/', async(req, res) => {
 })
 
 
-router.delete('/:id', async (req,res)=> {
-  console.log('here from  the delete controller')
-  try {
-    const user = await User.findByIdAndRemove(req.params.id)
-    console.log("from delete controller: the delete route", user)
-    res.json(user)
-  }catch(error){
-    res.send(error)
-  }
-})
+// router.delete('/:id', async (req,res)=> {
+//   console.log('here from  the delete controller')
+//   try {
+//     const user = await User.findByIdAndRemove(req.params.id)
+//     console.log("from delete controller: the delete route hit", user)
+//     res.json(user)
+//   }catch(error){
+//     res.send(error)
+//   }
+// })
 
+
+router.patch('/:userId/edit', (req,res)=> {
+  console.log('made it to the server delete route')
+  const userId = req.params.userId
+  console.log('i found the user by iD a the server', userId)
+  const updateInfo = req.body
+  console.log("i grabbed the info of that user @ controller", updateInfo)
+  User.findByIdAndUpdate(userId, updateInfo)
+  .then(()=> {
+    res.json('/users/${userId}')
+  }).catch((error)=>{
+    console.log(error)
+  })
+})
 
 module.exports = router

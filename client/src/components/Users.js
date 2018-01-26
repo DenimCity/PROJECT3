@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
+import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 
 
 
@@ -24,6 +24,7 @@ class Users extends Component {
           <img src={this.props.photo} alt="pic of user"/>
           <Name>{this.props.firstName}</Name>
         </div>
+       
         </UserWrapper>
     )
   }

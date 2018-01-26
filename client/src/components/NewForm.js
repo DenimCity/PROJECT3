@@ -95,35 +95,11 @@ state = {
             <input
               onChange={this.handleChange}
               name="photos"
-              placeholder="upload a photo"
+              placeholder="a picture of your most recent work"
               type="text"
               value={this.state.newUser.img1}/>
           </div>
 
-          {/* <div>
-            <input
-              onChange={this.handleChange}
-              name="photographers"
-              placeholder="inspo first name"
-              type="text"
-              value={this.state.users.photographers.firstName}/>
-          </div>
-          <div>
-            <input
-              onChange={this.handleChange}
-              name="photographers"
-              placeholder="inspo website"
-              type="text"
-              value={this.state.users.photographers.website}/>
-          </div>
-          <div>
-            <input
-              onChange={this.handleChange}
-              name="photographers"
-              placeholder="insp picture"
-              type="text"
-              value={this.state.users.photographers.photo}/>
-          </div> */}
           <button type="submit">
             Submit
           </button>
