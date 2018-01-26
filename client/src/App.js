@@ -37,15 +37,14 @@ class App extends Component {
   }
 
   updateUser = () => {
-    // console.log ("from the edit function in UserView")
+    console.log ("from the edit function in UserView")
     axios.patch(`/api/users/${this.state.user._id}`, this.state.user)
-    // console.log ("ive made it to the edit router in the userview")
+    console.log ("ive made it to the edit router in the userview")
     .then(res => {
     const update = res.data
-      // console.log("i have the the date user to delete ", user)
-      this.props.updateUser
-      // console.log("i grabbed the data that matched the use",userId)
-
+      console.log("i have the the date user to delete ", update)
+      this.props.updateUser()
+  
       }).catch((error)=>{
         console.log ("ERROR bob")
       })
