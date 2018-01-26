@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import {BrowserRouter as Router, Route, Switch, Link}  from 'react-router-dom'
+
 
 
 
@@ -45,7 +45,7 @@ export default Users
 const UserWrapper = styled.div`
 display:flex;
 flex-direction:row;
-font-size:35px;
+font-size:15px;
 img {
   height:200px;
   width:190px;
