@@ -26,7 +26,7 @@ class UserEditDelete extends Component {
 
 updateUser = () => {
   console.log ("from the edit function in UserView")
-  axios.patch(`/api/users/${this.props.match.params.userId}`)
+  axios.patch(`/api/users/${this.props.match.params.userId}`, this.state.user)
   
   .then(res => {
   const update = res.data
@@ -45,7 +45,7 @@ handleSubmit = (event) => {
 
   updateCurrentState = () => {
     axios
-      .get(`/api/users/${this.props.match.params.userId}`)
+      .get(`/api/users/${this.props.match.params.userId}`, this.state.user)
      
       .then(response => {
         this.setState({user: response.data, isStateNotSet: false })
