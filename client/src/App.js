@@ -36,19 +36,8 @@ class App extends Component {
     this.setState({users})
   }
 
-  updateUser = () => {
-    console.log ("from the edit function in UserView")
-    axios.patch(`/api/users/${this.state.user._id}`, this.state.user)
-    console.log ("ive made it to the edit router in the userview")
-    .then(res => {
-    const update = res.data
-      console.log("i have the the date user to delete ", update)
-      this.props.updateUser()
   
-      }).catch((error)=>{
-        console.log ("ERROR bob")
-      })
-  }
+  
 
   componentWillMount() {
     this.userDatabase()
@@ -59,7 +48,7 @@ class App extends Component {
     const DataOfUsers = () => (<UserList MyUsers={this.state.users} />)
 
     const makeNewUser = () => (<NewForm createUser={this.createUser} users={this.state.users}/>)
-    const editUser = (props) => (<UserEditDelete     updateUser={this.updateUser} users={this.state.users} {...props} />)
+    const editUser = (props) => (<UserEditDelete      users={this.state.users} {...props} />)
 
     return (
       <Router>
