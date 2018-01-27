@@ -30,7 +30,6 @@ router.get('/:userId', (req, res) => {
 })
 
 
-
 //to create new user
 router.post('/', async(req, res) => {
   try {
@@ -62,7 +61,7 @@ router.patch('/:userId', (req,res)=> {
   console.log("i grabbed the info of that user @ controller", updateInfo)
   User.findByIdAndUpdate(userId, updateInfo)
 
-  
+
   .then(()=> {
     res.json()
   }).catch((error)=>{
