@@ -39,10 +39,13 @@ const userController = require('./routes/userController')
 //express Controllers for Users
 app.use('/api/users', userController)
 
-// express Controllers for photo const photoController =
-// require('./routes/photoController') app.use('/api/users/:userId/photo',
-// photoController) const photographerController =
-// require('.routes/photographerController') app.use('/api') database setup
+const photographerController = require('./routes/photographerController')
+app.use('/api/photographers', photographerController)
+
+const photoController = require('./routes/photoController')
+app.use('/api/photos', photoController)
+
+
 
 app.use(express.static(__dirname + '/client/build/'))
 app.get('/', (req, res) => {
