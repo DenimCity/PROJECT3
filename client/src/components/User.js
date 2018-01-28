@@ -15,9 +15,10 @@ render() {
       <div className="firstNameContainer">
       <div>{this.props.firstName} {this.props.lastName}</div>
       <Link to={`/users/${this.props.id}`}>Edit</Link>
+      
       </div>
       </div>
-      <img src={this.props.img1} alt="their most recent upload"/>
+      <img src={this.props.photos} alt="their most recent upload"/>
 </div>
 
   )

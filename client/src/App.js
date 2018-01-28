@@ -37,6 +37,18 @@ class App extends Component {
   }
 
   
+
+  // deleteUser = () => {
+  //   console.log(`from the delete router`)
+  //   axios.delete(`api/users/${this.state.users._id}/delete`)
+  //   .then(res => {
+  //     console.log(`i grabbed the delete data`, toDelete)
+  //   }).catch(err){
+
+  //   }
+    
+  //       }
+  
   
 
   componentWillMount() {
@@ -48,7 +60,9 @@ class App extends Component {
     const DataOfUsers = () => (<UserList MyUsers={this.state.users} />)
 
     const makeNewUser = () => (<NewForm createUser={this.createUser} users={this.state.users}/>)
-    const editUser = (props) => (<UserEditDelete      users={this.state.users} {...props} />)
+    const editUser = (props) => (<UserEditDelete  users={this.state.users} {...props} />)
+    
+    
 
     return (
       <Router>
@@ -58,6 +72,7 @@ class App extends Component {
           <Route exact path="/new" component={makeNewUser}/>
           <Route exact path="/users" component={User}/>
           <Route exact path="/users/:userId" component={editUser}/>
+          <Route exact path="users/userId/delete" component={editUser}/>
 
         </Switch>
       </Router>
