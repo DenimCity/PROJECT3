@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import './App.css';
 import axios from 'axios'
-import HomePage from './components/HomePage'
-import UserList from './components/UserList'
-import NewForm from './components/NewForm'
-import User from './components/User'
-import UserEditDelete from './components/UserEditDelete'
+import HomePage from './components/Users/HomePage'
+import UserList from './components/Users/UserList'
+import NewForm from './components/Users/NewForm'
+import User from './components/Users/User'
+import UserEditDelete from './components/Users/UserEditDelete'
 
 class App extends Component {
 

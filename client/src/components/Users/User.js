@@ -1,5 +1,5 @@
 import React, {  Component} from 'react'
-import UserList from '../components/UserList'
+import UserList from './UserList'
 import {Link} from 'react-router-dom'
 class User extends Component {
 render() {
