@@ -1,14 +1,43 @@
 import React, {Component} from 'react'
 import { Link} from 'react-router-dom'
 import styled from 'styled-components'
+import NavBar from '../styled_components/NavBar'
+import NavLinkWrapper from '../styled_components/NavLinkWrapper'
+import MediaQuery from 'react-responsive'
 
 class HomePage extends Component {
   render() {
     return (
       <div className="body">
-        <AboveNavBar className="HomePageBackground">
+          <NavBar>
+          <NavLinkWrapper>
+          <Link to="/">Home</Link>
+          <Link to="/user">Users</Link>
+          <a href="">photographers</a>
+          <Link to="#">Photo Gallery</Link>
+          <a href="">About</a>
+          </NavLinkWrapper>
+          </NavBar>
+
+
+          <div className="main">
+          <h1>Welcome to ClickedIn!</h1>
+          
+          
+          
+          </div>
+          
+          
+          
+          <div>
+          
+          <h2>Welcome Visual Creators</h2>
+          
+          
+          </div>
+        {/* <AboveNavBar className="HomePageBackground">
           <span className="homePageText">
-            <h1>Welcome to ClickedIn!</h1>
+            
           </span>
         </AboveNavBar>
         <NavBar className="navbar">
@@ -30,7 +59,7 @@ class HomePage extends Component {
             </p>
             <div className="imageContainer">
            {/* loop in an array of images in this column */}
-            </div>
+            {/* </div>
           <div className="textContainer">
     <h5>Taking Over The World One Click At a Time</h5>
           </div>
@@ -42,77 +71,94 @@ class HomePage extends Component {
             <div className="image2">
             </div>
           </div>
-        </Body>
+        </Body> */} 
       </div>
     )
   }
 }
 export default HomePage
 
-export const AboveNavBar = styled.div`
-background-image: url(https://lonelyplanetimages.imgix.net/mastheads/GettyImages-538096543_medium.jpg?sharp=10&vib=20&w=1200);
-height: 235px;
-display: flex;
-background-position: center;
-width: 100%;
-justify-content: center;
-border: 1px solid;
-span {
-  display: flex;
-  justify-content:row-reverse;
-}
-h1{
-  font-family: cursive;
-  color: white;
-  text-shadow: 2px 2px 4px #D2CCA1;
-}
-.homePageText {
-  flex-direction: column-reverse;
-}`
-export const NavBar = styled.div`
-background-color:black;
-  height: 50px;
-  display: flex;
-  flex-direction:row;
-  justify-content:center;
-  align-items:center;
+
+
+const Links = styled.a`
+background: transparent;
+border-radius: 300px;
+border: 2px solid #fff;
+color: #fff;
+font-family: "proxima-nova";
+text-transform: uppercase;
+text-decoration: none;
+letter-spacing: 2px;
+font-weight: 600;
+font-style: normal;
+margin-left: 1em;
+padding: 1em 1.5em !important;
+display: block;
+`
+// export const AboveNavBar = styled.div`
+// background-image: url(https://lonelyplanetimages.imgix.net/mastheads/GettyImages-538096543_medium.jpg?sharp=10&vib=20&w=1200);
+// height: 235px;
+// display: flex;
+// background-position: center;
+// width: 100%;
+// justify-content: center;
+// border: 1px solid;
+// span {
+//   display: flex;
+//   justify-content:row-reverse;
+// }
+// h1{
+//   font-family: cursive;
+//   color: white;
+//   text-shadow: 2px 2px 4px #D2CCA1;
+// }
+// .homePageText {
+//   flex-direction: column-reverse;
+// }`
+// export const NavBar = styled.div`
+// background-color:black;
+//   height: 50px;
+//   display: flex;
+//   flex-direction:row;
+//   justify-content:center;
+//   align-items:center;
   
-.button {
-  margin:2px 50px 2px 50px;
-}
-  a {
-    color:white;
-  }
-a:hover {
-  cursor:pointer;
-  color:goldenrod;
-}`
-const Body = styled.div`
-h2 {
-  padding-top:2%;
-  color: #E83151;
-    text-align: center;
-    font-family: serif; 
-}
-h5{
-    color: #E83151;
-    padding-top:2%;
-    text-align: center;
-    font-family: serif;
-}
-p {
-  text-align:center;
-  font-size:rem;
-  margin-left: 40px;
-  margin-right: 40px;
-}
-.imageContainer{
-  background-image:url('https://i.imgur.com/NRnhMjw.jpg')
-  height:31px;
-  display:flex;
-  flex-direction:row;
-}
-img {
-  height:50px;
-  width:50px;
-}`
+// .button {
+//   margin:2px 50px 2px 50px;
+// }
+//   a {
+//     color:white;
+//   }
+// a:hover {
+//   cursor:pointer;
+//   color:goldenrod;
+// }`
+// const Body = styled.div`
+// h2 {
+//   padding-top:2%;
+//   color: #E83151;
+//     text-align: center;
+//     font-family: serif; 
+// }
+// h5{
+//     color: #E83151;
+//     padding-top:2%;
+//     text-align: center;
+//     font-family: serif;
+// }
+// p {
+//   text-align:center;
+//   font-size:rem;
+//   margin-left: 40px;
+//   margin-right: 40px;
+// }
+// .imageContainer{
+//   background-image:url('https://i.imgur.com/NRnhMjw.jpg')
+//   height:31px;
+//   display:flex;
+//   flex-direction:row;
+// }
+// img {
+//   height:50px;
+//   width:50px;
+// }`
