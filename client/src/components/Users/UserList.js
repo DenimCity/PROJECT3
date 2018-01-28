@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Users from './Users'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
-import User from '../components/User'
+import User from './User'
 
 
 class UserList extends Component {
