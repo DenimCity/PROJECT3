@@ -7,20 +7,23 @@ mongoose.Promise = global.Promise
 
 
 
-const PhotosSchema = new Schema({
+const PhotoSchema = new Schema({
   img1:{type:String},
   img2: {type:String},
   img3: {type: String},
-  img4:{type:String}
-})
+  img4:{type:String},
+  img5:{type:String},
+  img6:{type:String}
+}, {usePushEach: true}
+)
 
 const PhotographerSchema = new Schema({
   firstName: {type: String},
   lastName:{type: String},
   website: {type: String},
-  photo: {type: String}
-},
-  {usePushEach: true}
+  photo: {type: String},
+  instagram:{type:String}
+},{usePushEach: true}
 )
 
 const UserSchema = new Schema({
@@ -30,15 +33,11 @@ const UserSchema = new Schema({
   camera: {type: String},
   lens: {type: String},
   photo: {type: String,default: 'http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png'},
-  photos:[PhotosSchema],
-  photographers: [PhotographerSchema],
-},
-
-{usePushEach: true},
-) 
+},{usePushEach: true},
+)
 
 module.exports ={
   UserSchema,
   PhotographerSchema,
-  PhotosSchema
+  PhotoSchema
 }
