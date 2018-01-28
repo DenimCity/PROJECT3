@@ -14,7 +14,6 @@ class UserEditDelete extends Component {
       redirect:false,
       isStateNotSet: true
     }
-
   }
   handleChange = (event) => {
     const updateUser = {
@@ -24,11 +23,10 @@ class UserEditDelete extends Component {
     this.setState({user: updateUser})
 }
 
-updateUser = () => {
+updateUser = (user) => {
   axios.patch(`/api/users/${this.props.match.params.userId}`, this.state.user)
-  .then(res => {
-  const update = res.data
-    }).catch((error)=>{
+  .then(res => ({user}))
+  .catch((error)=>{
       console.log ("ERROR bob")
     })}
 
@@ -38,45 +36,27 @@ handleSubmit = (event) => {
   this.setState({redirect:true})
 }
 
-
 deleteUser =  (userId) => {
   console.log("about to delete a user from the app.js")
   axios.delete(`/api/users/${this.state.user._id}/delete`)
-  .then(response=> {
-    userId
-    this.setState({redirect:true})
-  })
 }
 
-
   updateCurrentState = () => {
-    axios
-      .get(`/api/users/${this.props.match.params.userId}`, this.state.user)
-     
-      .then(response => {
-        this.setState({user: response.data, isStateNotSet: false })
-        
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+  axios.get(`/api/users/${this.props.match.params.userId}`, this.state.user)
+  .then(response => {
+  this.setState({user: response.data, isStateNotSet: false })})
+  .catch((error) => {
+  console.log(error)})
   }
-
- 
 
   componentWillMount() {
     this.updateCurrentState()
-
   }
 
   render() {
-    
-    
     return (
       this.state.isStateNotSet ? <div></div> : 
-
       <div>
-
         <div>
           <div>
             <h2>Update User</h2>
@@ -143,8 +123,6 @@ deleteUser =  (userId) => {
             </button>
             <button onClick={this.deleteUser}>Delete</button>
           </form>
-       
-          
         </div>
       </div>
     )

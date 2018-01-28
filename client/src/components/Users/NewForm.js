@@ -21,25 +21,18 @@ state = {
     // and add it to
     const newUser = {...this.state.newUser}
     newUser[attribute] = val
-
     this.setState({newUser})
   }
-
- 
-
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.createUser(this.state.newUser)
     this.setState({redirect:true})
   }
-
   render() {
    if (this.state.redirect){
      return <Redirect to="/user"/>
    }
-
     return (
-
       <NewUserContainer>
         <div>
           <h2>Create New User</h2>
@@ -101,14 +94,11 @@ state = {
               type="text"
               value={this.state.newUser.photo}/>
           </div>
-
           <button type="submit">
             Submit
           </button>
         </form>
-
       </NewUserContainer>
-
     )
   }
 }
@@ -131,7 +121,6 @@ justify-content: center;
    font-weight:500;
    
  }
-
  .ButtonContainer{
    display:flex;
 color:white;
