@@ -25,14 +25,9 @@ class UserEditDelete extends Component {
 }
 
 updateUser = () => {
-  console.log ("from the edit function in UserView")
   axios.patch(`/api/users/${this.props.match.params.userId}`, this.state.user)
-  
   .then(res => {
   const update = res.data
-    console.log("i have the the date user to delete ", update)
-    // this.props.updateUser()
-
     }).catch((error)=>{
       console.log ("ERROR bob")
     })}
@@ -42,6 +37,17 @@ handleSubmit = (event) => {
   this.updateUser()
   this.setState({redirect:true})
 }
+
+
+deleteUser =  (userId) => {
+  console.log("about to delete a user from the app.js")
+  axios.delete(`/api/users/${this.state.user._id}/delete`)
+  .then(response=> {
+    userId
+    this.setState({redirect:true})
+  })
+}
+
 
   updateCurrentState = () => {
     axios
@@ -135,6 +141,7 @@ handleSubmit = (event) => {
             <button type="readonly">
               Submit
             </button>
+            <button onClick={this.deleteUser}>Delete</button>
           </form>
        
           

@@ -50,7 +50,7 @@ state = {
               onChange={this.handleChange}
               name="photo"
               placeholder="DefaultPhoto"
-              type="text"
+              type="text" required
               value={this.state.newUser.photo}/>
           </div>
           <div>
@@ -58,7 +58,7 @@ state = {
               onChange={this.handleChange}
               name="firstName"
               placeholder="first name"
-              type="text"
+              type="text" required
               value={this.state.newUser.firstName}/>
           </div>
           <div>
@@ -99,7 +99,7 @@ state = {
               name="photos"
               placeholder="a picture of your most recent work"
               type="text"
-              value={this.state.newUser.img1}/>
+              value={this.state.newUser.photo}/>
           </div>
 
           <button type="submit">

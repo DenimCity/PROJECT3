@@ -14,11 +14,9 @@ router.get('/', async(req, res) => {
   }
 })
 
-
+//to find a user
 router.get('/:userId', (req, res) => {
-  console.log("here from update the controller route")
   const userId = req.params.userId
-  console.log("here from the usercontroller", userId)
 
   User.findById(userId)
     .then((user) => {
@@ -40,28 +38,25 @@ router.post('/', async(req, res) => {
   }
 })
 
+//to delete a user
+router.delete('/:userId/delete', async (req,res)=> {
+  console.log('here from  the delete controller, you hit the route')
+  try {
+    const user = await User.findByIdAndRemove(req.params.userId)
+    console.log(" i found the user and about to delete but user is", req.params.userId)
+    console.log("from delete controller: we grabbed the user to delete", user)
 
-// router.delete('/:userId', async (req,res)=> {
-//   console.log('here from  the delete controller')
-//   try {
-//     const user = await User.findByIdAndRemove(req.params.id)
-//     console.log("from delete controller: the delete route hit", user)
-//     res.json(user)
-//   }catch(error){
-//     res.send(error)
-//   }
-// })
+    res.json(user)
+  }catch(error){
+    res.send(error)
+  }
+})
 
-
+///to update a user
 router.patch('/:userId', (req,res)=> {
-  console.log('made it to the server edit and update route')
   const userId = req.params.userId
-  console.log('i found the user by iD a the server', userId)
   const updateInfo = req.body
-  console.log("i grabbed the info of that user @ controller", updateInfo)
   User.findByIdAndUpdate(userId, updateInfo)
-
-
   .then(()=> {
     res.json()
   }).catch((error)=>{
