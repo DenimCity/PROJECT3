@@ -104,13 +104,29 @@ const Homer = new Photographer({
   instagram:'mr.homersimpson',
 })
 
-const Upload = new Photo ({
-  img1:'https://i.imgur.com/phBGjPR.jpg',
-  img2:'https://i.imgur.com/GAkAnn4.jpg',
-  img3:'https://i.imgur.com/f3WIKxA.jpg',
-  img4:'https://i.imgur.com/6cwZ4Y7.jpg',  
-  img5:'https://i.pinimg.com/736x/d2/1e/50/d21e50b01d45b4c281b8b7e55e5f86a8--photography-surreal-magic-photography.jpg',
-  img6:'https://farm4.staticflickr.com/3829/33207121940_81fc6b004e_b.jpg',
+const Upload1 = new Photo ({
+  img:'https://i.imgur.com/phBGjPR.jpg',
+
+})
+
+const Upload2 = new Photo ({
+  img:'https://i.imgur.com/VopCByG.jpg',
+  
+})
+const Upload3 = new Photo ({
+  img:'https://i.imgur.com/GAkAnn4.jpg',
+})
+const Upload4 = new Photo ({
+  img:'https://i.imgur.com/f3WIKxA.jpg',
+})
+const Upload5 = new Photo ({
+  img:'https://i.imgur.com/S3sGKnu.jpg', 
+})
+const Upload6 = new Photo ({
+  img:'https://i.imgur.com/WNpGmAu.jpg',
+})
+const Upload7 = new Photo ({
+  img:'https://i.imgur.com/llS7sCc.jpg',
 })
 
   
@@ -130,14 +146,22 @@ const Upload = new Photo ({
     
   })
 
-  .then(()=>{
+  Photographer.remove({}).then(()=>{
     console.log('Photographers saved')
     Gary.save()
     Marge.save()
     return Homer.save()
-  }).then(()=>{
+  }) 
+  Photo.remove({}).then(()=>{
     console.log('Photos saved!!')
-    return Upload.save()
+     Upload1.save()
+     Upload2.save()
+     Upload3.save()
+     Upload4.save()
+     Upload5.save()
+     Upload6.save()
+    return Upload7.save()
+    
   })
 
   .then(()=>{

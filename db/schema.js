@@ -7,14 +7,14 @@ mongoose.Promise = global.Promise
 
 
 
-const PhotoSchema = new Schema({
-  img1:{type:String},
-  img2: {type:String},
-  img3: {type: String},
-  img4:{type:String},
-  img5:{type:String},
-  img6:{type:String}
-}, {usePushEach: true}
+const PhotoSchema = new Schema([{
+  img:{type:String},
+  img: {type:String},
+  img: {type: String},
+  img:{type:String},
+  img:{type:String},
+  img:{type:String}
+}], {usePushEach: true}
 )
 
 const PhotographerSchema = new Schema({
