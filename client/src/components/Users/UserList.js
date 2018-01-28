@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import Users from './Users'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 import User from './User'
@@ -7,10 +6,8 @@ import User from './User'
 
 class UserList extends Component {
 
- 
-
   render() {
-    
+
     const banana = this.props.MyUsers.map((user, index) => {
       return (<User
         key={index}
@@ -20,10 +17,7 @@ class UserList extends Component {
         instagram={user.instagram}
         camera={user.camera}
         lens={user.lens}
-        id={user._id}/>)
-  
-  
-    })
+        id={user._id}/>)})
     
     return (
       <UserIdContainer >
@@ -34,9 +28,7 @@ class UserList extends Component {
         </div>
         <div>
           <div>{banana}</div>
-
         </div>
-        
       </UserIdContainer>
     )
   }

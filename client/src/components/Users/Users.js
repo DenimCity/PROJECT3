@@ -24,7 +24,6 @@ class Users extends Component {
           <img src={this.props.photo} alt="pic of user"/>
           <Name>{this.props.firstName}</Name>
         </div>
-       
         </UserWrapper>
     )
   }
@@ -64,10 +63,9 @@ height:200px;
  width:25px;
  background-color:green;
  cursor:pointer;
- 
+
  &:hover{
-   background-color:gold;
+background-color:gold;
  }
- 
  `
 
