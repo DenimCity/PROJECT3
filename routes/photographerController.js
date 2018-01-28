@@ -16,10 +16,10 @@ router.get('/', async(req, res) => {
 
 //to find a photographer
 router.get('/:photographerId', (req, res) => {
-  const userId = req.params.photographerId
+  const photographerId = req.params.photographerId
 
-  Photographer.findById(photograherId)
-    .then((user) => {
+  Photographer.findById(photographerId)
+    .then((photographer) => {
       res.json(photographer)
     })
     .catch((err) => {
@@ -42,18 +42,18 @@ router.post('/', async(req, res) => {
 router.delete('/:photographerId/delete', async (req,res)=> {
   console.log('here from  the delete controller, you hit the route')
   try {
-    const user = await Photographer.findByIdAndRemove(req.params.userId)
+    const user = await Photographer.findByIdAndRemove(req.params.photographerId)
     console.log(" i found the photographer and about to delete but photographer is", req.params.photographerId)
     console.log("from delete controller: we grabbed the photographer to delete", photographer)
 
-    res.json(user)
+    res.json(photographer)
   }catch(error){
     res.send(error)
   }
 })
 
 ///to update a photographer
-router.patch('/:photographerId', (req,res)=> {
+router.patch('/:photographersId', (req,res)=> {
   const photographerId = req.params.photographerId
   const updateInfo = req.body
   Photographer.findByIdAndUpdate(photographerId, updateInfo)
