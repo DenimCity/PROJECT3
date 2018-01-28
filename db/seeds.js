@@ -121,19 +121,19 @@ const Upload = new Photo ({
 
   User.remove({}).then(()=>{
     console.log('Users planted in database')
-    return Jean.save()
-    return Michelle.save()
-    return Steve.save()
-    return Ozzie.save()
-    return Emanuella.save()
+    Jean.save()
+    Michelle.save()
+    Steve.save()
+    Ozzie.save()
+    Emanuella.save()
     return Sean.save()
     
   })
 
   .then(()=>{
     console.log('Photographers saved')
-    return Gary.save()
-    return Marge.save()
+    Gary.save()
+    Marge.save()
     return Homer.save()
   }).then(()=>{
     console.log('Photos saved!!')
