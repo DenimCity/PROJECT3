@@ -22,6 +22,7 @@
     "hbs": "~4.0.1",
     "mongoose": "^5.0.1",
     "morgan": "~1.9.0",
+    "react-responsive": "^4.0.3",
     "react-router-dom": "^4.2.2",
     "serve-favicon": "~2.4.5",
     "styled-components": "^3.0.2"
