@@ -4,7 +4,7 @@ const Photo  = require('../db/models/Photo')
 const bodyParser = require('body-parser') 
 const User = require('../db/models/User') 
 
-///all users 
+///all photos 
 router.get('/', async(req, res) => {
   try {
     const photos = await Photo.find({})
@@ -38,7 +38,7 @@ router.post('/', async(req, res) => {
   }
 })
 
-//to delete a phot
+//to delete a photos
 router.delete('/:userId/delete', async (req,res)=> {
   console.log('here from  the delete controller, you hit the route')
   try {
@@ -52,7 +52,7 @@ router.delete('/:userId/delete', async (req,res)=> {
   }
 })
 
-///to update a user
+///to update a photo
 router.patch('/:userId', (req,res)=> {
   const userId = req.params.userId
   const updateInfo = req.body

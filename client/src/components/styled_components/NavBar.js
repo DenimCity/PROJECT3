@@ -2,10 +2,9 @@ import styled from 'styled-components'
 
 const NavBar = styled.div `
 background-image: url(https://i.imgur.com/gp9Klik.jpg);
-height: 239px;
+height: 98px;
 background-position: left;
 width: 100vw;
-position: fixed;
 top: 0;
 overflow: hidden;
 border: transparent;
