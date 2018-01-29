@@ -128,6 +128,12 @@ const Upload6 = new Photo ({
 const Upload7 = new Photo ({
   img:'https://i.imgur.com/llS7sCc.jpg',
 })
+const Upload8 = new Photo ({
+  img:'https://i.imgur.com/G80lKgk.jpg',
+})
+const Upload9 = new Photo ({
+  img:'https://i.imgur.com/NRnhMjw.jpg',
+})
 
   
 
@@ -160,7 +166,9 @@ const Upload7 = new Photo ({
      Upload4.save()
      Upload5.save()
      Upload6.save()
-    return Upload7.save()
+     Upload7.save()
+     Upload8.save()
+    return Upload9.save()
     
   })
 
