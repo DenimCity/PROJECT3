@@ -10,14 +10,13 @@ class Photographer extends Component {
           <ImageContainer>
             <Picture src={this.props.photo} alt=""/>
             
-            
             </ImageContainer>
-
-        </div>
-        <div>First Name: {this.props.firstName}</div>
+        
+            <div>First Name: {this.props.firstName}</div>
         <div>Last Name: {this.props.lastName}</div>
         <div>Instagram:  @{this.props.instagram}</div>
         <div>Website: {this.props.website}</div>
+        </div>
         
       </div>
     )
@@ -30,11 +29,10 @@ export default Photographer
 const ImageContainer = styled.div`
 width: 500px;
 height:200px;
-
 `
 
 const Picture = styled.img`
 width:100%;
-height:100%
+height:100%;
 `
 

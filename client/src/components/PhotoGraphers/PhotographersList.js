@@ -50,7 +50,7 @@ class PhotographersList extends Component {
 export default PhotographersList
 const PhotographerWrapper = styled.div`
 display:grid;
-grid-template-columns:50% 50% ;
+grid-template-columns:90% ;
 
 `
 

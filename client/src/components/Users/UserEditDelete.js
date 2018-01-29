@@ -135,10 +135,10 @@ deleteUser =  (userId) => {
                 value={this.state.user.lens}/>
             </div>
           
-            <button type="submit">
+            <Submit type="submit">
               Submit
-            </button>
-            <button onClick={this.deleteUser}>Delete</button>
+            </Submit>
+            <Delete onClick={this.deleteUser}>Delete</Delete>
           </form>
         </EditFormContainer>
       </div>
@@ -148,6 +148,24 @@ deleteUser =  (userId) => {
 
 export default UserEditDelete
 
+const Submit = styled.button`
+background-color:green;
+width:50%;
+height: 48px;
+&&:hover {
+  background-color:goldenrod;
+}
+
+`
+
+const Delete = styled.button`
+background-color:red;
+width:50%;
+height: 48px;
+&&:hover {
+  background-color:goldenrod;
+}
+`
 const EditFormContainer = styled.div`
 display:flex;
 justify-content: center;
