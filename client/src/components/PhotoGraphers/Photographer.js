@@ -15,8 +15,8 @@ class Photographer extends Component {
         </div>
         <div>First Name: {this.props.firstName}</div>
         <div>Last Name: {this.props.lastName}</div>
-
-        <div>Website:{this.props.website}</div>
+        <div>Instagram:  @{this.props.instagram}</div>
+        <div>Website: {this.props.website}</div>
       </div>
     )
   }
