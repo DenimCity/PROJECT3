@@ -29,6 +29,7 @@ class HomePage extends Component {
                     all. Become a user and upload away.</p>
                 </Words>
               </TitleData>
+        </Main1>
           <TitleHeader>
       <ImageContainer>
         
@@ -38,7 +39,6 @@ class HomePage extends Component {
 
 
           </TitleHeader>
-        </Main1>
         <Main1>
           <Title>
             <TitleData>
@@ -73,7 +73,14 @@ justify-content:center;
 width:600px;
 height:90px;
 text-align:center;
-font-size:22px;
+
+
+p{
+  font-size:22px;
+  @media (max-with:700px){
+  font-size: 5px
+  }
+}
 `
 
 const TitleData = styled.div `
@@ -81,7 +88,9 @@ display:flex;
 flex-direction: column;
 align-items:center;
 margin-bottom: 37px;
-
+@media (max-with:700px){
+  
+}
 `
 const Links = styled.a `
 background: transparent;
@@ -97,11 +106,17 @@ font-style: normal;
 margin-left: 1em;
 padding: 1em 1.5em !important;
 display: block;
+@media (max-with:700px){
+  
+}
 `
 
 const TitleHeader = styled.div `
  display:flex;
  flex-direction:row;
+ @media (max-with:700px){
+  
+}
  `
 
 const Title = styled.div `
@@ -109,6 +124,9 @@ const Title = styled.div `
  display:flex;
  flex-direction:column;
  text-align:center;
+ @media (max-with:700px){
+  width:10%
+}
  `
 const Wrapper = styled.div `
 flex-direction: column;
@@ -116,6 +134,9 @@ display: flex;
 justify-content: center;
 width: 100vw;
 height: 100vh;
+@media (max-with:700px){
+  
+}
 `
 const ImageContainer = styled.div`
 
