@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import {Redirect} from 'react-router-dom'
 
 class UserEditDelete extends Component {
 
@@ -32,7 +33,9 @@ updateUser = (user) => {
 
 handleSubmit = (event) => {
   event.preventDefault()
+  
   this.updateUser()
+  
   this.setState({redirect:true})
 }
 
@@ -45,6 +48,7 @@ deleteUser =  (userId) => {
   axios.get(`/api/users/${this.props.match.params.userId}`, this.state.user)
   .then(response => {
   this.setState({user: response.data, isStateNotSet: false })})
+  
   .catch((error) => {
   console.log(error)})
   }
@@ -54,6 +58,9 @@ deleteUser =  (userId) => {
   }
 
   render() {
+    if (this.state.redirect){
+      return <Redirect to="/user"/>
+    }
     return (
       this.state.isStateNotSet ? <div></div> : 
       <div>
