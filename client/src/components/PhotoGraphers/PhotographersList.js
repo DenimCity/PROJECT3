@@ -3,7 +3,7 @@ import NavBar from '../styled_components/NavBar'
 import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 import {Link} from 'react-router-dom'
 import Photographer from './Photographer'
-
+import styled from 'styled-components'
 
 
 
@@ -31,15 +31,14 @@ class PhotographersList extends Component {
  <NavBar>
  <NavLinkWrapper>
    <Link to="/">Home</Link>
-   <Link to="/photographers/new">Create A Photographer</Link>
    <Link to="/user">Users</Link>
-   <Link to="">Photo Gallery</Link>
+   <Link to="/photogallery">Photo Gallery</Link>
  </NavLinkWrapper>
 </NavBar> 
-<h1>Photographers List</h1>
 
-<div>{cameraPeople}</div>
-
+<PhotographerContainer>
+<PhotographerWrapper>{cameraPeople}</PhotographerWrapper>
+</PhotographerContainer>
       </div>
 
     )
@@ -49,3 +48,15 @@ class PhotographersList extends Component {
 }
 
 export default PhotographersList
+const PhotographerWrapper = styled.div`
+display:grid;
+grid-template-columns:50% 50% ;
+
+`
+
+
+const PhotographerContainer = styled.div`
+display:flex;
+justify-content:center;
+
+`
