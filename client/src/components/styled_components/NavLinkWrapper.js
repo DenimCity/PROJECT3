@@ -11,7 +11,7 @@ text-align: right;
 font-size: 14px;
 flex-direction: inherit;
 flex-wrap: wrap;
-@media screen and (max-width:600px){
+@media (max-width:600px){
 
 font-size:8px;
 }

@@ -45,11 +45,11 @@ state = {
 </NavLinkWrapper>
 </NavBar> 
 
-
+<BigContainer>
       <NewUserContainer>
-        <div>
+        <Title>
           <h2>Create New User</h2>
-        </div>
+        </Title>
         <Container>
         <form onSubmit={this.handleSubmit}>
           <div>
@@ -101,13 +101,17 @@ state = {
               value={this.state.newUser.lens}/>
           </div>
          
-          <button type="submit">
+          <Submit type="submit">
             Submit
-          </button>
+          </Submit>
+          <Link to="/user">
+          <Cancel>Cancel</Cancel>
+          </Link>
         </form>
 </Container>
-
       </NewUserContainer>
+
+      </BigContainer>
       </div>
     )
   }
@@ -115,14 +119,31 @@ state = {
 
 export default NewForm
 
-const NewUserContainer = styled.div `
+
+const BigContainer = styled.div`
+height:10px;
+
 background-image: url(https://i.imgur.com/CBWEmLR.jpg);
+
+`
+const Submit = styled.button`
+width: 59px;
+height: 33px;
+background-color:green;
+`
+const Cancel = styled.button`
+background-color:goldenrod;
+width: 59px;
+height: 33px;
+`
+const Title = styled.div`
+display:flex;
+justify-content:center;
+`
+
+const NewUserContainer = styled.div `
 background-position: center;
-padding-right: 15px;
-padding-left: 0px;
-padding-top: 109px;
-margin-right: auto;
-margin-left: auto;
+
 justify-content: center;
 height:100%;
 
@@ -150,6 +171,7 @@ color:white;
 
 const Container = styled.div`
 justify-content:center;
+display:flex;
 
 form {
   font-size: 12px;
