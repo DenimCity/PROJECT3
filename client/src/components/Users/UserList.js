@@ -34,9 +34,6 @@ class UserList extends Component {
             {/* <Link to="">About</Link> */}
           </NavLinkWrapper>
         </NavBar>
-        <h1>Users List</h1>
-
-
             <ListWrapper>
               <Users>
                 {banana}
