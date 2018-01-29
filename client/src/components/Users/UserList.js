@@ -25,42 +25,40 @@ class UserList extends Component {
 
     return (
       <div>
-      <NavBar>
-      <NavLinkWrapper>
-        <Link to="/">Home</Link>
-        <Link to="/new">Create A User</Link>
-        <Link to="/photographers">Photographers</Link>
-        <Link to="">Photo Gallery</Link>
-        {/* <Link to="">About</Link> */}
-      </NavLinkWrapper>
-    </NavBar> 
-    <h1>Users List</h1>
-    
-    <UserIdContainer> 
-      
-    <UserWrapper>
-      <ListWrapper>
-      <Users>{banana}</Users> 
-</ListWrapper>      
-      
-      </UserWrapper>
-      </UserIdContainer >
+        <NavBar>
+          <NavLinkWrapper>
+            <Link to="/">Home</Link>
+            <Link to="/new">Create A User</Link>
+            <Link to="/photographers">Photographers</Link>
+            <Link to="">Photo Gallery</Link>
+            {/* <Link to="">About</Link> */}
+          </NavLinkWrapper>
+        </NavBar>
+        <h1>Users List</h1>
+
+        <UserIdContainer>
+
+          <UserWrapper>
+            <ListWrapper>
+              <Users>
+                {banana}
+              </Users>
+            </ListWrapper>
+
+          </UserWrapper>
+        </UserIdContainer >
       </div>
-     )
+    )
   }
 }
 export default UserList
 
-const ListWrapper = styled.div`
-/* justify-content: center; 
-align-items: center; 
-flex-wrap:wrap;
+const ListWrapper = styled.div `
 display:flex;
-flex-direction:column; */
-
-
+justify-content:center;
+align-items:center;
 `
-const Users = styled.div`
+const Users = styled.div `
 display:grid;
 grid-template-columns:33% 33% 33%;
 
@@ -76,8 +74,7 @@ h1 {
 }
 `
 
-
-const UserWrapper = styled.div`
+const UserWrapper = styled.div `
 display:flex;
 justify-content:center;
 `
