@@ -30,7 +30,13 @@ class HomePage extends Component {
                 </Words>
               </TitleData>
           <TitleHeader>
-           
+      <ImageContainer>
+        
+        <img src="https://i.imgur.com/gp9Klik.jpg" alt=""/>
+        
+        </ImageContainer>     
+
+
           </TitleHeader>
         </Main1>
         <Main1>
@@ -67,13 +73,14 @@ justify-content:center;
 width:600px;
 height:90px;
 text-align:center;
+font-size:22px;
 `
 
 const TitleData = styled.div `
 display:flex;
 flex-direction: column;
 align-items:center;
-
+margin-bottom: 37px;
 
 `
 const Links = styled.a `
@@ -109,4 +116,12 @@ display: flex;
 justify-content: center;
 width: 100vw;
 height: 100vh;
+`
+const ImageContainer = styled.div`
+
+img {
+  width: 100%;
+    height: 317px;
+}
+
 `
