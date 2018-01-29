@@ -17,8 +17,8 @@ class HomePage extends Component {
             <Link to="/">Home</Link>
             <Link to="/user">Users</Link>
             <Link to="/photographers">photographers</Link>
-            <Link to="#">Photo Gallery</Link>
-            <a href="">About</a>
+            <Link to="/photogallery">Photo Gallery</Link>
+            {/* <a href="">About</a> */}
           </NavLinkWrapper>
         </NavBar>
         <Main1>
