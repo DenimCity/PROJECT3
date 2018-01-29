@@ -26,11 +26,11 @@ class HomePage extends Component {
             </Img>
             <Title>
               <TitleData>
-              <h1>Welcome to ClickedIn!</h1>
-              <div>
-                <p>A page dedicated to photographers and their "Photogmanship. Come one come
-                  all. Become a user and upload away.</p>
-              </div>
+                <h1>Welcome to ClickedIn!</h1>
+                <div>
+                  <p>A page dedicated to photographers and their "Photogmanship. Come one come
+                    all. Become a user and upload away.</p>
+                </div>
               </TitleData>
             </Title>
             <Img>
@@ -38,17 +38,17 @@ class HomePage extends Component {
             </Img>
           </TitleHeader>
         </Main1>
-
         <Main2>
-
-          {/* <h2>Welcome Visual Creators</h2> */}
-
-          <p>
-            With over 10 years of experience in the photography trade, we provided a avenue
-            for our artists. In need of a influencer, Look no further!
-          </p>
-          </Main2>
-
+          <Title>
+            <TitleData>
+              <h2>Welcome Visual Creators</h2>
+              <p>
+                With over 10 years of experience in the photography trade, we provided a avenue
+                for our artists. In need of a influencer, Look no further!
+              </p>
+            </TitleData>
+          </Title>
+        </Main2>
       </Wrapper>
     )
   }
@@ -64,18 +64,18 @@ img{
   height:100%;
 }
 `
-const Main1 = styled.div`
+const Main1 = styled.div `
 display:flex;
 flex-direction: column;
 `
-const Main2 = styled.div`
+const Main2 = styled.div `
 with:100%;
 
 height: 100%;
 display:flex;
 `
 
-const TitleData = styled.div`
+const TitleData = styled.div `
 display:flex;
 flex-direction: column;
 align-items:center;

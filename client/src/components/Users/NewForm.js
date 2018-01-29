@@ -86,14 +86,7 @@ state = {
               type="text"
               value={this.state.newUser.lens}/>
           </div>
-          <div>
-            <input
-              onChange={this.handleChange}
-              name="photos"
-              placeholder="a picture of your most recent work"
-              type="text"
-              value={this.state.newUser.photo}/>
-          </div>
+         
           <button type="submit">
             Submit
           </button>
