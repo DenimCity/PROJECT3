@@ -8,15 +8,15 @@ class Photographer extends Component {
       <div>
         <div>
           <div>
-            <img src={this.props.photo} alt=""/></div>
+            <img src={this.props.photo} alt=""/>
+            </div>
+          
           <div></div>
         </div>
         <div>First Name: {this.props.firstName}</div>
         <div>Last Name: {this.props.lastName}</div>
-        <div>
-          Website:
-          <Link to={this.props.website}></Link>
-        </div>
+
+        <div>Website:{this.props.website}</div>
       </div>
     )
   }

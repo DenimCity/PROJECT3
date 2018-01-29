@@ -14,7 +14,7 @@ class PhotographersList extends Component {
 
     const cameraPeople = this
       .props
-      .photographers
+      .MyPhotographers
       .map((photographer, index) => {
         return (<Photographer
           key={index}
@@ -31,10 +31,9 @@ class PhotographersList extends Component {
  <NavBar>
  <NavLinkWrapper>
    <Link to="/">Home</Link>
-   <Link to="/new">Create A User</Link>
-   <Link to="/photographers">Photographers</Link>
+   <Link to="/photographers/new">Create A Photographer</Link>
+   <Link to="/user">Users</Link>
    <Link to="">Photo Gallery</Link>
-   <Link to="">About</Link>
  </NavLinkWrapper>
 </NavBar> 
 <h1>Photographers List</h1>
