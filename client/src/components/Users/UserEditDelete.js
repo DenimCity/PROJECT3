@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import {Redirect} from 'react-router-dom'
+import styled from 'styled-components'
+import {Redirect, Link} from 'react-router-dom'
+import NavBar from '../styled_components/NavBar'
+import NavLinkWrapper from '../styled_components/NavLinkWrapper'
+
 
 class UserEditDelete extends Component {
 
@@ -69,7 +73,15 @@ deleteUser =  (userId) => {
     return (
       this.state.isStateNotSet ? <div></div> : 
       <div>
-        <div>
+              <NavBar>
+<NavLinkWrapper>
+  <Link to="/">Home</Link>
+  <Link to="/user">Users</Link>
+  <Link to="/photographers">Photographers</Link>
+  <Link to="/photogallery">Photo Gallery</Link>
+</NavLinkWrapper>
+</NavBar> 
+        <EditFormContainer>
           <div>
             <h2>Update User</h2>
           </div>
@@ -128,10 +140,26 @@ deleteUser =  (userId) => {
             </button>
             <button onClick={this.deleteUser}>Delete</button>
           </form>
-        </div>
+        </EditFormContainer>
       </div>
     )
   }
 }
 
 export default UserEditDelete
+
+const EditFormContainer = styled.div`
+display:flex;
+justify-content: center;
+padding-top:90;
+
+input[type="text"] {
+  border: solid 1px;
+  width: 239px;
+  height: 50px;
+  text-align: center;
+
+
+}
+`
+

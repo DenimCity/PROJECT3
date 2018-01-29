@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
+import NavBar from '../styled_components/NavBar'
+import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 
 
 
@@ -33,10 +35,22 @@ state = {
      return <Redirect to="/user"/>
    }
     return (
+<div>
+      <NavBar>
+<NavLinkWrapper>
+  <Link to="/">Home</Link>
+  <Link to="/user">Users</Link>
+  <Link to="/photographers">Photographers</Link>
+  <Link to="/photogallery">Photo Gallery</Link>
+</NavLinkWrapper>
+</NavBar> 
+
+
       <NewUserContainer>
         <div>
           <h2>Create New User</h2>
         </div>
+        <Container>
         <form onSubmit={this.handleSubmit}>
           <div>
             <input
@@ -91,7 +105,10 @@ state = {
             Submit
           </button>
         </form>
+</Container>
+
       </NewUserContainer>
+      </div>
     )
   }
 }
@@ -107,6 +124,14 @@ padding-top: 109px;
 margin-right: auto;
 margin-left: auto;
 justify-content: center;
+height:100%;
+
+@media screen and (max-with:600px){
+  padding-right: 9px;
+padding-left: 9px;
+padding-top: 9px;
+
+}
  h2 {
    font-size:30px;
    margin-top:20px;
@@ -123,3 +148,11 @@ color:white;
 }
 `
 
+const Container = styled.div`
+justify-content:center;
+
+form {
+  font-size: 12px;
+}
+
+`

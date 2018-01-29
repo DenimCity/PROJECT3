@@ -15,21 +15,14 @@ render() {
 </Link>
 </ImageContainer>
 <UserDescriptionContainer>
-<div>First Name: {this.props.firstName} </div>
-<div>Last Name:  {this.props.lastName}</div>
-<div>Instagram: {this.props.instagram} </div>
-<div>Go To Camera: {this.props.camera} </div>
-<div>Got to Lens{this.props.lens} </div>
+<p>First Name: {this.props.firstName} </p>
+<p>Last Name:  {this.props.lastName}</p>
+<p>Instagram: {this.props.instagram} </p>
+<p>Go To Camera: {this.props.camera} </p>
+<p>Got to Lens: {this.props.lens} </p>
 
 </UserDescriptionContainer>
 </ProfileContainer>
-
-
-      <div className="firstNameContainer">
-      
-      
-      
-      </div>
       
       </UserProfileCardContainer>
 </div>
@@ -43,20 +36,36 @@ const UserProfileCardContainer = styled.div`
 display:flex;
 `
 const ProfileContainer = styled.div`
-display:flex;
+/* display:flex; */
 /* flex-direction:column; */
 `
 const ImageContainer = styled.div`
-/* display:flex;
-flex-direction: column;
-width:100px;
-height:100px; */
 img {
   width:200px;
+  @media screen and (max-width:700px){
+width:100px
+  
+}
+}
+
+@media screen and (max-width:700px){
+
+
 }
 `
 
 const UserDescriptionContainer = styled.div`
+/* font-size:12px; */
+display:flex;
+flex-direction:column;
+align-content:center
+flex-wrap:wrap;
+p{
+  font-size:12px;
+  @media screen and (max-width:700px){
+font-size: 8px;
 
+} 
+}
 
 `

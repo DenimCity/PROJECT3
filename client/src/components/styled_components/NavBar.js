@@ -5,8 +5,8 @@ background-image: url(https://i.imgur.com/gp9Klik.jpg);
 height: 98px;
 background-position: left;
 width: 100vw;
-top: 0;
-overflow: hidden;
+
+
 border: transparent;
 a {
   background-color: transparent;
