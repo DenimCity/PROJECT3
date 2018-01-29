@@ -9,7 +9,8 @@ import User from './components/Users/User'
 import UserEditDelete from './components/Users/UserEditDelete'
 ///Photographer Imports 
 import PhotographersList from './components/PhotoGraphers/PhotographersList'
-
+///PhotoGallery
+import PhotoGallery from './components/PhotoGallery/PhotoGallery'
 
 
 class App extends Component {
@@ -50,14 +51,17 @@ photographerDatabase = () => {
 }
 
 photoGalleryPhotos = () => {
+  console.log("here from  the photo axios call")
   axios.get('/api/photos').then(response =>{
     const photos = response.data
+    console.log("we have the data from the photo axios call", photos)
     this.setState({photos: photos})
   })
 }
 
   componentWillMount() {
     this.userDatabase()
+    this.photoGalleryPhotos()
     this.photographerDatabase()
   }
 
@@ -70,7 +74,7 @@ photoGalleryPhotos = () => {
 
     const DataOfPhotographers = () => (<PhotographersList MyPhotographers={this.state.photographers} />)
    
-    
+    const allOfThePhotos = () => (<PhotoGallery MyPictures={this.state.photos} />)
 
     return (
       <Router>
@@ -82,6 +86,9 @@ photoGalleryPhotos = () => {
           <Route exact path="/users/:userId" component={editUser}/>
           <Route exact path="users/userId/delete" component={editUser}/>
           <Route exact path="/photographers" component={DataOfPhotographers}/>
+          <Route exact path="/photogallery" component={allOfThePhotos}/>
+          <Route exact path="*" render={() => (<h4>Page not found!</h4>)} />
+
           {/* <Route exact path="/photographers/new" component={NewPhotographer}/> */}
         </Switch>
       </Router>
