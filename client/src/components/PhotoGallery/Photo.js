@@ -11,10 +11,9 @@ return(
 
   <div>
 
-<div>
+<PictureWrapper>
   <Picture src={this.props.image} alt=""/>
-  <p></p>
-</div>
+</PictureWrapper>
 
   </div>
 )
@@ -27,7 +26,20 @@ return(
 export default Photo
 
 const Picture = styled.img`
-    width: 200px;
+    width: 100%;
+    height:100%;
 
+    @media screen and (min-with:750){
 
+/* width:30%;
+height:30% */
+} 
+`
+
+const PictureWrapper = styled.div`
+height:200px;
+width:200px;
+overflow:hidden;
+
+  
 `
