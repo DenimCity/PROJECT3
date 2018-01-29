@@ -1,17 +1,22 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import axios from 'axios'
-
+///Users imports 
 import HomePage from './components/Users/HomePage'
 import UserList from './components/Users/UserList'
 import NewForm from './components/Users/NewForm'
 import User from './components/Users/User'
 import UserEditDelete from './components/Users/UserEditDelete'
+///Photographer Imports 
+import PhotographersList from './components/PhotoGraphers/PhotographersList'
+
+
 
 class App extends Component {
 
   state = {
-    users: []
+    users: [],
+    photographers:[],
   }
 
   userDatabase = () => {
@@ -26,41 +31,35 @@ class App extends Component {
   createUser = async(user) => {
     // send the user to the database
     const response = await axios.post(`/api/users`, user)
-
     // grab the new user we just created in the database
     const newUser = response.data
-
     // put that new user into our list of users on the `state`
     const users = [...this.state.users]
     users.push(newUser)
     this.setState({users})
   }
 
-  
-
-  // deleteUser = () => {
-  //   console.log(`from the delete router`)
-  //   axios.delete(`api/users/${this.state.users._id}/delete`)
-  //   .then(res => {
-  //     console.log(`i grabbed the delete data`, toDelete)
-  //   }).catch(err){
-
-  //   }
-    
-  //       }
-  
-  
+photographerDatabase = () => {
+  axios.get('/api/photographers')
+  .then(response => {
+    const photographers = response.data
+    this.setState({photographers: photographers})
+  })
+}
 
   componentWillMount() {
     this.userDatabase()
+    this.photographerDatabase()
   }
 
   render() {
     ////the function to grab all the users
     const DataOfUsers = () => (<UserList MyUsers={this.state.users} />)
-
+///taking the state from this page and shipping props to their designated folder
     const makeNewUser = () => (<NewForm createUser={this.createUser} users={this.state.users}/>)
     const editUser = (props) => (<UserEditDelete  users={this.state.users} {...props} />)
+
+    const DataOfPhotographers = () => (<PhotographersList photographers={this.state.photographers} />)
     
     
 
@@ -73,7 +72,7 @@ class App extends Component {
           <Route exact path="/users" component={User}/>
           <Route exact path="/users/:userId" component={editUser}/>
           <Route exact path="users/userId/delete" component={editUser}/>
-
+          <Route exact path="/photographers" component={DataOfPhotographers}/>
         </Switch>
       </Router>
     )
