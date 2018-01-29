@@ -1,12 +1,10 @@
 import React, {Component} from 'react'
-import NavBar from '../styled_components/NavBar'
-import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 import {Link} from 'react-router-dom'
 import Photographer from './Photographer'
 import styled from 'styled-components'
 
-
-
+import NavBar from '../styled_components/NavBar'
+import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 
 class PhotographersList extends Component {
 
@@ -37,7 +35,9 @@ class PhotographersList extends Component {
 </NavBar> 
 
 <PhotographerContainer>
-<PhotographerWrapper>{cameraPeople}</PhotographerWrapper>
+<PhotographerWrapper>
+{cameraPeople}
+</PhotographerWrapper>
 </PhotographerContainer>
       </div>
 

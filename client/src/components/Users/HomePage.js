@@ -22,59 +22,49 @@ class HomePage extends Component {
           </NavLinkWrapper>
         </NavBar>
         <Main1>
-          <TitleHeader>
-            <Img>
-              <img src="https://i.imgur.com/sDVPVPl.jpg" alt=""/>
-            </Img>
-            <Title>
               <TitleData>
                 <h1>Welcome to ClickedIn!</h1>
-                <div>
+                <Words>
                   <p>A page dedicated to photographers and their "Photogmanship. Come one come
                     all. Become a user and upload away.</p>
-                </div>
+                </Words>
               </TitleData>
-            </Title>
-            <Img>
-              <img src="https://i.imgur.com/sDVPVPl.jpg" alt=""/>
-            </Img>
+          <TitleHeader>
+           
           </TitleHeader>
         </Main1>
-        <Main2>
+        <Main1>
           <Title>
             <TitleData>
               <h2>Welcome Visual Creators</h2>
+              <Words>
               <p>
                 With over 10 years of experience in the photography trade, we provided a avenue
                 for our artists. In need of a influencer, Look no further!
               </p>
+              </Words>
             </TitleData>
           </Title>
-        </Main2>
+        </Main1>
       </Wrapper>
     )
   }
 }
 export default HomePage
 
-const Img = styled.div `
-height: 461px;
-width: 70%;
-padding-top: 12px;
-img{
-  width:100%;
-  height:100%;
-}
-`
+
 const Main1 = styled.div `
 display:flex;
 flex-direction: column;
 `
-const Main2 = styled.div `
-with:100%;
 
-height: 100%;
+
+const Words = styled.div`
 display:flex;
+justify-content:center;
+width:600px;
+height:90px;
+text-align:center;
 `
 
 const TitleData = styled.div `
