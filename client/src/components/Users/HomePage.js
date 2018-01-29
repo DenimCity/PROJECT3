@@ -46,7 +46,9 @@ class HomePage extends Component {
             </TitleData>
           </Title>
         </Main1>
+        
       </Wrapper>
+
     )
   }
 }

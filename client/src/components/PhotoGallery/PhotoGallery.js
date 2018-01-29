@@ -44,11 +44,12 @@ const PhotoWrapper = styled.div`
 
 display:grid;
 grid-template-columns:33% 33% 33%;
+
 `
 
 const PhotoWrapperContainer = styled.div`
 display:flex;
 justify-content:center;
 
-
+margin: 105px;
 `
