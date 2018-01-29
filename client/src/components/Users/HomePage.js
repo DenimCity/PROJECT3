@@ -7,9 +7,11 @@ import MediaQuery from 'react-responsive'
 
 class HomePage extends Component {
   render() {
+
+
+    
     return (
       <Wrapper>
-
         <NavBar>
           <NavLinkWrapper>
             <Link to="/">Home</Link>

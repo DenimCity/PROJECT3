@@ -36,12 +36,16 @@ handleSubmit = (event) => {
   
   this.updateUser()
   
+  
   this.setState({redirect:true})
 }
+
+
 
 deleteUser =  (userId) => {
   console.log("about to delete a user from the app.js")
   axios.delete(`/api/users/${this.state.user._id}/delete`)
+  window.location.reload()
 }
 
   updateCurrentState = () => {
