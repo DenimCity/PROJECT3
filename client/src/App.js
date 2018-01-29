@@ -17,6 +17,7 @@ class App extends Component {
   state = {
     users: [],
     photographers:[],
+    photos:[]
   }
 
   userDatabase = () => {
@@ -39,11 +40,19 @@ class App extends Component {
     this.setState({users})
   }
 
+
 photographerDatabase = () => {
   axios.get('/api/photographers')
   .then(response => {
     const photographers = response.data
     this.setState({photographers: photographers})
+  })
+}
+
+photoGalleryPhotos = () => {
+  axios.get('/api/photos').then(response =>{
+    const photos = response.data
+    this.setState({photos: photos})
   })
 }
 
@@ -59,8 +68,8 @@ photographerDatabase = () => {
     const makeNewUser = () => (<NewForm createUser={this.createUser} users={this.state.users}/>)
     const editUser = (props) => (<UserEditDelete  users={this.state.users} {...props} />)
 
-    const DataOfPhotographers = () => (<PhotographersList photographers={this.state.photographers} />)
-    
+    const DataOfPhotographers = () => (<PhotographersList MyPhotographers={this.state.photographers} />)
+   
     
 
     return (
@@ -73,6 +82,7 @@ photographerDatabase = () => {
           <Route exact path="/users/:userId" component={editUser}/>
           <Route exact path="users/userId/delete" component={editUser}/>
           <Route exact path="/photographers" component={DataOfPhotographers}/>
+          {/* <Route exact path="/photographers/new" component={NewPhotographer}/> */}
         </Switch>
       </Router>
     )

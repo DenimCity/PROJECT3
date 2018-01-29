@@ -129,7 +129,7 @@ deleteUser =  (userId) => {
                 type="text"
                 value={this.state.user.img1}/>
             </div>
-            <button type="readonly">
+            <button type="submit">
               Submit
             </button>
             <button onClick={this.deleteUser}>Delete</button>
