@@ -26,6 +26,7 @@ class UserEditDelete extends Component {
 
 updateUser = (user) => {
   axios.patch(`/api/users/${this.props.match.params.userId}`, this.state.user)
+  
   .then(res => ({user}))
   .catch((error)=>{
       console.log ("ERROR bob")
@@ -33,7 +34,7 @@ updateUser = (user) => {
 
 handleSubmit = (event) => {
   event.preventDefault()
-  
+  window.location.reload()
   this.updateUser()
   
   
@@ -121,14 +122,7 @@ deleteUser =  (userId) => {
                 type="text"
                 value={this.state.user.lens}/>
             </div>
-            <div>
-              <input
-                onChange={this.handleChange}
-                name="photos"
-                placeholder="a picture of your most recent work"
-                type="text"
-                value={this.state.user.img1}/>
-            </div>
+          
             <button type="submit">
               Submit
             </button>
