@@ -1,22 +1,24 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-
+import styled from 'styled-components'
 class Photographer extends Component {
   render() {
 
     return (
       <div>
         <div>
-          <div>
-            <img src={this.props.photo} alt=""/>
-            </div>
-          
-          <div></div>
+          <ImageContainer>
+            <Picture src={this.props.photo} alt=""/>
+            
+            
+            </ImageContainer>
+
         </div>
         <div>First Name: {this.props.firstName}</div>
         <div>Last Name: {this.props.lastName}</div>
         <div>Instagram:  @{this.props.instagram}</div>
         <div>Website: {this.props.website}</div>
+        
       </div>
     )
   }
@@ -24,3 +26,15 @@ class Photographer extends Component {
 }
 
 export default Photographer
+
+const ImageContainer = styled.div`
+width: 500px;
+height:200px;
+
+`
+
+const Picture = styled.img`
+width:100%;
+height:100%
+`
+

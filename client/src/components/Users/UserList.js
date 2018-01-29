@@ -36,17 +36,13 @@ class UserList extends Component {
         </NavBar>
         <h1>Users List</h1>
 
-        <UserIdContainer>
 
-          <UserWrapper>
             <ListWrapper>
               <Users>
                 {banana}
               </Users>
             </ListWrapper>
 
-          </UserWrapper>
-        </UserIdContainer >
       </div>
     )
   }
@@ -74,7 +70,7 @@ h1 {
 }
 `
 
-const UserWrapper = styled.div `
-display:flex;
-justify-content:center;
-`
+// const UserWrapper = styled.div `
+// display:flex;
+// justify-content:center;
+// `
