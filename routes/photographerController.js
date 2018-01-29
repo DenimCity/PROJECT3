@@ -6,8 +6,10 @@ const bodyParser = require('body-parser')
 
 ///all photographer 
 router.get('/', async(req, res) => {
+  console.log("her from the photograhphers find route")
   try {
     const photographers = await Photographer.find({})
+    console.log("when we hit the controller we see",photographers)
     res.json(photographers)
   } catch (error) {
     console.log(error)

@@ -25,15 +25,15 @@ class UserList extends Component {
 
     return (
       <div>
-      {/* <NavBar>
+      <NavBar>
       <NavLinkWrapper>
         <Link to="/">Home</Link>
         <Link to="/new">Create A User</Link>
-        <a href="">photographers</a>
-        <Link to="#">Photo Gallery</Link>
+        <Link to="/photographers">Photographers</Link>
+        <Link to="">Photo Gallery</Link>
         <a href="">About</a>
       </NavLinkWrapper>
-    </NavBar>  */}
+    </NavBar> 
     <h1>Users List</h1>
     
     <UserIdContainer> 
