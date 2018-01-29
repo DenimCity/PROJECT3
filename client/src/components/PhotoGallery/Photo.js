@@ -28,14 +28,15 @@ return(
 export default Photo
 
 const Picture = styled.img`
-    width: 100px;
+    width: 195px;
     height:100%;
-    border-radius:12px;
+    
     padding:9;
  
 @media screen and (max-width:650px){
-  width: 75%;
-    height:35%;
+  width: 75px;
+    height:50%;
+    border-radius:0px;
 }
 `
 
@@ -43,9 +44,9 @@ const PictureWrapper = styled.div`
 height:200px;
 width:200px;
 overflow:hidden;
-/* /* @media screen and (max-width:650px){
+/* @media screen and (max-width:650px){
   height:100px;
-width:147px; */
-} */
+width:147px
+}
   
 `
