@@ -10,14 +10,15 @@ render() {
 <UserProfileCardContainer>
 <ProfileContainer>
 <ImageContainer>
-<Link to={`/users/${this.props.id}`}><img src={this.props.photo} alt={this.props.firstName}/>
+<Link to={`/users/${this.props.id}`}>
+<img src={this.props.photo} alt={this.props.firstName}/>
 </Link>
 </ImageContainer>
 <UserDescriptionContainer>
 <div>First Name: {this.props.firstName} </div>
 <div>Last Name:  {this.props.lastName}</div>
 <div>Instagram: {this.props.instagram} </div>
-<div>Go To Camera{this.props.camera} </div>
+<div>Go To Camera: {this.props.camera} </div>
 <div>Got to Lens{this.props.lens} </div>
 
 </UserDescriptionContainer>
