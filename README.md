@@ -7,7 +7,6 @@ created by Jean Altidor
 GWI 13'
 contact: jeanwaltidor@gmail.com
 
--
 
 
 #### Project description
@@ -22,7 +21,7 @@ Link to app:
 [Click Here](https://mysterious-cove-14804.herokuapp.com/)
 
 
-##User Stories:
+## User Stories:
   
 Simple descriptions of a feature told from the perspective of the person who desires the new capability, usually a user or customer of the system. 
 Click here to view my user stories for this app. 
@@ -37,7 +36,7 @@ Wireframes & Mock-Ups:
 
  
 
-##Technologies/Libraries:
+## Technologies/Libraries:
 MERN STACK 
 	
 * Mongo/Mongoose
