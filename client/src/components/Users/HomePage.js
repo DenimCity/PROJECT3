@@ -17,7 +17,6 @@ class HomePage extends Component {
             <Link to="/user">Users</Link>
             <Link to="/photographers">photographers</Link>
             <Link to="/photogallery">Photo Gallery</Link>
-            {/* <a href="">About</a> */}
           </NavLinkWrapper>
         </NavBar>
         <Main1>
@@ -35,6 +34,7 @@ class HomePage extends Component {
         <img src="https://i.imgur.com/gp9Klik.jpg" alt=""/>
         
         </ImageContainer>     
+
 
 
           </TitleHeader>
