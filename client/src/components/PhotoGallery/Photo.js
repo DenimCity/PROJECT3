@@ -44,9 +44,4 @@ const PictureWrapper = styled.div`
 height:200px;
 width:200px;
 overflow:hidden;
-/* @media screen and (max-width:650px){
-  height:100px;
-width:147px
-}
-  
 `
