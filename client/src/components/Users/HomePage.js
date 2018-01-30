@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import NavBar from '../styled_components/NavBar'
 import NavLinkWrapper from '../styled_components/NavLinkWrapper'
-import MediaQuery from 'react-responsive'
 
 class HomePage extends Component {
   render() {

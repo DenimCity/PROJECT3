@@ -7,8 +7,11 @@ import NavBar from '../styled_components/NavBar'
 import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 
 class PhotographersList extends Component {
+  
 
   render() {
+
+
 
     const cameraPeople = this
       .props
