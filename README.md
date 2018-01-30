@@ -18,27 +18,34 @@ As a photohgrapher, at times I find myself asking waht kind of camera or lens th
 ### Link to the Deployed App
 -
 
-Click here to view my app:
-[Deploy](https://mysterious-cove-14804.herokuapp.com/)
+Link to app:
+[Click Here](https://mysterious-cove-14804.herokuapp.com/)
 
 
-###User Stories:
+##User Stories:
   
-Simple descriptions of a feature told from the perspective of the person who desires the new capability, usually a user or customer of the system.
+Simple descriptions of a feature told from the perspective of the person who desires the new capability, usually a user or customer of the system. 
+Click here to view my user stories for this app. 
+
+[USER STORIES](https://trello.com/b/HnQFfYXE/project-3)
 
 Wireframes & Mock-Ups: 
 [View Sketches](https://www.figma.com/file/P5G3vFVCFEntEUwyDGzKjsnW/Untitled)
-[ERD]()
+
+[ERDs](https://github.com/DenimCity/PROJECT3/blob/master/pictures/ERD.png)
+
+
  
 
 ##Technologies/Libraries:
 MERN STACK 
-Mongo/Mongoose
-Express
-React
-Node
+	
+* Mongo/Mongoose
+*  Express
+* React
+* Node
 
-With the use o
+
 
 Online Resources
 - 
