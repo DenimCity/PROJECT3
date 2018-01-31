@@ -44,6 +44,11 @@ MERN STACK
 * React
 * Node
 
+Version 2 Ideations:
+--
+* Allowing users to CREATE-EDIT-DELETE photos.
+* Allowing users to CREATE-EDIT-DELETE photographers.
+
 
 
 Open Resources
@@ -56,7 +61,8 @@ React Docs
 
 DELIVERABLES
 --
-1. Being able to create and connect RESTful routes.
-2. Grasping the concept of passing and setting 
+1. Created and established RESTfull routes.
+2. Grasped the concept of passing and setting state.
+3. 
 
 
