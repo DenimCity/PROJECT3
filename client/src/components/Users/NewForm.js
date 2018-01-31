@@ -30,10 +30,13 @@ state = {
     this.props.createUser(this.state.newUser)
     this.setState({redirect:true})
   }
+  
+
   render() {
-   if (this.state.redirect){
-     return <Redirect to="/user"/>
-   }
+    if (this.state.redirect){
+      return <Redirect to="/user"/>
+    }
+   
     return (
 <div>
       <NavBar>
