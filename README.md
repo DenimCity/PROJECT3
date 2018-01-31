@@ -63,6 +63,7 @@ DELIVERABLES
 --
 1. Created and established RESTfull routes.
 2. Grasped the concept of passing and setting state.
-3. 
+3. Utilizing Axios and promises to grab data from an API.
+4. Utilizing data from a live server and presenting it to the users.
 
 
