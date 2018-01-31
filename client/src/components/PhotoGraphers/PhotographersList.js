@@ -11,8 +11,6 @@ class PhotographersList extends Component {
 
   render() {
 
-
-
     const cameraPeople = this
       .props
       .MyPhotographers

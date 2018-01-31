@@ -91,24 +91,7 @@ margin-bottom: 37px;
   
 }
 `
-const Links = styled.a `
-background: transparent;
-border-radius: 300px;
-border: 2px solid #fff;
-color: #fff;
-font-family: "proxima-nova";
-text-transform: uppercase;
-text-decoration: none;
-letter-spacing: 2px;
-font-weight: 600;
-font-style: normal;
-margin-left: 1em;
-padding: 1em 1.5em !important;
-display: block;
-@media (max-with:700px){
-  
-}
-`
+
 
 const TitleHeader = styled.div `
  display:flex;

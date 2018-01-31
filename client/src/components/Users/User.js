@@ -3,7 +3,13 @@ import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 class User extends Component {
-render() {
+
+
+
+
+  render() {
+
+    
   return(
     <div>
 

@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
+
 class Photo extends Component {
 
-
   render() {
-
 
 return(
 
@@ -18,12 +17,7 @@ return(
 </PictureWrapper>
 
   </div>
-)
-
-
-  }
-
-}
+) }}
 
 export default Photo
 
@@ -39,7 +33,6 @@ const Picture = styled.img`
     border-radius:0px;
 }
 `
-
 const PictureWrapper = styled.div`
 height:200px;
 width:200px;
