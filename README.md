@@ -1,4 +1,4 @@
-# Project - 3
+# Project  3
 Photographer Website
 
 
@@ -9,13 +9,14 @@ contact: jeanwaltidor@gmail.com
 
 
 
+
 #### Project description
 
 This is a photographer freelance playground. This is a website that is setup for, rookie to experienced, photographers to share their work. A website that will evolve into a blog of photos that inspire photographers. 
 
 As a photohgrapher, at times I find myself asking waht kind of camera or lens they used for a shot. On here, youll get info on a photographers favorite camera body and lens. 
 ### Link to the Deployed App
--
+
 
 Link to app:
 [Click Here](https://mysterious-cove-14804.herokuapp.com/)
@@ -31,30 +32,31 @@ Click here to view my user stories for this app.
 Wireframes & Mock-Ups: 
 [View Sketches](https://www.figma.com/file/P5G3vFVCFEntEUwyDGzKjsnW/Untitled)
 
-[ERDs](https://github.com/DenimCity/PROJECT3/blob/master/pictures/ERD.png)
+View Schema Mock Up: [View ERDs](https://github.com/DenimCity/PROJECT3/blob/master/pictures/ERD.png)
 
 
  
-
 ## Technologies/Libraries:
 MERN STACK 
 	
 * Mongo/Mongoose
-*  Express
+* Express
 * React
 * Node
 
 
 
-Online Resources
+Open Resources
 - 
 Youtube,
 Google,
 W3schools, 
 Stackoverflow,
-jQuery Docs
-React Doc
+React Docs
 
-
+DELIVERABLES
+--
+1. Being able to create and connect RESTful routes.
+2. Grasping the concept of passing and setting 
 
 
