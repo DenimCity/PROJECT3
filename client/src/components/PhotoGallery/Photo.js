@@ -2,8 +2,15 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 class Photo extends Component {
-
-
+//this is the function that grabs the photographer database
+  // photoGalleryPhotos = () => {
+  //   console.log("here from  the photo axios call")
+  //   axios.get('/api/photos').then(response =>{
+  //     const photos = response.data
+  //     console.log("we have the data from the photo axios call", photos)
+  //     this.setState({photos: photos})
+  //   })
+  //   }
   render() {
 
 
