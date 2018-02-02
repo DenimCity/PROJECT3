@@ -10,9 +10,9 @@ import NewForm from './components/Users/NewForm'
 import User from './components/Users/User'
 import UserEditDelete from './components/Users/UserEditDelete'
 ///Photographer Imports 
-import PhotographersList from './components/PhotoGraphers/PhotographersList'
-///PhotoGallery
-import PhotoGallery from './components/PhotoGallery/PhotoGallery'
+// import PhotographersList from './components/PhotoGraphers/PhotographersList'
+// ///PhotoGallery
+// import PhotoGallery from './components/PhotoGallery/PhotoGallery'
 
 
 const history = createHistory()
@@ -24,14 +24,14 @@ const Root = () => (
     <ConnectedRouter history={history}>
       <div>
       <Route exact path="/" component={HomePage}/>
-      <Route exact path="/user" component={DataOfUsers}/>
-      <Route exact path="/new" component={makeNewUser}/>
+      <Route exact path="/user" component={UserList}/>
+      <Route exact path="/new" component={NewForm}/>
       <Route exact path="/users" component={User}/>
-      <Route exact path="/users/:userId" component={editUser}/>
-      <Route exact path="users/userId/delete" component={editUser}/>
-      <Route exact path="/photographers" component={DataOfPhotographers}/>
-      <Route exact path="/photogallery" component={allOfThePhotos}/>
-      <Route exact path="*" render={() => (<h4>Page not found!</h4>)} />
+      <Route exact path="/users/:userId" component={UserEditDelete}/>
+      <Route exact path="users/userId/delete" component={UserEditDelete}/>
+      {/* <Route exact path="/photographers" component={DataOfPhotographers}/>
+      <Route exact path="/photogallery" component={allOfThePhotos}/> */}
+      
 
       </div>
     </ConnectedRouter>
