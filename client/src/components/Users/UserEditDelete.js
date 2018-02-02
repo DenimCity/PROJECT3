@@ -28,13 +28,7 @@ class UserEditDelete extends Component {
     this.setState({user: updateUser})
 }
 
-updateUser = (user) => {
-  axios.patch(`/api/users/${this.props.match.params.userId}`, this.state.user)
-  
-  .then(res => ({user}))
-  .catch((error)=>{
-      console.log ("ERROR bob")
-    })}
+
 
 handleSubmit = (event) => {
   event.preventDefault()
@@ -47,20 +41,7 @@ handleSubmit = (event) => {
 
 
 
-deleteUser =  (userId) => {
-  console.log("about to delete a user from the app.js")
-  axios.delete(`/api/users/${this.state.user._id}/delete`)
-  window.location.reload()
-}
 
-  updateCurrentState = () => {
-  axios.get(`/api/users/${this.props.match.params.userId}`, this.state.user)
-  .then(response => {
-  this.setState({user: response.data, isStateNotSet: false })})
-  
-  .catch((error) => {
-  console.log(error)})
-  }
 
   componentWillMount() {
     this.updateCurrentState()
