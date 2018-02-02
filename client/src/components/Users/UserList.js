@@ -6,23 +6,27 @@ import NavBar from '../styled_components/NavBar'
 import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 class UserList extends Component {
 
-  render() {
+  componentWillMount(){
 
-    const banana = this
-      .props
-      .MyUsers
-      .map((user, index) => {
-        return (<User
-          key={index}
-          photo={user.photo}
-          firstName={user.firstName}
-          lastName={user.lastName}
-          instagram={user.instagram}
-          camera={user.camera}
-          lens={user.lens}
-          id={user._id}/>)
-      })
-
+    this.props.getUserRoute()
+  }
+  
+  // const banana = this
+  // .props
+  // .MyUsers
+  // .map((user, index) => {
+  //   return (<User
+  //     key={index}
+  //     photo={user.photo}
+  //     firstName={user.firstName}
+  //     lastName={user.lastName}
+  //     instagram={user.instagram}
+  //     camera={user.camera}
+  //     lens={user.lens}
+  //     id={user._id}/>)
+  //   })
+    
+    render() {
     return (
       <div>
         <NavBar>
@@ -44,7 +48,11 @@ class UserList extends Component {
     )
   }
 }
-export default UserList
+
+const mapStateToProps =(state) =>{
+  return {users: state.users}
+}
+export default connect(MapStateToProps, {push, getUserRoute})(UserList)
 
 const ListWrapper = styled.div `
 display:flex;
