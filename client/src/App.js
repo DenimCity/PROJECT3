@@ -87,7 +87,6 @@ photoGalleryPhotos = () => {
           <Route exact path="users/userId/delete" component={editUser}/>
           <Route exact path="/photographers" component={DataOfPhotographers}/>
           <Route exact path="/photogallery" component={allOfThePhotos}/>
-          <Route exact path="*" render={() => (<h4>Page not found!</h4>)} />
 
           {/* <Route exact path="/photographers/new" component={NewPhotographer}/> */}
         </Switch>
