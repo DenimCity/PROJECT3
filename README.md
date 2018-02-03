@@ -19,7 +19,7 @@ As a photohgrapher, at times I find myself asking waht kind of camera or lens th
 
 
 Link to app:
-[Click Here](https://mysterious-cove-14804.herokuapp.com/)
+[Click Here](https://photographerplayground.herokuapp.com/)
 
 
 ## User Stories:
