@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {push} from 'react-router-redux'
+import {getUserRoute} from '../actions/thunk.actions.js'
 import User from './User'
 import NavBar from '../styled_components/NavBar'
 import NavLinkWrapper from '../styled_components/NavLinkWrapper'
@@ -40,7 +43,7 @@ class UserList extends Component {
         </NavBar>
             <ListWrapper>
               <Users>
-                {banana}
+                {/* {banana} */}
               </Users>
             </ListWrapper>
 
