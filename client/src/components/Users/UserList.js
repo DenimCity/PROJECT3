@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {push} from 'react-router-redux'
-import {getUserRoute} from '../actions/thunk.actions.js'
+import {getUserRoute} from '../../actions/thunk.actions'
 import User from './User'
 import NavBar from '../styled_components/NavBar'
 import NavLinkWrapper from '../styled_components/NavLinkWrapper'
@@ -55,7 +55,7 @@ class UserList extends Component {
 const mapStateToProps =(state) =>{
   return {users: state.users}
 }
-export default connect(MapStateToProps, {push, getUserRoute})(UserList)
+export default connect(mapStateToProps, {push, getUserRoute})(UserList)
 
 const ListWrapper = styled.div `
 display:flex;
