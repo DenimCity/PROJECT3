@@ -69,8 +69,8 @@ flex-direction: column;
 const Words = styled.div`
 display:flex;
 justify-content:center;
-width:600px;
-height:90px;
+width:89%px;
+height:30%px;
 text-align:center;
 
 
@@ -123,7 +123,7 @@ height: 100vh;
 const ImageContainer = styled.div`
 
 img {
-  width: 100%;
+  width: 100vw;
     height: 317px;
 }
 
