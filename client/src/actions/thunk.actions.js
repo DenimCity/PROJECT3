@@ -26,7 +26,7 @@ return {type:'CREATE_USER', newUserData}
 // this function post the user to the database
 export function sendNewUserToDatabase(newUserInfo){
   return function (dispatch){
-    return axios.post(`/api/users`, user)
+    return axios.post(`/api/users`, newUserInfo)
     .then((response)=>{
       dispatch(sendNewUserToState(response.data))
     })
@@ -34,15 +34,15 @@ export function sendNewUserToDatabase(newUserInfo){
 }
 
 //this function
-export function editUserToState(editUserInfo){
-return {type:'EDIT_USER', editedUserData}
+export function editUserToState(editUserData){
+return {type:'EDIT_USER', editUserData}
 }
 
 export function editUserInDatabase(editUserInfo){
   return function(dispatch){
     return axios.patch(`/api/users/${editUserInfo.id}`, editUserInfo)
     .then((response)=> {
-      dispatch(editedUserToState(editUserInfo))
+      dispatch(editUserToState(editUserInfo))
     })
   }
 }
