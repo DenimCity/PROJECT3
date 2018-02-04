@@ -1,8 +1,10 @@
 import axios from 'axios'
 
 //this function pushes to the users reducer in  folder
-export function sendUsersToState(userDataBase)
-return {type:'GET_USERS',userDataBase}
+export function sendUsersToState(userDataBase) {
+  return {type:'GET_USERS',userDataBase}
+
+}
 
 ///this function grabs the user database and dispatches it to our 
 //export function
@@ -16,7 +18,7 @@ export function getUserRoute(){
   }
 }
 //function exports out to the userReducer folder and //pushes the action
-export function sendUsersToState(newUserData){
+export function sendNewUserToState(newUserData){
 return {type:'CREATE_USER', newUserData}
 }
 
@@ -32,7 +34,7 @@ export function sendNewUserToDatabase(newUserInfo){
 }
 
 //this function
-export function editUserInDatabase(editUserInfo){
+export function editUserToState(editUserInfo){
 return {type:'EDIT_USER', editedUserData}
 }
 
