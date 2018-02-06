@@ -9,15 +9,7 @@ import NavBar from '../styled_components/NavBar'
 import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 class UserList extends Component {
 
-  componentWillMount(){
-
-    this.props.getUserRoute()
-  }
-  
-  // const banana = this
-  // .props
-  // .MyUsers
-  // .map((user, index) => {
+  // const banana = this.props.map((user, index) => {
   //   return (<User
   //     key={index}
   //     photo={user.photo}
@@ -28,6 +20,10 @@ class UserList extends Component {
   //     lens={user.lens}
   //     id={user._id}/>)
   //   })
+  componentWillMount(){
+    this.props.getUserRoute()
+  }
+  
     
     render() {
     return (
@@ -46,7 +42,6 @@ class UserList extends Component {
                 {/* {banana} */}
               </Users>
             </ListWrapper>
-
       </div>
     )
   }
