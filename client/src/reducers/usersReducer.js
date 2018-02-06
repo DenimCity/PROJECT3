@@ -5,7 +5,7 @@ function userReducer(state = [
 ], action) {
   switch (action.type) {
     case 'GET_USERS':
-      return [...action.userDataBase]
+      return [...action.userFromDataBase]
 
     case 'CREATE_USER':
       return [...state.action]

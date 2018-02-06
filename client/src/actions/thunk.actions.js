@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 //this function pushes to the users reducer in  folder
-export function sendUsersToState(userDataBase) {
-  return {type:'GET_USERS',userDataBase}
+export function sendUsersToState(userFromDataBase) {
+  return {type:'GET_USERS',userFromDataBase}
 
 }
 
