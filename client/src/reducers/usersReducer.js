@@ -1,6 +1,6 @@
 function userReducer(state = [
   {
-    users: []
+    users: [],
   }
 ], action) {
   switch (action.type) {
@@ -8,7 +8,8 @@ function userReducer(state = [
       return [...action.userFromDataBase]
 
     case 'CREATE_USER':
-      return [...state.action]
+      return [...state,
+        action.newUserData]
 
     case 'EDIT_USER':
       return updateObjectInArray(state, action)
