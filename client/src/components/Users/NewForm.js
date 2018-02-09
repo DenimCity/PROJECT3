@@ -1,17 +1,16 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import {Redirect, Link} from 'react-router-dom'
-import NavBar from '../styled_components/NavBar'
-import NavLinkWrapper from '../styled_components/NavLinkWrapper'
-
+import {sendNewUserToDatabase} from '../../actions/thunk.actions'
+import {connect} from 'react-redux' 
 
 
 
 class NewForm extends Component {
 
 state = {
-  newUser:[],
-  redirect:false
+  newUser:{},
+  // redirect:false
 }
   //this function will handle the change the user makes types in the form
   handleChange = (event) => {
@@ -27,24 +26,25 @@ state = {
   }
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.createUser(this.state.newUser)
-    this.setState({redirect:true})
+    this.props.sendNewUserToDatabase(this.state.newUser)
+    this.setState({
+      newUser:{
+        photo:"",
+        firstName:"",
+        lastName:"",
+        instagram:"",
+        camera:"",
+        lens:"",
+      }
+    
+    })
   }
   render() {
-   if (this.state.redirect){
-     return <Redirect to="/user"/>
-   }
+  //  if (this.state.redirect){
+  //    return <Redirect to="/user"/>
+  //  }
     return (
 <div>
-      <NavBar>
-<NavLinkWrapper>
-  <Link to="/">Home</Link>
-  <Link to="/user">Users</Link>
-  <Link to="/photographers">Photographers</Link>
-  <Link to="/photogallery">Photo Gallery</Link>
-</NavLinkWrapper>
-</NavBar> 
-
 <BigContainer>
       <NewUserContainer>
         <Title>
@@ -56,7 +56,7 @@ state = {
             <input
               onChange={this.handleChange}
               name="photo"
-              placeholder="DefaultPhoto"
+              placeholder="https://i.imgur.com/G80lKgk.jpg"
               type="text" required
               value={this.state.newUser.photo}/>
           </div>
@@ -101,9 +101,7 @@ state = {
               value={this.state.newUser.lens}/>
           </div>
          
-          <Submit type="submit">
-            Submit
-          </Submit>
+          <Submit onClick={this.handleSubmit} type="submit">Submit</Submit>
           <Link to="/user">
           <Cancel>Cancel</Cancel>
           </Link>
@@ -117,7 +115,7 @@ state = {
   }
 }
 
-export default NewForm
+export default connect(null, {sendNewUserToDatabase})(NewForm)
 
 
 const BigContainer = styled.div`
