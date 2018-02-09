@@ -8,10 +8,10 @@ const bodyParser = require('body-parser')
 router.get('/', async(req, res) => {
   try {
     const users = await User.find({})
-    console.log("here we have a problem", users )
+    console.log("we grabbed the users", users )
     res.json(users)
   } catch (error) {
-    console.log("here is a problem",error)
+    console.log("we couldnt grab the users",error)
   }
 })
 
