@@ -18,14 +18,23 @@ height: 33px;
 class Users extends Component {
 
   render(){
+    // this.props.map((user, index) => {
+    //   return (<User
+    //     key={index}
+    //     photo={user.photo}
+    //     firstName={user.firstName}
+    //     lastName={user.lastName}
+    //     instagram={user.instagram}
+    //     camera={user.camera}
+    //     lens={user.lens}
+    //     id={user._id}/>)
+    //   })
     return(
-      <UserWrapper>
-        <div className="picWrapper">
-          <img src={this.props.photo} alt="pic of user"/>
-          <Name>{this.props.firstName}</Name>
-        </div>
-        </UserWrapper>
-    )
+    <div>
+      
+    </div>
+
+     )
   }
 }
 export default Users
