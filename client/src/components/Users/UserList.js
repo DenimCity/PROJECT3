@@ -10,6 +10,8 @@ class UserList extends Component {
     this.props.getUserRoute();
   }
   render() {
+
+    
     return (
       <Wrapper>
         <CardWrapperContainer>
@@ -27,7 +29,8 @@ class UserList extends Component {
                   <p>Camera Preference: {user.camera}</p>
                   <p>Lens Of Choice: {user.lens}</p>
                   <p>
-                    <button>More Info</button>
+                    <button>
+                      More Info</button>
                   </p>
                 </Card>
               </CardWrapper>
