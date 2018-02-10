@@ -10,7 +10,7 @@ class NewForm extends Component {
 
 state = {
   newUser:{},
-  // redirect:false
+  redirectToUserPage:false,
 }
   //this function will handle the change the user makes types in the form
   handleChange = (event) => {
@@ -26,23 +26,26 @@ state = {
   }
   handleSubmit = (event) => {
     event.preventDefault()
+    alert('You have created a user' + this.state.newUser )
     this.props.sendNewUserToDatabase(this.state.newUser)
-    this.setState({
-      newUser:{
-        photo:"",
-        firstName:"",
-        lastName:"",
-        instagram:"",
-        camera:"",
-        lens:"",
-      }
+    // this.setState({
+    //   newUser:{
+    //     photo:"",
+    //     firstName:"",
+    //     lastName:"",
+    //     instagram:"",
+    //     camera:"",
+    //     lens:"",
+    //     redirectToUserPage:true
+    //   }
+      
+    // })
     
-    })
   }
   render() {
-  //  if (this.state.redirect){
-  //    return <Redirect to="/user"/>
-  //  }
+   if (this.state.redirectToUserPage){
+     return <Redirect to="/"/>
+   }
     return (
 <div>
 <BigContainer>
@@ -54,6 +57,7 @@ state = {
         <form onSubmit={this.handleSubmit}>
           <div>
             <input
+            
               onChange={this.handleChange}
               name="photo"
               placeholder="https://i.imgur.com/G80lKgk.jpg"
