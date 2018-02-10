@@ -27,7 +27,8 @@ class UserList extends Component {
                   <p>Camera Preference: {user.camera}</p>
                   <p>Lens Of Choice: {user.lens}</p>
                   <p>
-                    <button>EDIT</button>
+                    <button>Edit</button>
+                    <Delete>Delete</Delete>
                   </p>
                 </Card>
               </CardWrapper>
@@ -78,11 +79,33 @@ height:97%;
     cursor: pointer;
     width: 100%;
     font-size: 18px;
-    
-    &&:hover{
+    &:hover{
       opacity: 0.7;
+      background-color:goldenrod;
+      padding:10px;
+      font-size:22;
+      color:black;
     }
 `;
+
+const Delete = styled.button`
+border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: red!important;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    &:hover{
+      opacity: 0.7;
+      background-color:goldenrod;
+      padding:10px;
+      font-size:22;
+      color:black;
+`
 const CardWrapper = styled.div`
   color: black;
   display: flex;
