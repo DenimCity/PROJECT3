@@ -10,8 +10,6 @@ class UserList extends Component {
     this.props.getUserRoute();
   }
   render() {
-
-    
     return (
       <Wrapper>
         <CardWrapperContainer>
@@ -29,8 +27,7 @@ class UserList extends Component {
                   <p>Camera Preference: {user.camera}</p>
                   <p>Lens Of Choice: {user.lens}</p>
                   <p>
-                    <button>
-                      More Info</button>
+                    <button>EDIT</button>
                   </p>
                 </Card>
               </CardWrapper>
@@ -50,7 +47,7 @@ export default connect(mapStateToProps, { push, getUserRoute })(UserList);
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 const CardWrapperContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -59,7 +56,7 @@ const CardWrapperContainer = styled.div`
   align-items: safe;
   padding-top: 7rem;
   width: 75vw;
-`
+`;
 const Card = styled.div`
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 width: 22rem;
@@ -85,12 +82,12 @@ height:97%;
     &&:hover{
       opacity: 0.7;
     }
-`
+`;
 const CardWrapper = styled.div`
-  color: red;
+  color: black;
   display: flex;
   flex-direction: column;
-`
+`;
 const PictureContainer = styled.div`
   width: 22rem;
-`
+`;
