@@ -4,7 +4,6 @@ import Photographer from './Photographer'
 import styled from 'styled-components'
 
 import NavBar from '../styled_components/NavBar'
-import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 
 class PhotographersList extends Component {
   
@@ -29,13 +28,7 @@ class PhotographersList extends Component {
 
     return (
       <div>
- <NavBar>
- <NavLinkWrapper>
-   <Link to="/">Home</Link>
-   <Link to="/user">Users</Link>
-   <Link to="/photogallery">Photo Gallery</Link>
- </NavLinkWrapper>
-</NavBar> 
+ 
 
 <PhotographerContainer>
 <PhotographerWrapper>

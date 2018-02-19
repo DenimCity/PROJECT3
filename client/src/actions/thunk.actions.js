@@ -1,14 +1,23 @@
 import axios from 'axios'
 
+// export function getUsers(){
+//   const request = axios.get('/api/users')
+
+//   return (dispatch) => {
+//     request.then(({data})=>{
+//       dispatch({ type:'GET_USERS', payload:data})
+//     })
+//   }
+// }
+
 //this function pushes to the users reducer in  folder
-export function sendUsersToState(userFromDataBase) {
-  return {type:'GET_USERS',userFromDataBase}
+export function sendUsersToState(usersFromDataBase) {
+  return {type:'GET_USERS', usersFromDataBase}
 
 }
 
-///this function grabs the user database and dispatches it to our 
-//export function
-export function getUserRoute(){
+// /this function grabs all the users from the USER database and dispatches it to our 
+export function getUsers(){
   return function (dispatch){
     return axios
       .get('/api/users')
@@ -17,6 +26,27 @@ export function getUserRoute(){
       })
   }
 }
+
+
+//this the function that pushes it the action folder 
+export function sendOneUserToState(userFromDatabase){
+  return {type: 'GET_USER', userFromDatabase}
+  // return {type: 'GET_USER', userFromDatabase.user}
+}
+//this function should grab one user
+export function getUser(userId){
+  return function (dispatch){
+    return axios.get(`/api/users/${userId}`).then((response)=>{
+    
+      // console.log(`we have the one user from the api call thunk route, ${userId}, ${JSON.stringify(response.data)}`)
+      dispatch(sendOneUserToState(response.data))
+    })
+  }
+}
+
+
+
+
 //function exports out to the userReducer folder and //pushes the action
 export function sendNewUserToState(newUserData){
 return {type:'CREATE_USER', newUserData}
@@ -33,6 +63,9 @@ export function sendNewUserToDatabase(newUserInfo){
   }
 }
 
+
+
+
 //this function
 export function editUserToState(editUserData){
 return {type:'EDIT_USER', editUserData}
@@ -41,6 +74,7 @@ return {type:'EDIT_USER', editUserData}
 export function editUserInDatabase(editUserInfo){
   return function(dispatch){
     return axios.patch(`/api/users/${editUserInfo.id}`, editUserInfo)
+    // console.log(`from the thunk edit route, we have something here =>>> , ${editUserInfo.id}`)
     .then((response)=> {
       dispatch(editUserToState(editUserInfo))
     })
@@ -60,23 +94,3 @@ export function deleteUserFromDatabase(userToDeleteFromDatabase){
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-    
-//       updateCurrentState = () => {
-//       axios.get(`/api/users/${this.props.match.params.userId}`, this.state.user)
-//       .then(response => {
-//       this.setState({user: response.data, isStateNotSet: false })})
-      
-//       .catch((error) => {
-//       console.log(error)})
-//       }

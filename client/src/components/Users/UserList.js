@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { push } from "react-router-redux";
-import { getUserRoute } from "../../actions/thunk.actions";
-import User from "./User";
+import { getUsers, getUser, deleteUserFromDatabase } from "../../actions/thunk.actions";
+import {Link} from 'react-router-dom'
 
 class UserList extends Component {
   componentWillMount() {
-    this.props.getUserRoute();
+    this.props.getUsers();
+    console.log('UsersList', this.props)
   }
   render() {
     return (
@@ -27,9 +28,10 @@ class UserList extends Component {
                   <p>Camera Preference: {user.camera}</p>
                   <p>Lens Of Choice: {user.lens}</p>
                   <p>
-                    <button>Edit</button>
-                    <Delete>Delete</Delete>
+                    <Link to={`/user/${user._id}`}>Edit </Link>
+                    
                   </p>
+                    <Delete onClick={() => this.props.deleteUserFromDatabase()}>Delete</Delete>
                 </Card>
               </CardWrapper>
             );
@@ -43,7 +45,7 @@ class UserList extends Component {
 const mapStateToProps = state => {
   return { users: state.users };
 };
-export default connect(mapStateToProps, { push, getUserRoute })(UserList);
+export default connect(mapStateToProps, { push, getUsers, getUser, deleteUserFromDatabase })(UserList);
 
 const Wrapper = styled.div`
   display: flex;
@@ -104,7 +106,8 @@ border: none;
       background-color:goldenrod;
       padding:10px;
       font-size:22;
-      color:black;
+      color:white;
+    }
 `
 const CardWrapper = styled.div`
   color: black;

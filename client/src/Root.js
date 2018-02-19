@@ -30,7 +30,6 @@ const Root = () => (
         <Route exact path="/users/:userId" component={User} />
         <Route  exact path="users/:userId/edit" component={UserEdit} />
         </Switch>
-
         {/* <Route exact path="/users" component={User} /> */}
         {/* <Route exact path="/photographers" component={DataOfPhotographers}/>
       <Route exact path="/photogallery" component={allOfThePhotos}/> */}
