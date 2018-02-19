@@ -56,18 +56,3 @@ display:grid;
 grid-template-columns:33% 33% 33%;
 
 `
-
-const UserIdContainer = styled.div `
-display:flex;
-flex-wrap:wrap;
-justify-content:row;
-width:50px;
-h1 {
-  color:goldenrod;
-}
-`
-
-// const UserWrapper = styled.div `
-// display:flex;
-// justify-content:center;
-// `
