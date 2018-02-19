@@ -51,10 +51,9 @@ photographerDatabase = () => {
 }
 
 photoGalleryPhotos = () => {
-  console.log("here from  the photo axios call")
+  
   axios.get('/api/photos').then(response =>{
     const photos = response.data
-    console.log("we have the data from the photo axios call", photos)
     this.setState({photos: photos})
   })
 }

@@ -30,7 +30,7 @@ class UserList extends Component {
             <Link to="/">Home</Link>
             <Link to="/new">Create A User</Link>
             <Link to="/photographers">Photographers</Link>
-            <Link to="">Photo Gallery</Link>
+            <Link to="/photogallery">Photo Gallery</Link>
             {/* <Link to="">About</Link> */}
           </NavLinkWrapper>
         </NavBar>
