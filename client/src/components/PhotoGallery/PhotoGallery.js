@@ -24,7 +24,7 @@ class PhotoGallery extends Component {
    <Link to="/">Home</Link>
    <Link to="/user">Users</Link>
    <Link to="/photographers">Photographers</Link>
-   <Link to="">Photo Gallery</Link>
+   <Link to="photogallery">Photo Gallery</Link>
  </NavLinkWrapper>
 </NavBar>
       <div>
