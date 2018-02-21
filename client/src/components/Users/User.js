@@ -1,51 +1,51 @@
-import React, {  Component} from 'react'
+import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
 class User extends Component {
 
-
-
-
   render() {
 
-    
-  return(
-    <div>
+    return (
+      <div>
 
-<UserProfileCardContainer>
-<ProfileContainer>
-<ImageContainer>
-<Link to={`/users/${this.props.id}`}>
-<img src={this.props.photo} alt={this.props.firstName}/>
-</Link>
-</ImageContainer>
-<UserDescriptionContainer>
-<p>First Name: {this.props.firstName} </p>
-<p>Last Name:  {this.props.lastName}</p>
-<p>Instagram: {this.props.instagram} </p>
-<p>Go To Camera: {this.props.camera} </p>
-<p>Got to Lens: {this.props.lens} </p>
+        <UserProfileCardContainer>
+          <ProfileContainer>
+            <ImageContainer>
+              <Link to={`/users/${this.props.id}`}>
+                <img src={this.props.photo} alt={this.props.firstName}/>
+              </Link>
+            </ImageContainer>
+            <UserDescriptionContainer>
+              <p>First Name: {this.props.firstName}
+              </p>
+              <p>Last Name: {this.props.lastName}</p>
+              <p>Instagram: {this.props.instagram}
+              </p>
+              <p>Go To Camera: {this.props.camera}
+              </p>
+              <p>Got to Lens: {this.props.lens}
+              </p>
 
-</UserDescriptionContainer>
-</ProfileContainer>
-      
-      </UserProfileCardContainer>
-</div>
-  )}}
+            </UserDescriptionContainer>
+          </ProfileContainer>
+
+        </UserProfileCardContainer>
+      </div>
+    )
+  }
+}
 
 export default User
 
-
-
-const UserProfileCardContainer = styled.div`
+const UserProfileCardContainer = styled.div `
 display:flex;
 `
-const ProfileContainer = styled.div`
+const ProfileContainer = styled.div `
 /* display:flex; */
 /* flex-direction:column; */
 `
-const ImageContainer = styled.div`
+const ImageContainer = styled.div `
 img {
   width:200px;
   @media screen and (max-width:700px){
@@ -60,7 +60,7 @@ width:100px
 }
 `
 
-const UserDescriptionContainer = styled.div`
+const UserDescriptionContainer = styled.div `
 /* font-size:12px; */
 display:flex;
 flex-direction:column;

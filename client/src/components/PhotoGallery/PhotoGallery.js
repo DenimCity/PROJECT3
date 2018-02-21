@@ -5,49 +5,46 @@ import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
-
 class PhotoGallery extends Component {
 
   render() {
-
-    const Gallery = this.props.MyPictures.map((photo, index) => {
-        return (<Photo key={index} 
-          image={photo.img} 
-          id={photo._id}/>)
-
+    const Gallery = this
+      .props
+      .MyPictures
+      .map((photo, index) => {
+        return (<Photo key={index} image={photo.img} id={photo._id}/>)
       })
 
     return (
       <div>
-      <NavBar>
- <NavLinkWrapper>
-   <Link to="/">Home</Link>
-   <Link to="/user">Users</Link>
-   <Link to="/photographers">Photographers</Link>
-   <Link to="photogallery">Photo Gallery</Link>
- </NavLinkWrapper>
-</NavBar>
-      <div>
-        <PhotoWrapperContainer>
-        <PhotoWrapper>{Gallery}</PhotoWrapper>
-        </PhotoWrapperContainer>
-      </div>
+        <NavBar>
+          <NavLinkWrapper>
+            <Link to="/">Home</Link>
+            <Link to="/user">Users</Link>
+            <Link to="/photographers">Photographers</Link>
+            <Link to="photogallery">Photo Gallery</Link>
+          </NavLinkWrapper>
+        </NavBar>
+        <div>
+          <PhotoWrapperContainer>
+            <PhotoWrapper>{Gallery}</PhotoWrapper>
+          </PhotoWrapperContainer>
+        </div>
       </div>
     )
   }
-
 }
 
 export default PhotoGallery
 
-const PhotoWrapper = styled.div`
+const PhotoWrapper = styled.div `
 
 display:grid;
 grid-template-columns:33% 33% 33%;
 
 `
 
-const PhotoWrapperContainer = styled.div`
+const PhotoWrapperContainer = styled.div `
 display:flex;
 justify-content:center;
 

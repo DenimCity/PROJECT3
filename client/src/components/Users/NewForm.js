@@ -13,14 +13,9 @@ state = {
   newUser:[],
   redirect:false
 }
-  //this function will handle the change the user makes types in the form
   handleChange = (event) => {
-    // we need to assign the information they are typing in into a variable the
-    // variable after we will use to capture values from the input field
     const attribute = event.target.name
     let val = event.target.value
-    // update the value on the screen with what the user is typing copy that info
-    // and add it to
     const newUser = {...this.state.newUser}
     newUser[attribute] = val
     this.setState({newUser})

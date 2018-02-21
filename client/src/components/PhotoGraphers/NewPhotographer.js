@@ -1,33 +1,22 @@
-import React, { Component  } from 'react'
+import React, {Component} from 'react'
 import {Redirect} from 'react-router-dom'
-
 
 class NewPhotographer extends Component {
 
   state = {
-    NewPhotographer:[],
-    redirect:false
+    NewPhotographer: [],
+    redirect: false
   }
 
+  render() {
+    return (
+      <div>
+      new NewPhotographer page
+      </div>
+    )
 
-
-  
-
-
-
-  render(){
-  
-
-return (
-<div>
- </div>
-)
-
-
+  }
 
 }
-
-}
-
 
 export default NewPhotographer
