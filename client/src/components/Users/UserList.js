@@ -34,11 +34,11 @@ class UserList extends Component {
             {/* <Link to="">About</Link> */}
           </NavLinkWrapper>
         </NavBar>
-            <ListWrapper>
-              <Users>
-                {banana}
-              </Users>
-            </ListWrapper>
+        <ListWrapper>
+          <Users>
+            {banana}
+          </Users>
+        </ListWrapper>
 
       </div>
     )

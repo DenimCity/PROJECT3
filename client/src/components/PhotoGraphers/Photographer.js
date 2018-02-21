@@ -8,15 +8,12 @@ class Photographer extends Component {
         <div>
           <ImageContainer>
             <Picture src={this.props.photo} alt=""/>
-            
             </ImageContainer>
-        
             <div>First Name: {this.props.firstName}</div>
         <div>Last Name: {this.props.lastName}</div>
         <div>Instagram:  @{this.props.instagram}</div>
         <div>Website: {this.props.website}</div>
         </div>
-        
       </div>
     )
   }
