@@ -13,7 +13,6 @@ class PhotoGallery extends Component {
         return (<Photo key={index} 
           image={photo.img} 
           id={photo._id}/>)
-
       })
 
     return (
