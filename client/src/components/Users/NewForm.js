@@ -33,7 +33,6 @@ state = {
      return <Redirect to="/user"/>
    }
     return (
-
       <NewUserContainer>
         <Title>
           <h2>Create New User</h2>
