@@ -1,13 +1,16 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { sendNewUserToDatabase } from "../../actions/thunk.actions";
-import { connect } from "react-redux";
+import React, {Component} from 'react'
+import styled from 'styled-components'
+import {Redirect, Link} from 'react-router-dom'
+
+
+
 
 class NewForm extends Component {
-  state = {
-    newUser: {}
-  };
+
+state = {
+  newUser:[],
+  redirect:false
+}
   //this function will handle the change the user makes types in the form
   handleChange = event => {
     // we need to assign the information they are typing in into a variable the
@@ -16,101 +19,93 @@ class NewForm extends Component {
     let val = event.target.value;
     // update the value on the screen with what the user is typing copy that info
     // and add it to
-    const newUser = { ...this.state.newUser };
-    newUser[attribute] = val;
-    this.setState({ newUser });
-  };
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.sendNewUserToDatabase(this.state.newUser);
-  };
-
-
-
+    const newUser = {...this.state.newUser}
+    newUser[attribute] = val
+    this.setState({newUser})
+  }
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.createUser(this.state.newUser)
+    this.setState({redirect:true})
+  }
   render() {
+   if (this.state.redirect){
+     return <Redirect to="/user"/>
+   }
     return (
+
       <NewUserContainer>
         <Title>
           <h2>Create New User</h2>
         </Title>
         <Container>
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <input
-                onChange={this.handleChange}
-                name="photo"
-                placeholder="https://i.imgur.com/G80lKgk.jpg"
-                type="text"
-                required
-                value={this.state.newUser.photo}
-              />
-            </div>
-            <br />
-            <div>
-              <input
-                onChange={this.handleChange}
-                name="firstName"
-                placeholder="first name"
-                type="text"
-                required
-                value={this.state.newUser.firstName}
-              />
-            </div>
-            <div>
-              <input
-                onChange={this.handleChange}
-                name="lastName"
-                placeholder="last name"
-                type="text"
-                required
-                value={this.state.newUser.lastName}
-              />
-            </div>
-            <div>
-              <input
-                onChange={this.handleChange}
-                name="instagram"
-                placeholder="@instagram"
-                type="text"
-                value={this.state.newUser.instagram}
-              />
-            </div>
-            <div>
-              <input
-                onChange={this.handleChange}
-                name="camera"
-                placeholder="Go to Camera"
-                type="text"
-                required
-                value={this.state.newUser.camera}
-              />
-            </div>
-            <div>
-              <input
-                onChange={this.handleChange}
-                name="lens"
-                placeholder="Go to lens"
-                type="text"
-                required
-                value={this.state.newUser.lens}
-              />
-            </div>
-            <ButtonContainer>
-              <Submit onClick={this.handleSubmit} type="submit">
-                <Link to="/user">Submit</Link>
-              </Submit>
-              <Link to="/user">
-                <Cancel>Cancel</Cancel>
-              </Link>
-            </ButtonContainer>
-          </form>
-        </Container>
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <input
+              onChange={this.handleChange}
+              name="photo"
+              placeholder="DefaultPhoto"
+              type="text" required
+              value={this.state.newUser.photo}/>
+          </div>
+          <div>
+            <input
+              onChange={this.handleChange}
+              name="firstName"
+              placeholder="first name"
+              type="text" required
+              value={this.state.newUser.firstName}/>
+          </div>
+          <div>
+            <input
+              onChange={this.handleChange}
+              name="lastName"
+              placeholder="last name"
+              type="text"
+              value={this.state.newUser.lastName}/>
+          </div>
+          <div>
+            <input
+              onChange={this.handleChange}
+              name="instagram"
+              placeholder="@instagram"
+              type="text"
+              value={this.state.newUser.instagram}/>
+          </div>
+          <div>
+            <input
+              onChange={this.handleChange}
+              name="camera"
+              placeholder="Go to Camera"
+              type="text"
+              value={this.state.newUser.camera}/>
+          </div>
+          <div>
+            <input
+              onChange={this.handleChange}
+              name="lens"
+              placeholder="go to lens"
+              type="text"
+              value={this.state.newUser.lens}/>
+          </div>
+         
+          <Submit type="submit">
+            Submit
+          </Submit>
+          <Link to="/user">
+          <Cancel>Cancel</Cancel>
+          </Link>
+        </form>
+</Container>
       </NewUserContainer>
+      
+      
     );
   }
 }
 
-export default connect(null, { sendNewUserToDatabase })(NewForm);
+export default NewForm
+
 
 const Submit = styled.button`
   width: 100%;
@@ -133,11 +128,6 @@ const NewUserContainer = styled.div`
   justify-content: center;
   height: 100%;
 
-  @media screen and (max-with: 600px) {
-    padding-right: 9px;
-    padding-left: 9px;
-    padding-top: 9px;
-  }
   h2 {
     font-size: 30px;
     margin-top: 20px;
@@ -165,7 +155,7 @@ const NewUserContainer = styled.div`
       cursor: pointer;
     }
   }
-`;
+`
 
 const Container = styled.div`
   justify-content: center;
@@ -180,4 +170,4 @@ const ButtonContainer = styled.div`
   display: grid;
   grid-template-columns:auto auto;
   grid-template-columns: 
-`;
+`
