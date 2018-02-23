@@ -1,18 +1,10 @@
 import axios from 'axios'
 
-// export function getUsers(){
-//   const request = axios.get('/api/users')
 
-//   return (dispatch) => {
-//     request.then(({data})=>{
-//       dispatch({ type:'GET_USERS', payload:data})
-//     })
-//   }
-// }
 
-//this function pushes to the users reducer in  folder
-export function sendUsersToState(usersFromDataBase) {
-  return {type:'GET_USERS', usersFromDataBase}
+// this function pushes to the users reducer in  folder
+export function sendUsersToState(usersFromDatabase) {
+  return {type:'GET_USERS', usersFromDatabase}
 
 }
 
@@ -22,7 +14,9 @@ export function getUsers(){
     return axios
       .get('/api/users')
       .then((response)=>{
+        console.log("get users database from thunk file",response)
         dispatch(sendUsersToState(response.data))
+
       })
   }
 }
