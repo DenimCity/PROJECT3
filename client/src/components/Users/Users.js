@@ -31,7 +31,7 @@ class Users extends Component {
     //   })
     return(
     <div>
-      
+      hi from the user edit page page 
     </div>
 
      )

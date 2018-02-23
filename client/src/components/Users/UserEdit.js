@@ -38,7 +38,7 @@ class UserEdit extends Component {
     
     return (
       <div>
-        <h1>balnlkdnflkdnldkfndfnd</h1>
+        <h1>hi from the user edit page </h1>
         {/* <div>
           <h2>Update User</h2>
         </div>
@@ -104,7 +104,7 @@ class UserEdit extends Component {
     );
   }
 }
-export default connect(null, {getUsers,editUserInDatabase, deleteUserFromDatabase})(UserEdit);
+export default connect(null, {getUsers,editUserInDatabase})(UserEdit);
 
 // const Submit = styled.button`
 //   background-color: green;

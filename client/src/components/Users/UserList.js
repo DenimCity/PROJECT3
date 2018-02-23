@@ -28,10 +28,10 @@ class UserList extends Component {
                   <p>Camera Preference: {user.camera}</p>
                   <p>Lens Of Choice: {user.lens}</p>
                   <p>
-                    <Link to={`/user/${user._id}`}>Edit </Link>
+                    <Link to={`/users/${user._id}/edit`}>Edit </Link>
                     
                   </p>
-                    <Delete onClick={() => this.props.deleteUserFromDatabase()}>Delete</Delete>
+                    <Delete onClick={() => this.props.deleteUserFromDatabase(user)}>Delete</Delete>
                 </Card>
               </CardWrapper>
             );

@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { Route, Switch } from "react-router";
+import { Route } from "react-router";
 import { ConnectedRouter } from "react-router-redux";
 import createHistory from "history/createBrowserHistory";
 import configureStore from "./configureStore";
@@ -22,13 +22,13 @@ const Root = () => (
     <ConnectedRouter history={history}>
       <div>
         <NavBar/>
-        <Switch>
+        
         <Route exact path="/" component={HomePage} />
         <Route exact path="/users" component={UserList} />
         <Route exact path="/new" component={NewForm} />
         <Route exact path="/users/:userId" component={User} />
-        <Route  exact path="users/:userId/edit" component={UserEdit} />
-        </Switch>
+        <Route  exact path="users/:userid/edit" component={User} />
+        
         {/* <Route exact path="/users" component={User} /> */}
         {/* <Route exact path="/photographers" component={DataOfPhotographers}/>
       <Route exact path="/photogallery" component={allOfThePhotos}/> */}

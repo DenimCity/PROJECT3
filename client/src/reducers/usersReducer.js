@@ -1,15 +1,24 @@
-function usersReducer(state = [], action)
+const defaultState = [
+  {
+    firstName:'Jean',
+    id: 0,
+  },
+  {
+    firstName:'Josh',
+    id: 1,
+  },
+]
+function usersReducer(state = defaultState, action)
 
 {
   switch (action.type) {
     
  
-    case "GET_USER":
-    console.table('getting users ')
+    case "GET_USERS":
+    console.log('getting users', action.type)
       return [
-        {...state},
         ...action.usersFromDatabase
-      ];
+  ]
 
     case "CREATE_USER":
       return [...state, action.newUserData];
