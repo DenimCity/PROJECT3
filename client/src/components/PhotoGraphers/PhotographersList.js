@@ -3,11 +3,8 @@ import {Link} from 'react-router-dom'
 import Photographer from './Photographer'
 import styled from 'styled-components'
 
-import NavBar from '../styled_components/NavBar'
-import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 
 class PhotographersList extends Component {
-  
 
   render() {
 
@@ -26,37 +23,24 @@ class PhotographersList extends Component {
       })
 
     return (
-      <div>
- <NavBar>
- <NavLinkWrapper>
-   <Link to="/">Home</Link>
-   <Link to="/user">Users</Link>
-   <Link to="/photogallery">Photo Gallery</Link>
- </NavLinkWrapper>
-</NavBar> 
-
-<PhotographerContainer>
-<PhotographerWrapper>
-{cameraPeople}
-</PhotographerWrapper>
-</PhotographerContainer>
-      </div>
-
+      <PhotographerContainer>
+        <PhotographerWrapper>
+          {cameraPeople}
+        </PhotographerWrapper>
+      </PhotographerContainer>
     )
-
   }
 
 }
 
 export default PhotographersList
-const PhotographerWrapper = styled.div`
+const PhotographerWrapper = styled.div `
 display:grid;
 grid-template-columns:90% ;
 
 `
 
-
-const PhotographerContainer = styled.div`
+const PhotographerContainer = styled.div `
 display:flex;
 justify-content:center;
 

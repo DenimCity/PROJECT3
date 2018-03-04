@@ -2,8 +2,6 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import {Redirect, Link} from 'react-router-dom'
-import NavBar from '../styled_components/NavBar'
-import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 
 
 class UserEditDelete extends Component {
@@ -40,12 +38,8 @@ handleSubmit = (event) => {
   event.preventDefault()
   window.location.reload()
   this.updateUser()
-  
-  
   this.setState({redirect:true})
 }
-
-
 
 deleteUser =  (userId) => {
   console.log("about to delete a user from the app.js")
@@ -73,14 +67,7 @@ deleteUser =  (userId) => {
     return (
       this.state.isStateNotSet ? <div></div> : 
       <div>
-              <NavBar>
-<NavLinkWrapper>
-  <Link to="/">Home</Link>
-  <Link to="/user">Users</Link>
-  <Link to="/photographers">Photographers</Link>
-  <Link to="/photogallery">Photo Gallery</Link>
-</NavLinkWrapper>
-</NavBar> 
+ 
         <EditFormContainer>
           <div>
             <h2>Update User</h2>

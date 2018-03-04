@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 
 
@@ -18,11 +18,12 @@ height: 33px;
 class Users extends Component {
 
   render(){
+    const user = this.props
     return(
       <UserWrapper>
         <div className="picWrapper">
-          <img src={this.props.photo} alt="pic of user"/>
-          <Name>{this.props.firstName}</Name>
+          <img src={user.photo} alt="pic of user"/>
+          <Name>{user.firstName}</Name>
         </div>
         </UserWrapper>
     )
@@ -46,17 +47,6 @@ const InfoWrapper = styled.div`
 border:solid 1px black;
 height:200px;
 `
- const LinkWrapper = styled.div`
- display:flex;
- align-items:center;
- justify-content:center;
- flex-direction: row;
- margins: 2px 0 0 2px;
- 
-  a {
-  margin: 2px 3px 4px 5px;
-}
- `
 
  const Name = styled.div`
  height:15px;

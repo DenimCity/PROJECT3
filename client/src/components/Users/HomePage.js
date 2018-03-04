@@ -1,25 +1,12 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
-import NavBar from '../styled_components/NavBar'
-import NavLinkWrapper from '../styled_components/NavLinkWrapper'
+import Nav from '../styled_components/Nav'
 
 class HomePage extends Component {
   render() {
-
-
-    
     return (
       <Wrapper>
-        <NavBar>
-          <NavLinkWrapper>
-            <Link to="/">Home</Link>
-            <Link to="/user">Users</Link>
-            <Link to="/photographers">photographers</Link>
-            <Link to="/photogallery">Photo Gallery</Link>
-            {/* <a href="">About</a> */}
-          </NavLinkWrapper>
-        </NavBar>
         <Main1>
               <TitleData>
                 <h1>Welcome to ClickedIn!</h1>
@@ -30,13 +17,7 @@ class HomePage extends Component {
               </TitleData>
         </Main1>
           <TitleHeader>
-      <ImageContainer>
-        
         <img src="https://i.imgur.com/gp9Klik.jpg" alt=""/>
-        
-        </ImageContainer>     
-
-
           </TitleHeader>
         <Main1>
           <Title>
@@ -51,7 +32,6 @@ class HomePage extends Component {
             </TitleData>
           </Title>
         </Main1>
-        
       </Wrapper>
 
     )
@@ -96,19 +76,22 @@ margin-bottom: 37px;
 const TitleHeader = styled.div `
  display:flex;
  flex-direction:row;
+ img {
+  width: 100vw;
+    height: 317px;
+}
+
  @media (max-with:700px){
   
 }
  `
 
 const Title = styled.div `
- width: 20%
+ width: 100%;
  display:flex;
  flex-direction:column;
  text-align:center;
- @media (max-with:700px){
-  width:10%
-}
+ 
  `
 const Wrapper = styled.div `
 flex-direction: column;
@@ -119,12 +102,4 @@ height: 100vh;
 @media (max-with:700px){
   
 }
-`
-const ImageContainer = styled.div`
-
-img {
-  width: 100vw;
-    height: 317px;
-}
-
 `
