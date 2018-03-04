@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import Photo from './Photo'
-import NavBar from '../styled_components/NavBar'
-import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -12,28 +10,18 @@ class PhotoGallery extends Component {
       .props
       .MyPictures
       .map((photo, index) => {
-        return (<Photo key={index} image={photo.img} id={photo._id}/>)
+        return (
+        <Photo key={index} image={photo.img} id={photo._id}/>)
       })
-
     return (
-      <div>
-        <NavBar>
-          <NavLinkWrapper>
-            <Link to="/">Home</Link>
-            <Link to="/user">Users</Link>
-            <Link to="/photographers">Photographers</Link>
-            <Link to="photogallery">Photo Gallery</Link>
-          </NavLinkWrapper>
-        </NavBar>
-        <div>
-          <PhotoWrapperContainer>
-            <PhotoWrapper>{Gallery}</PhotoWrapper>
-          </PhotoWrapperContainer>
-        </div>
-      </div>
+      <PhotoWrapperContainer>
+        <PhotoWrapper>{Gallery}</PhotoWrapper>
+      </PhotoWrapperContainer>
     )
   }
 }
+
+
 
 export default PhotoGallery
 

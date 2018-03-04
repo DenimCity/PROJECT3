@@ -1,9 +1,6 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
 import User from './User'
-import NavBar from '../styled_components/NavBar'
-import NavLinkWrapper from '../styled_components/NavLinkWrapper'
 class UserList extends Component {
 
   render() {
@@ -24,23 +21,12 @@ class UserList extends Component {
       })
 
     return (
-      <div>
-        <NavBar>
-          <NavLinkWrapper>
-            <Link to="/">Home</Link>
-            <Link to="/new">Create A User</Link>
-            <Link to="/photographers">Photographers</Link>
-            <Link to="">Photo Gallery</Link>
-            {/* <Link to="">About</Link> */}
-          </NavLinkWrapper>
-        </NavBar>
         <ListWrapper>
           <Users>
             {banana}
           </Users>
         </ListWrapper>
 
-      </div>
     )
   }
 }

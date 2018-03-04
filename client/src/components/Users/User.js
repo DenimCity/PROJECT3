@@ -1,14 +1,12 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
 import styled from 'styled-components'
-
+import {Link} from 'react-router-dom'
 class User extends Component {
 
   render() {
 
     return (
       <div>
-
         <UserProfileCardContainer>
           <ProfileContainer>
             <ImageContainer>
@@ -26,10 +24,8 @@ class User extends Component {
               </p>
               <p>Got to Lens: {this.props.lens}
               </p>
-
             </UserDescriptionContainer>
           </ProfileContainer>
-
         </UserProfileCardContainer>
       </div>
     )
@@ -54,17 +50,13 @@ width:100px
 }
 }
 
-@media screen and (max-width:700px){
 
-
-}
 `
 
 const UserDescriptionContainer = styled.div `
-/* font-size:12px; */
 display:flex;
 flex-direction:column;
-align-content:center
+align-content:center;
 flex-wrap:wrap;
 p{
   font-size:12px;

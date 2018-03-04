@@ -1,140 +1,129 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import {Redirect, Link} from 'react-router-dom'
-import NavBar from '../styled_components/NavBar'
-import NavLinkWrapper from '../styled_components/NavLinkWrapper'
-
-
-
 
 class NewForm extends Component {
 
-state = {
-  newUser:[],
-  redirect:false
-}
+  state = {
+    newUser: [],
+    redirect: false
+  }
   handleChange = (event) => {
     const attribute = event.target.name
     let val = event.target.value
-    const newUser = {...this.state.newUser}
+    const newUser = {
+      ...this.state.newUser
+    }
     newUser[attribute] = val
     this.setState({newUser})
   }
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.createUser(this.state.newUser)
-    this.setState({redirect:true})
+    this
+      .props
+      .createUser(this.state.newUser)
+    this.setState({redirect: true})
   }
-  
 
   render() {
-    if (this.state.redirect){
+    if (this.state.redirect) {
       return <Redirect to="/user"/>
     }
-   
-    return (
-<div>
-      <NavBar>
-<NavLinkWrapper>
-  <Link to="/">Home</Link>
-  <Link to="/user">Users</Link>
-  <Link to="/photographers">Photographers</Link>
-  <Link to="/photogallery">Photo Gallery</Link>
-</NavLinkWrapper>
-</NavBar> 
 
-<BigContainer>
-      <NewUserContainer>
-        <Title>
-          <h2>Create New User</h2>
-        </Title>
-        <Container>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <input
-              onChange={this.handleChange}
-              name="photo"
-              placeholder="DefaultPhoto"
-              type="text" required
-              value={this.state.newUser.photo}/>
-          </div>
-          <div>
-            <input
-              onChange={this.handleChange}
-              name="firstName"
-              placeholder="first name"
-              type="text" required
-              value={this.state.newUser.firstName}/>
-          </div>
-          <div>
-            <input
-              onChange={this.handleChange}
-              name="lastName"
-              placeholder="last name"
-              type="text"
-              value={this.state.newUser.lastName}/>
-          </div>
-          <div>
-            <input
-              onChange={this.handleChange}
-              name="instagram"
-              placeholder="@instagram"
-              type="text"
-              value={this.state.newUser.instagram}/>
-          </div>
-          <div>
-            <input
-              onChange={this.handleChange}
-              name="camera"
-              placeholder="Go to Camera"
-              type="text"
-              value={this.state.newUser.camera}/>
-          </div>
-          <div>
-            <input
-              onChange={this.handleChange}
-              name="lens"
-              placeholder="go to lens"
-              type="text"
-              value={this.state.newUser.lens}/>
-          </div>
-         
-          <Submit type="submit">
-            Submit
-          </Submit>
-          <Link to="/user">
-          <Cancel>Cancel</Cancel>
-          </Link>
-        </form>
-</Container>
-      </NewUserContainer>
+    return (
+
+      <BigContainer>
+        <NewUserContainer>
+          <Title>
+            <h2>Create New User</h2>
+          </Title>
+          <Container>
+            <form onSubmit={this.handleSubmit}>
+              <div>
+                <input
+                  onChange={this.handleChange}
+                  name="photo"
+                  placeholder="DefaultPhoto"
+                  type="text"
+                  required
+                  value={this.state.newUser.photo}/>
+              </div>
+              <div>
+                <input
+                  onChange={this.handleChange}
+                  name="firstName"
+                  placeholder="first name"
+                  type="text"
+                  required
+                  value={this.state.newUser.firstName}/>
+              </div>
+              <div>
+                <input
+                  onChange={this.handleChange}
+                  name="lastName"
+                  placeholder="last name"
+                  type="text"
+                  value={this.state.newUser.lastName}/>
+              </div>
+              <div>
+                <input
+                  onChange={this.handleChange}
+                  name="instagram"
+                  placeholder="@instagram"
+                  type="text"
+                  value={this.state.newUser.instagram}/>
+              </div>
+              <div>
+                <input
+                  onChange={this.handleChange}
+                  name="camera"
+                  placeholder="Go to Camera"
+                  type="text"
+                  value={this.state.newUser.camera}/>
+              </div>
+              <div>
+                <input
+                  onChange={this.handleChange}
+                  name="lens"
+                  placeholder="go to lens"
+                  type="text"
+                  value={this.state.newUser.lens}/>
+              </div>
+
+              <Submit type="submit">
+                Submit
+              </Submit>
+              <Link to="/user">
+                <Cancel>Cancel</Cancel>
+              </Link>
+            </form>
+          </Container>
+        </NewUserContainer>
 
       </BigContainer>
-      </div>
     )
   }
 }
 
 export default NewForm
 
-
-const BigContainer = styled.div`
+const BigContainer = styled.div `
 height:10px;
 
 background-image: url(https://i.imgur.com/CBWEmLR.jpg);
 
 `
-const Submit = styled.button`
+const Submit = styled.button `
 width: 59px;
 height: 33px;
 background-color:green;
 `
-const Cancel = styled.button`
+const Cancel = styled.button `
 background-color:goldenrod;
 width: 59px;
 height: 33px;
 `
-const Title = styled.div`
+const Title = styled.div `
 display:flex;
 justify-content:center;
 `
@@ -167,7 +156,7 @@ color:white;
 }
 `
 
-const Container = styled.div`
+const Container = styled.div `
 justify-content:center;
 display:flex;
 

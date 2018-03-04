@@ -1,16 +1,14 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import axios from 'axios'
-///Users imports 
 import HomePage from './components/Users/HomePage'
 import UserList from './components/Users/UserList'
 import NewForm from './components/Users/NewForm'
 import User from './components/Users/User'
 import UserEditDelete from './components/Users/UserEditDelete'
-///Photographer Imports 
 import PhotographersList from './components/PhotoGraphers/PhotographersList'
-///PhotoGallery
 import PhotoGallery from './components/PhotoGallery/PhotoGallery'
+import Nav from './components/styled_components/Nav'
 
 
 class App extends Component {
@@ -31,16 +29,12 @@ class App extends Component {
   }
 
   createUser = async(user) => {
-    // send the user to the database
     const response = await axios.post(`/api/users`, user)
-    // grab the new user we just created in the database
     const newUser = response.data
-    // put that new user into our list of users on the `state`
     const users = [...this.state.users]
     users.push(newUser)
     this.setState({users})
   }
-
 
 photographerDatabase = () => {
   axios.get('/api/photographers')
@@ -66,17 +60,16 @@ photoGalleryPhotos = () => {
   }
 
   render() {
-    ////the function to grab all the users
+   
     const DataOfUsers = () => (<UserList MyUsers={this.state.users} />)
-///taking the state from this page and shipping props to their designated folder
     const makeNewUser = () => (<NewForm createUser={this.createUser} users={this.state.users}/>)
     const editUser = (props) => (<UserEditDelete  users={this.state.users} {...props} />)
-
     const DataOfPhotographers = () => (<PhotographersList MyPhotographers={this.state.photographers} />)
-   
     const allOfThePhotos = () => (<PhotoGallery MyPictures={this.state.photos} />)
 
     return (
+      <div>
+        <Nav/>
       <Router>
         <Switch>
           <Route exact path="/" component={HomePage}/>
@@ -87,10 +80,9 @@ photoGalleryPhotos = () => {
           <Route exact path="users/userId/delete" component={editUser}/>
           <Route exact path="/photographers" component={DataOfPhotographers}/>
           <Route exact path="/photogallery" component={allOfThePhotos}/>
-
-          {/* <Route exact path="/photographers/new" component={NewPhotographer}/> */}
         </Switch>
       </Router>
+      </div>
     )
   }
 }
