@@ -52,7 +52,9 @@ export function sendNewUserToDatabase(newUserInfo){
   return function (dispatch){
     return axios.post(`/api/users`, newUserInfo)
     .then((response)=>{
+      console.log('the response of creating a user',response);
       dispatch(sendNewUserToState(response.data))
+      console.log('the repsonse data looks like',response.data);
     })
   }
 }
@@ -60,7 +62,6 @@ export function sendNewUserToDatabase(newUserInfo){
 
 
 
-//this function
 export function editUserToState(editUserData){
 return {type:'EDIT_USER', editUserData}
 }
