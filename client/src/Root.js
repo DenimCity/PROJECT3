@@ -8,7 +8,7 @@ import HomePage from "./components/Users/HomePage";
 import UserList from "./components/Users/UserList";
 import NewForm from "./components/Users/NewForm";
 import User from "./components/Users/User";
-import UserEdit from "./components/Users/UserEdit";
+
 ///Photographer Imports
 // import PhotographersList from './components/PhotoGraphers/PhotographersList'
 // ///PhotoGallery
@@ -27,7 +27,6 @@ const Root = () => (
         <Route exact path="/users" component={UserList} />
         <Route exact path="/new" component={NewForm} />
         <Route exact path="/users/:userId" component={User} />
-        <Route  exact path="users/:userid/edit" component={User} />
         
         {/* <Route exact path="/users" component={User} /> */}
         {/* <Route exact path="/photographers" component={DataOfPhotographers}/>
