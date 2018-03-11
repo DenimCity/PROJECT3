@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import {Redirect, Link} from 'react-router-dom'
-
+import { connect } from "react-redux";
+import { push } from "react-router-redux";
+import { sendNewUserToDatabase } from "../../actions/thunk.actions";
 
 
 
@@ -11,26 +13,21 @@ state = {
   newUser:[],
   redirect:false
 }
-  //this function will handle the change the user makes types in the form
   handleChange = event => {
-    // we need to assign the information they are typing in into a variable the
-    // variable after we will use to capture values from the input field
-    const attribute = event.target.name;
-    let val = event.target.value;
-    // update the value on the screen with what the user is typing copy that info
-    // and add it to
+    const attributeName = event.target.name;
+    const  attributeValue = event.target.value;
     const newUser = {...this.state.newUser}
-    newUser[attribute] = val
+    newUser[attributeName] = attributeValue
     this.setState({newUser})
   }
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.createUser(this.state.newUser)
+    this.props.sendNewUserToDatabase(this.state.newUser)
     this.setState({redirect:true})
   }
   render() {
    if (this.state.redirect){
-     return <Redirect to="/user"/>
+     return <Redirect to="/users"/>
    }
     return (
       <NewUserContainer>
@@ -43,8 +40,8 @@ state = {
             <input
               onChange={this.handleChange}
               name="photo"
-              placeholder="DefaultPhoto"
-              type="text" required
+              placeholder="Paste photo link"
+              type="text" 
               value={this.state.newUser.photo}/>
           </div>
           <div>
@@ -91,7 +88,7 @@ state = {
           <Submit type="submit">
             Submit
           </Submit>
-          <Link to="/user">
+          <Link to="/users">
           <Cancel>Cancel</Cancel>
           </Link>
         </form>
@@ -103,7 +100,10 @@ state = {
   }
 }
 
-export default NewForm
+const mapStateToProps = state => {
+  return { users: state.users };
+};
+export default connect(mapStateToProps, { push, sendNewUserToDatabase })(NewForm);
 
 
 const Submit = styled.button`
