@@ -24,18 +24,18 @@ mongoose
   })
 
   const Jean = new User({
-    firstName:'Jean',
-    lastName:'Altidor',
-    instagram:'Jeanlikdenim',
+    firstName:'Paul',
+    lastName:'George',
+    instagram:'@PaulEyeView',
     camera:'Sony AR7II',
     lens:'24-70mm 2.8',
     photo:'https://i.imgur.com/PoTSPmN.jpg',
   })
 
   const Michelle = new User({
-    firstName:'Michelle',
-    lastName:'Alfred',
-    instagram:'The_Fit_Queen',
+    firstName:'Monna',
+    lastName:'Thompson',
+    instagram:'@The_Camera_Queen',
     camera:'Canon T3i',
     lens:'50mm 1.8',
     photo:'https://i.imgur.com/lko39vz.jpg',
@@ -45,27 +45,27 @@ mongoose
   const Steve = new User({
     firstName: 'Steve',
     lastName: 'Serrano',
-    instagram: 'SESimages',
+    instagram: '@SESimages',
     camera: 'Fujima',
     lens: '24mm 1.8',
     photo: 'https://i.imgur.com/KiEwS9g.jpg',
   })
 
   const Ozzie = new User({
-    firstName: 'Ozzie',
+    firstName: 'Josh',
     lastName: 'Cunningham',
-    instagram: '@_bendLikeBanana',
+    instagram: '@OzonePhotos',
     camera: 'Nikon',
     lens: '24-70mm 2.8',
     photo: 'https://i.imgur.com/aZqPH6m.jpg'
   })
 
   const Emanuella = new User({
-    firstName: 'Emanuella',
-    lastName: 'Dorcil',
-    instagram: '@TheOnly_Ea',
+    firstName: 'Mariah',
+    lastName: 'Griffin',
+    instagram: '@KeerpYourEyeOnThePrize',
     camera: 'Sony AR7 II',
-    lens: '50 1.8',
+    lens: '50mm 1.8',
     photo: 'https://i.imgur.com/6cwZ4Y7.jpg'
   })
   const Sean = new User({
@@ -73,7 +73,7 @@ mongoose
     lastName: 'D',
     instagram: 'SeanD1',
     camera: 'Canon MkII',
-    lens: '70-200 2.8',
+    lens: '70-200mm 2.8',
     photo: 'https://i.imgur.com/Y5LWTra.jpg'
   })
 
@@ -135,11 +135,6 @@ const Upload9 = new Photo ({
   img:'https://i.imgur.com/NRnhMjw.jpg',
 })
 
-  
-
-
- 
- 
 
   User.remove({}).then(()=>{
     console.log('Users planted in database')
