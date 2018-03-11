@@ -1,57 +1,70 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import styled from "styled-components";
-import { connect } from "react-redux";
-import { push } from "react-router-redux";
-import { getUsers, getUser, deleteUserFromDatabase } from "../../actions/thunk.actions";
+import {connect} from "react-redux";
+import {push} from "react-router-redux";
+import {getUsers, getUser, deleteUserFromDatabase} from "../../actions/thunk.actions";
 import {Link} from 'react-router-dom'
+import User from './User'
 
 class UserList extends Component {
   componentWillMount() {
-    this.props.getUsers();
+    this
+      .props
+      .getUsers();
     console.log('UsersList', this.props)
   }
   render() {
     return (
-      <Wrapper>
-        <CardWrapperContainer>
-          {this.props.users.map((user, i) => {
-            return (
-              <CardWrapper key={i} id={user._id}>
-                <Card>
-                  <PictureContainer>
-                    <img src={user.photo} alt={user.firstName} />
-                  </PictureContainer>
-                  <h1>
-                    {user.firstName} {user.lastName}{" "}
-                  </h1>
-                  <p>Instagram: {user.instagram}</p>
-                  <p>Camera Preference: {user.camera}</p>
-                  <p>Lens Of Choice: {user.lens}</p>
-                  <p>
-                    <Link to={`/users/${user._id}/edit`}>Edit </Link>
-                    
-                  </p>
-                    <Delete onClick={() => this.props.deleteUserFromDatabase(user)}>Delete</Delete>
-                </Card>
-              </CardWrapper>
-            );
-          })}
-        </CardWrapperContainer>
-      </Wrapper>
+      <div>
+        <NewUserContainer>
+          <Link to="/new">
+            <AddUserButton>Add New User</AddUserButton>
+          </Link>
+        </NewUserContainer>
+
+        <Wrapper>
+          <CardWrapperContainer>
+            {this
+              .props
+              .users
+              .map((user, i) => {
+                return (
+                  <CardWrapper key={i} id={user._id}>
+                    <Card>
+                      <PictureContainer>
+                        <img src={user.photo} alt={user.firstName}/>
+                      </PictureContainer>
+                      <h1>
+                        {user.firstName}
+                        {user.lastName}{" "}
+                      </h1>
+                      <p>Instagram: {user.instagram}</p>
+                      <p>Camera Preference: {user.camera}</p>
+                      <p>Lens Of Choice: {user.lens}</p>
+                      <p></p>
+                      <Delete onClick={() => this.props.deleteUserFromDatabase(user)}>Delete</Delete>
+                    </Card>
+                  </CardWrapper>
+                );
+              })}
+          </CardWrapperContainer>
+        </Wrapper>
+
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return { users: state.users };
+  return {users: state.users};
 };
-export default connect(mapStateToProps, { push, getUsers, getUser, deleteUserFromDatabase })(UserList);
+export default connect(mapStateToProps, {push, getUsers, getUser, deleteUserFromDatabase})(UserList);
 
-const Wrapper = styled.div`
+const Wrapper = styled.div `
   display: flex;
   justify-content: center;
 `;
-const CardWrapperContainer = styled.div`
+const CardWrapperContainer = styled.div `
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -60,7 +73,7 @@ const CardWrapperContainer = styled.div`
   padding-top: 7rem;
   width: 75vw;
 `;
-const Card = styled.div`
+const Card = styled.div `
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 width: 22rem;
 height:97%;  
@@ -90,7 +103,7 @@ height:97%;
     }
 `;
 
-const Delete = styled.button`
+const Delete = styled.button `
 border: none;
     outline: 0;
     display: inline-block;
@@ -109,11 +122,24 @@ border: none;
       color:white;
     }
 `
-const CardWrapper = styled.div`
+const CardWrapper = styled.div `
   color: black;
   display: flex;
   flex-direction: column;
 `;
-const PictureContainer = styled.div`
+const PictureContainer = styled.div `
   width: 22rem;
 `;
+
+const NewUserContainer = styled.div `
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:3rem;
+`
+
+const AddUserButton = styled.button `
+background-color:green;
+height:8vh;
+
+`
