@@ -1,12 +1,5 @@
 const defaultState = [
-  {
-    firstName:'Jean',
-    id: 0,
-  },
-  {
-    firstName:'Josh',
-    id: 1,
-  },
+
 ]
 function usersReducer(state = defaultState, action)
 
