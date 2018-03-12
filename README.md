@@ -57,5 +57,9 @@ jQuery Docs
 React Doc
 
 
+Version 2 Ideas:
+1. Add Redux(Working on That Now)
+2. Add Different levels of expertise cameras list to homepage.
+3. Incorporate youtube tutorials that show real user reviews.
 
 
