@@ -23,16 +23,17 @@ export default class NavBar extends Component {
 }
 
 const NavBarStyles = styled.div `
-background-image: url(https://i.imgur.com/gp9Klik.jpg);
-height: 98px;
-background-position: left;
-width: 100vw;
-border: transparent;
+background: #293E49;
+    height: 5vh;
+    width: 100vw;
+    @media (max-width: 669px) {
+      height: 11vh;
+}
 a {
-  background-color: transparent;
+  background-color: transparent; 
     border: 2px solid #fff;
     color: #fff;
-    border-radius: 300px;
+     border-radius: 300px;
     letter-spacing: 2px;
     font-weight: 600;
     margin-left: 1em;
@@ -40,26 +41,26 @@ a {
     text-transform: uppercase;
     text-decoration:none;
     line-height:1em;
+    font-size:1vh;
   &:hover{
     background-color:white;
     color:black;
   }
 }
+
+@media (max-width: 669px) {
+  
+  }
 `
 
 const LinkWrapper = styled.div `
-display: flex;
-justify-content: flex-end;
-color: #f2f2f2;
-text-align: center;
-padding: 14px;
-text-decoration: none;
-text-align: right;
-font-size: 14px;
-flex-direction: inherit;
-flex-wrap: wrap;
-@media (max-width:600px){
-
-font-size:8px;
+    display: flex;
+    justify-content: center;
+    padding: 1vh;
+    flex-wrap: wrap;
+@media (max-width:669px){
+padding: 4vh;
+font-size:1vh;
+flex-wrap: inherit;
 }
 `
