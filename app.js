@@ -1,77 +1,77 @@
-require("dotenv").config()
+require("dotenv").config();
 
-const express = require('express')
-const path = require('path')
-const favicon = require('serve-favicon')
-const logger = require('morgan')
-const cookieParser = require('cookie-parser')
-const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
+const express = require("express");
+const path = require("path");
+const favicon = require("serve-favicon");
+const logger = require("morgan");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
-const app = express()
+const app = express();
 
+mongoose.Promise = global.Promise;
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log("success");
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
-mongoose.Promise = global.Promise
-mongoose.connect(process.env.MONGODB_URI)
-
-const connection = mongoose.connection
-connection.on('connected', () => {
-  console.log('Mongoose Connected Successfully')
-})
+const connection = mongoose.connection;
+connection.on("connected", () => {
+  console.log("Mongoose Connected Successfully");
+});
 
 // If the connection throws an error
-connection.on('error', (err) => {
-  console.log('Mongoose default connection error: ' + err)
-})
+connection.on("error", err => {
+  console.log("Mongoose default connection error: " + err);
+});
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'hbs')
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "hbs");
 
 // un-comment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
-app.use(logger('dev'))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(cookieParser())
+app.use(logger("dev"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
-const userController = require('./routes/userController')
+const userController = require("./routes/userController");
 //express Controllers for Users
-app.use('/api/users', userController)
+app.use("/api/users", userController);
 
-const photographerController = require('./routes/photographerController')
-app.use('/api/photographers', photographerController)
+const photographerController = require("./routes/photographerController");
+app.use("/api/photographers", photographerController);
 
-const photoController = require('./routes/photoController')
-app.use('/api/photos', photoController)
+const photoController = require("./routes/photoController");
+app.use("/api/photos", photoController);
 
-
-
-app.use(express.static(__dirname + '/client/build/'))
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/client/build/index.html')
-})
+app.use(express.static(__dirname + "/client/build/"));
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/client/build/index.html");
+});
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  const err = new Error('Not Found')
-  err.status = 404
-  next(err)
-})
+app.use(function(req, res, next) {
+  const err = new Error("Not Found");
+  err.status = 404;
+  next(err);
+});
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
-  res.locals.message = err.message
-  res.locals.error = req
-    .app
-    .get('env') === 'development'
-    ? err
-    : {}
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
 
   // render the error page
-  res.status(err.status || 500)
-  res.render('error')
-})
+  res.status(err.status || 500);
+  res.render("error");
+});
 
-module.exports = app
+module.exports = app;

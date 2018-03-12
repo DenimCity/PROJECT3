@@ -1,5 +1,5 @@
 const express = require('express')
-const router = express.Router()
+const router = express.Router({mergeParams: true})
 const User = require('../db/models/User')
 const bodyParser = require('body-parser')
 
@@ -8,9 +8,10 @@ const bodyParser = require('body-parser')
 router.get('/', async(req, res) => {
   try {
     const users = await User.find({})
+    console.log("we grabbed the users", users )
     res.json(users)
   } catch (error) {
-    console.log(error)
+    console.log("we couldnt grab the users",error)
   }
 })
 
@@ -39,7 +40,7 @@ router.post('/', async(req, res) => {
 })
 
 //to delete a user
-router.delete('/:userId/delete', async (req,res)=> {
+router.delete('/:userId', async (req,res)=> {
   console.log('here from  the delete controller, you hit the route')
   try {
     const user = await User.findByIdAndRemove(req.params.userId)

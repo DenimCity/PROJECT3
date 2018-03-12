@@ -24,18 +24,18 @@ mongoose
   })
 
   const Jean = new User({
-    firstName:'Jean',
-    lastName:'Altidor',
-    instagram:'Jeanlikdenim',
+    firstName:'Paul',
+    lastName:'George',
+    instagram:'@PaulEyeView',
     camera:'Sony AR7II',
     lens:'24-70mm 2.8',
     photo:'https://i.imgur.com/PoTSPmN.jpg',
   })
 
   const Michelle = new User({
-    firstName:'Michelle',
-    lastName:'Alfred',
-    instagram:'The_Fit_Queen',
+    firstName:'Monna',
+    lastName:'Thompson',
+    instagram:'@The_Camera_Queen',
     camera:'Canon T3i',
     lens:'50mm 1.8',
     photo:'https://i.imgur.com/lko39vz.jpg',
@@ -45,27 +45,27 @@ mongoose
   const Steve = new User({
     firstName: 'Steve',
     lastName: 'Serrano',
-    instagram: 'SESimages',
+    instagram: '@SESimages',
     camera: 'Fujima',
     lens: '24mm 1.8',
     photo: 'https://i.imgur.com/KiEwS9g.jpg',
   })
 
   const Ozzie = new User({
-    firstName: 'Ozzie',
+    firstName: 'Josh',
     lastName: 'Cunningham',
-    instagram: '@_bendLikeBanana',
+    instagram: '@OzonePhotos',
     camera: 'Nikon',
     lens: '24-70mm 2.8',
     photo: 'https://i.imgur.com/aZqPH6m.jpg'
   })
 
   const Emanuella = new User({
-    firstName: 'Emanuella',
-    lastName: 'Dorcil',
-    instagram: '@TheOnly_Ea',
+    firstName: 'Mariah',
+    lastName: 'Griffin',
+    instagram: '@KeerpYourEyeOnThePrize',
     camera: 'Sony AR7 II',
-    lens: '50 1.8',
+    lens: '50mm 1.8',
     photo: 'https://i.imgur.com/6cwZ4Y7.jpg'
   })
   const Sean = new User({
@@ -73,7 +73,7 @@ mongoose
     lastName: 'D',
     instagram: 'SeanD1',
     camera: 'Canon MkII',
-    lens: '70-200 2.8',
+    lens: '70-200mm 2.8',
     photo: 'https://i.imgur.com/Y5LWTra.jpg'
   })
 
@@ -81,27 +81,27 @@ mongoose
   
 
 const Gary = new Photographer({
-firstName:'Gary',
-lastName:'Fong',
-photo:'https://petapixel.com/assets/uploads/2014/12/garyfong.jpg',
-instagram:'GaryFong4Real',
-website:'https://www.garyfong.com/'
+firstName:'Sam',
+lastName:'Kolder',
+photo:'https://i.imgur.com/FkChwv8.jpg',
+instagram:'Sam_Kolder',
+website:'https://www.instagram.com/sam_kolder'
 })
 
 const Marge = new Photographer({
-  firstName: 'Marge',
-  lastName:'Simpson',
-  website: 'http://www.simpsonsworld.com/',
-  photo: 'https://s-media-cache-ak0.pinimg.com/originals/97/59/ef/9759ef4e74d095b3a2f4aff7af016695.jpg',
-  instagram:'margebouviersimpson',
+  firstName: 'Jessica',
+  lastName:'Bubb',
+  website: 'http://www.rusticbones.com/',
+  photo: 'https://i.imgur.com/4uxYI5m.jpg',
+  instagram:'rusticbones',
 })
 
 const Homer = new Photographer({
-  firstName: 'Homer',
-  lastName:'Simpson',
-  website: 'https://en.wikipedia.org/wiki/Homer_Simpson',
-  photo: 'https://i.imgur.com/sDVPVPl.jpg',
-  instagram:'mr.homersimpson',
+  firstName: 'Brandon',
+  lastName:'Woelfel',
+  website: 'https://www.brandonwoelfel.com/',
+  photo: 'https://i.imgur.com/9si2Juh.jpg',
+  instagram:'brandonwoelfel',
 })
 
 const Upload1 = new Photo ({
@@ -109,10 +109,7 @@ const Upload1 = new Photo ({
 
 })
 
-const Upload2 = new Photo ({
-  img:'https://i.imgur.com/VopCByG.jpg',
-  
-})
+
 const Upload3 = new Photo ({
   img:'https://i.imgur.com/GAkAnn4.jpg',
 })
@@ -120,7 +117,7 @@ const Upload4 = new Photo ({
   img:'https://i.imgur.com/f3WIKxA.jpg',
 })
 const Upload5 = new Photo ({
-  img:'https://i.imgur.com/S3sGKnu.jpg', 
+  img:'https://i.imgur.com/qf7XGg9.jpg', 
 })
 const Upload6 = new Photo ({
   img:'https://i.imgur.com/WNpGmAu.jpg',
@@ -128,18 +125,11 @@ const Upload6 = new Photo ({
 const Upload7 = new Photo ({
   img:'https://i.imgur.com/llS7sCc.jpg',
 })
-const Upload8 = new Photo ({
-  img:'https://i.imgur.com/G80lKgk.jpg',
-})
+
 const Upload9 = new Photo ({
-  img:'https://i.imgur.com/NRnhMjw.jpg',
+  img:'https://i.imgur.com/srlfBko.jpg',
 })
 
-  
-
-
- 
- 
 
   User.remove({}).then(()=>{
     console.log('Users planted in database')
@@ -161,13 +151,11 @@ const Upload9 = new Photo ({
   Photo.remove({}).then(()=>{
     console.log('Photos saved!!')
      Upload1.save()
-     Upload2.save()
      Upload3.save()
      Upload4.save()
      Upload5.save()
      Upload6.save()
      Upload7.save()
-     Upload8.save()
     return Upload9.save()
     
   })
