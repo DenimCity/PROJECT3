@@ -89,3 +89,24 @@ export function deleteUserFromDatabase(userToDeleteFromDatabase){
   }
 }
 
+
+
+
+////photographers 
+export function sendPhotographersToState(photographersFromDatabase) {
+  return {type:'GET_PHOTOGRAPHERS', photographersFromDatabase}
+
+}
+
+// /this function grabs all the users from the USER database and dispatches it to our 
+export function getPhotographers(){
+  return function (dispatch){
+    return axios
+      .get('/api/photographers')
+      .then((response)=>{
+        console.log("get photogaphers from server in thunk file",response)
+        dispatch(sendPhotographersToState(response.data))
+
+      })
+  }
+}
