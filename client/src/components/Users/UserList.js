@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import {connect} from "react-redux";
 import {push} from "react-router-redux";
-import {Button, ButtonContainer} from '../styled_components/BasicStyles'
+import {Button, ButtonContainer, TitleContainer} from '../styled_components/BasicStyles'
 import {getUsers, deleteUserFromDatabase} from "../../actions/thunk.actions";
 import {Link} from 'react-router-dom'
 import User from './User'
@@ -17,6 +17,9 @@ class UserList extends Component {
   render() {
     return (
       <div>
+        <TitleContainer>
+          <h1>New Photographer Showcase</h1>
+        </TitleContainer>
         <ButtonContainer>
           <Link to="/new">
           <Button>Add New User</Button>

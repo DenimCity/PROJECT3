@@ -40,7 +40,7 @@ class PhotoGallery extends Component {
     return (
       <PageContainer>
         <TitleContainer>
-          Photograhers PhotoGallery
+          <h1>Photograhers PhotoGallery</h1>
         </TitleContainer>
         <br/>
         <br/>
