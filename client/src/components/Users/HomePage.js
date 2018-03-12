@@ -26,7 +26,7 @@ class HomePage extends Component {
           <TitleHeader>
             <ImageContainer>
 
-              <h9>image</h9>
+              <h1>image</h1>
             </ImageContainer>
              
            
@@ -204,10 +204,12 @@ display: block;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-height:22vh;
-h9{
+height:25vh;
+
+h1{
   opacity:-9;
 }
+
 `
 
 const CameraWrapper = styled.div `
