@@ -81,26 +81,26 @@ mongoose
   
 
 const Gary = new Photographer({
-firstName:'Gary',
-lastName:'Fong',
-photo:'https://petapixel.com/assets/uploads/2014/12/garyfong.jpg',
+firstName:'Sam',
+lastName:'Kolder',
+photo:'https://i.imgur.com/FkChwv8.jpg',
 instagram:'GaryFong4Real',
-website:'https://www.garyfong.com/'
+website:'https://www.instagram.com/sam_kolder'
 })
 
 const Marge = new Photographer({
-  firstName: 'Marge',
-  lastName:'Simpson',
-  website: 'http://www.simpsonsworld.com/',
-  photo: 'https://s-media-cache-ak0.pinimg.com/originals/97/59/ef/9759ef4e74d095b3a2f4aff7af016695.jpg',
+  firstName: 'Jessica',
+  lastName:'Bubb',
+  website: 'http://www.rusticbones.com/',
+  photo: 'https://i.imgur.com/4uxYI5m.jpg',
   instagram:'margebouviersimpson',
 })
 
 const Homer = new Photographer({
-  firstName: 'Homer',
-  lastName:'Simpson',
-  website: 'https://en.wikipedia.org/wiki/Homer_Simpson',
-  photo: 'https://i.imgur.com/sDVPVPl.jpg',
+  firstName: 'Brandon',
+  lastName:'Woelfel',
+  website: 'https://www.brandonwoelfel.com/',
+  photo: 'https://i.imgur.com/mcrH9yM.jpg',
   instagram:'mr.homersimpson',
 })
 
