@@ -1,29 +1,54 @@
 import React, {Component} from 'react'
-import Photo from './Photo'
-import NavBar from '../styled_components/NavBar'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
-
-
+import axios from 'axios'
+import {Button, TitleContainer} from '../styled_components/BasicStyles'
 class PhotoGallery extends Component {
+
+  state = {
+    photos: []
+
+  }
+
+  getPhotos = () => {
+    console.log('gett photos');
+    axios
+      .get(`/api/photos`)
+      .then(res => {
+        const photos = res.data
+        console.log('the data of all the photos', photos)
+        this.setState({photos})
+      })
+  }
+
+  componentWillMount = () => {
+    this.getPhotos()
+  }
 
   render() {
 
-    const Gallery = this.props.MyPictures.map((photo, index) => {
-        return (<Photo key={index} 
-          image={photo.img} 
-          id={photo._id}/>)
+    const Gallery = this
+      .state
+      .photos
+      .map((photo, i) => {
+        return (
+          <ImageContainer key={i} id={photo._id}>
+            <img src={photo.img} alt=""/>
+          </ImageContainer>
+        )
       })
 
     return (
-      <div>
-
-      <div>
-        <PhotoWrapperContainer>
-        <PhotoWrapper>{Gallery}</PhotoWrapper>
-        </PhotoWrapperContainer>
-      </div>
-      </div>
+      <PageContainer>
+        <TitleContainer>
+          Welcome To Our Photograhers PhotoGallery
+        </TitleContainer>
+        <br/>
+        <br/>
+        <PhotoContainer>
+          {Gallery}
+        </PhotoContainer>
+      </PageContainer>
     )
   }
 
@@ -31,16 +56,33 @@ class PhotoGallery extends Component {
 
 export default PhotoGallery
 
-const PhotoWrapper = styled.div`
+const PhotoContainer = styled.div `
+display: flex;
+flex-wrap:wrap;
+justify-content: center;
 
-display:grid;
-grid-template-columns:33% 33% 33%;
 
 `
 
-const PhotoWrapperContainer = styled.div`
+const PageContainer = styled.div `
 display:flex;
 justify-content:center;
+flex-direction:column;
 
-margin: 105px;
+
+`
+
+const ImageContainer = styled.div `
+width: 22rem;
+margin-right: 2rem;
+img {
+  width: 100%;
+    border-radius: 2rem;
+    height: 90%;
+    box-shadow: 4px 3px 1rem 3px;
+  @media (max-width:669){
+    height: 30vh;
+  }
+}
+
 `
