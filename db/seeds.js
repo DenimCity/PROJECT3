@@ -84,7 +84,7 @@ const Gary = new Photographer({
 firstName:'Sam',
 lastName:'Kolder',
 photo:'https://i.imgur.com/FkChwv8.jpg',
-instagram:'GaryFong4Real',
+instagram:'Sam_Kolder',
 website:'https://www.instagram.com/sam_kolder'
 })
 
@@ -93,15 +93,15 @@ const Marge = new Photographer({
   lastName:'Bubb',
   website: 'http://www.rusticbones.com/',
   photo: 'https://i.imgur.com/4uxYI5m.jpg',
-  instagram:'margebouviersimpson',
+  instagram:'rusticbones',
 })
 
 const Homer = new Photographer({
   firstName: 'Brandon',
   lastName:'Woelfel',
   website: 'https://www.brandonwoelfel.com/',
-  photo: 'https://i.imgur.com/mcrH9yM.jpg',
-  instagram:'mr.homersimpson',
+  photo: 'https://i.imgur.com/9si2Juh.jpg',
+  instagram:'brandonwoelfel',
 })
 
 const Upload1 = new Photo ({
@@ -109,10 +109,7 @@ const Upload1 = new Photo ({
 
 })
 
-const Upload2 = new Photo ({
-  img:'https://i.imgur.com/VopCByG.jpg',
-  
-})
+
 const Upload3 = new Photo ({
   img:'https://i.imgur.com/GAkAnn4.jpg',
 })
@@ -120,7 +117,7 @@ const Upload4 = new Photo ({
   img:'https://i.imgur.com/f3WIKxA.jpg',
 })
 const Upload5 = new Photo ({
-  img:'https://i.imgur.com/S3sGKnu.jpg', 
+  img:'https://i.imgur.com/qf7XGg9.jpg', 
 })
 const Upload6 = new Photo ({
   img:'https://i.imgur.com/WNpGmAu.jpg',
@@ -128,11 +125,9 @@ const Upload6 = new Photo ({
 const Upload7 = new Photo ({
   img:'https://i.imgur.com/llS7sCc.jpg',
 })
-const Upload8 = new Photo ({
-  img:'https://i.imgur.com/G80lKgk.jpg',
-})
+
 const Upload9 = new Photo ({
-  img:'https://i.imgur.com/NRnhMjw.jpg',
+  img:'https://i.imgur.com/srlfBko.jpg',
 })
 
 
@@ -156,13 +151,11 @@ const Upload9 = new Photo ({
   Photo.remove({}).then(()=>{
     console.log('Photos saved!!')
      Upload1.save()
-     Upload2.save()
      Upload3.save()
      Upload4.save()
      Upload5.save()
      Upload6.save()
      Upload7.save()
-     Upload8.save()
     return Upload9.save()
     
   })
