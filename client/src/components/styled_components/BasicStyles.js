@@ -7,6 +7,9 @@ align-items:center;
 font-size:2vw;
 text-align: center;
 font-family: serif;
+@media (max-width: 669px){
+  font-size: 7vw;
+}
 
 `
 
@@ -34,4 +37,11 @@ background: #3498db;
   text-decoration: none;
   }
 
+`
+
+export const ButtonContainer = styled.div `
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:3rem;
 `
