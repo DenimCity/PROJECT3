@@ -3,9 +3,8 @@ import {connect} from "react-redux";
 import {push} from "react-router-redux";
 import {getPhotographers} from "../../actions/thunk.actions";
 import {Link} from 'react-router-dom'
-import Photographer from './Photographer'
 import styled from 'styled-components'
-import {Button, TitleContainer} from '../styled_components/BasicStyles'
+import {Button, TitleContainer, ButtonContainer} from '../styled_components/BasicStyles'
 
 import NavBar from '../styled_components/NavBar'
 
@@ -62,11 +61,11 @@ class PhotographersList extends Component {
               )
             })}
         </Card>
-        <div>
+        <ButtonContainer>
           <Link to="/photographers/photogallery">
           <Button>Photogallery</Button>
           </Link>
-        </div>
+        </ButtonContainer>
       </div>
     )
   }

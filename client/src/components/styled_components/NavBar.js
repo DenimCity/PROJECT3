@@ -11,11 +11,10 @@ export default class NavBar extends Component {
           <Link to="/">Home</Link>
           <Link to="/users">Users</Link>
           <Link to="/photographers">Photographers</Link>
-          <Link to="/photogallery">Photo Gallery</Link>
+          <Link to="/photographers/photogallery">Photo Gallery</Link>
           {/* <Link to="">About</Link> */}
         </LinkWrapper>
       </NavBarStyles>
-
     )
 
   }
@@ -49,7 +48,7 @@ a {
 }
 
 @media (max-width: 669px) {
-  
+  font-size: 9px;
   }
 `
 

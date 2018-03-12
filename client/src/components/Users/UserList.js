@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import {connect} from "react-redux";
 import {push} from "react-router-redux";
-import {Button} from '../styled_components/BasicStyles'
+import {Button, ButtonContainer} from '../styled_components/BasicStyles'
 import {getUsers, deleteUserFromDatabase} from "../../actions/thunk.actions";
 import {Link} from 'react-router-dom'
 import User from './User'
@@ -17,11 +17,11 @@ class UserList extends Component {
   render() {
     return (
       <div>
-        <NewUserContainer>
+        <ButtonContainer>
           <Link to="/new">
           <Button>Add New User</Button>
           </Link>
-        </NewUserContainer>
+        </ButtonContainer>
 
         <Wrapper>
           <CardWrapperContainer>
@@ -130,11 +130,6 @@ const PictureContainer = styled.div `
   width: 22rem;
 `;
 
-const NewUserContainer = styled.div `
-display:flex;
-justify-content:center;
-align-items:center;
-margin-top:3rem;
-`
+
 
 

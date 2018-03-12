@@ -41,7 +41,7 @@ class PhotoGallery extends Component {
     return (
       <PageContainer>
         <TitleContainer>
-          Welcome To Our Photograhers PhotoGallery
+          Photograhers PhotoGallery
         </TitleContainer>
         <br/>
         <br/>
@@ -60,16 +60,12 @@ const PhotoContainer = styled.div `
 display: flex;
 flex-wrap:wrap;
 justify-content: center;
-
-
 `
 
 const PageContainer = styled.div `
 display:flex;
 justify-content:center;
 flex-direction:column;
-
-
 `
 
 const ImageContainer = styled.div `
