@@ -8,7 +8,7 @@ font-size:2vw;
 text-align: center;
 font-family: serif;
 @media (max-width: 669px){
-  font-size: 7vw;
+  font-size: 2vh;
 }
 
 `
