@@ -9,9 +9,7 @@ function usersReducer(state = defaultState, action)
  
     case "GET_PHOTOGRAPHERS":
     console.log('getting photographers', action.type)
-      return [
-        ...action.photographersFromDatabase
-  ]
+      return [...action.photographersFromDatabase]
 
     // case "CREATE_PHOTOGRAPHER":
     //   return [...state, action.newUserData];

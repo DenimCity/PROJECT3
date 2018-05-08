@@ -16,7 +16,10 @@ import PhotoGallery from './components/PhotoGallery/PhotoGallery'
 import NavBar from "./components/styled_components/NavBar";
 
 const history = createHistory();
+console.log('history: ', history);
 const store = configureStore(history);
+console.log('store: ',store);
+
 const Root = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
@@ -32,4 +35,5 @@ const Root = () => (
     </ConnectedRouter>
   </Provider>
 )
+console.log('Root: ', Root);
 export default Root;

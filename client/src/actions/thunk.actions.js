@@ -11,14 +11,16 @@ export function sendUsersToState(usersFromDatabase) {
 // /this function grabs all the users from the USER database and dispatches it to our 
 export function getUsers(){
   return function (dispatch){
-    return axios
+    return ( 
+      axios
       .get('/api/users')
       .then((response)=>{
         console.log("get users database from thunk file",response)
         dispatch(sendUsersToState(response.data))
 
       })
-  }
+ )} 
+
 }
 
 

@@ -8,12 +8,15 @@ import {Link} from 'react-router-dom'
 import User from './User'
 
 class UserList extends Component {
+
   componentWillMount() {
     this
       .props
       .getUsers();
-    console.log('UsersList', this.props)
+
   }
+
+  
   render() {
     return (
       <div>
@@ -58,6 +61,7 @@ class UserList extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log('state', state );
   return {users: state.users};
 };
 export default connect(mapStateToProps, {push, getUsers, deleteUserFromDatabase})(UserList);
