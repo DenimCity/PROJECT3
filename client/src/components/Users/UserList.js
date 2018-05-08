@@ -60,6 +60,7 @@ class UserList extends Component {
   }
 }
 
+// https://learn.co/lessons/map-state-to-props-readme
 const mapStateToProps = state => {
   console.log('state', state );
   return {users: state.users};
